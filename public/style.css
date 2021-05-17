@@ -1,0 +1,32 @@
+footer {
+    max-width: 1200px;    
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+}
+
+
+figure:nth-child(0) {
+    background-color: burlywood;
+}
+
+figure img:nth-child(0){
+    width: 200px;
+    height: 180px;   
+}
+
+figure img:nth-child(1){
+    width: 100px;
+    height: 105px;
+}
+
+figure img:nth-child(2) {
+    width: 120px;
+    height: 100px;
+}
+
+.bouton {
+    display: flex;    
+}
+
