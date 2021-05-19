@@ -85,7 +85,7 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "
+        echo "<h1>Page d'acceuil</h1>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,8 +117,8 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-
+<h1>Page d'acceuil</h1>
 {% endblock %}
-", "passage/index.html.twig", "C:\\Users\\Fg\\passageAGue\\templates\\passage\\index.html.twig");
+", "passage/index.html.twig", "C:\\Users\\samyg\\Desktop\\Stage\\passage_a_gue\\templates\\passage\\index.html.twig");
     }
 }
