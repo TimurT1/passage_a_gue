@@ -1,11 +1,63 @@
-footer {
-    max-width: 1200px;    
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-
+    flex-direction : column;
 }
 
+main{
+    height: 100%;
+}
+
+
+                        /* logotype */
+.logotype{
+    width: 140px !important;
+    height: 100px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+                        /* image de logotype */
+.logotype img{
+    width: 100%;
+    height: 80%;
+}
+
+                        /* nav-bar */
+
+.bg-primary{
+   /* background-color: #ef7757!important;*/
+    background: linear-gradient(#ffbcab,#ef7757);
+}
+
+                        /* Bouton de debut dans la navbar */
+.debut-nav{
+    order: 0;
+}
+                        /* Bouton a la fin dans la navbar */
+.fin-nav{
+    order: 1;
+}
+
+.userIcon{
+    color: rgb(178, 236, 241);     
+}
+
+.userIcon p{
+    color: black;
+    font-size: 16px;    
+}
+
+
+                        /**/
+footer {
+    display: flex;
+    flex-flow: row;
+}
 
 figure:nth-child(0) {
     background-color: burlywood;
@@ -20,13 +72,39 @@ figure img:nth-child(1){
     width: 100px;
     height: 105px;
 }
-
 figure img:nth-child(2) {
     width: 120px;
     height: 100px;
 }
-
 .bouton {
-    display: flex;    
+    margin: auto;
+    border-radius: 10px;
 }
+/*
+ul li:nth-of-type(1) {
+    order: 0;
+    background-color: black;
+}
+
+ul li:nth-of-type(2) {
+    order: 2;
+    background-color: rgb(153, 61, 61);
+}
+
+ul li:nth-of-type(3) {
+    order: 1;
+    background-color: rgb(79, 153, 61);
+}*/
+
+.btn-secondary{
+    background-color: #B2ECF1 !important;
+}
+
+
+.btn-info {
+    background-color: #d75432!important;
+    border-color: #d75432!important;
+    
+} 
+
 
