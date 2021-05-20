@@ -14,13 +14,14 @@ class LoginFormType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('roles')
-            ->add('password')
-            /*->add('checkPassword', PasswordType::class)*/
+
+            ->add('password', PasswordType::class)
+            ->add('checkPassword', PasswordType::class)
             ->add('nomUtilisateur')
             ->add('prenomUtilisateur')
             ->add('pseudoUtilisateur')
-            ->add('photoUtilisateur')
+            ->add('photoUtilisateur', null ,array('required' => false))
+
         ;
     }
 

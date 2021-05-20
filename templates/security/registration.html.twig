@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %} Inscription {% endblock %}
+
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="./css/form.css">
+{% endblock %}
+
+{% block body %}
+    <div class="formulaire">
+        
+        {{ form_start(form) }}
+        <h1>Inscription</h1>
+        {{ form_row(form.email, { 'label': "Email", 'attr': { 'placeholder': "Email" , 'autofocus' : 'enabled'}}) }}
+        {{ form_row(form.password, { 'label': "Mot de passe", 'attr': { 'placeholder': "Mot de passe"}}) }}
+        {{ form_row(form.checkPassword, { 'label': "Confrimez le mot de passe", 'attr': { 'placeholder': "Confirmez le mot de passe"}}) }}
+        {{ form_row(form.pseudoUtilisateur, { 'label': "Pseudonyme",'attr': { 'placeholder': "Le nom qui sera affiché"}}) }}
+        {{ form_row(form.nomUtilisateur, { 'label': "Nom",'attr': { 'placeholder': "Nom"}}) }}
+        {{ form_row(form.prenomUtilisateur, { 'label': "Prénom",'attr': { 'placeholder': "Prénom"}}) }}
+        {{ form_row(form.photoUtilisateur, { 'label': "Photo",'attr': { 'placeholder': "Ajoutez une photo "}}) }}
+        <a class="petit-lien" href="{{ path('app_login') }}">Déjà inscrit? Je me connecte</a><br>
+        <button type="submit" class="btn btn-lg btn-success center">inscription</button>
+        {{ form_end(form) }}
+          
+    </div>
+{% endblock %}

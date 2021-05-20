@@ -23,7 +23,7 @@ final class Versions
      * @deprecated please use {@see self::rootPackageName()} instead.
      *             This constant will be removed in version 2.0.0.
      */
-    const ROOT_PACKAGE_NAME = 'symfony/website-skeleton';
+    const ROOT_PACKAGE_NAME = '__root__';
 
     /**
      * Array of all available composer packages.
@@ -94,7 +94,6 @@ final class Versions
   'symfony/monolog-bundle' => 'v3.7.0@4054b2e940a25195ae15f0a49ab0c51718922eb4',
   'symfony/notifier' => 'v5.2.8@bafefffe9e1ac78d2aaa40fdaf578ef33f41fe72',
   'symfony/options-resolver' => 'v5.2.4@5d0f633f9bbfcf7ec642a2b5037268e61b0a62ce',
-  'symfony/orm-pack' => 'v2.1.0@357f6362067b1ebb94af321b79f8939fc9118751',
   'symfony/polyfill-intl-grapheme' => 'v1.22.1@5601e09b69f26c1828b13b6bb87cb07cddba3170',
   'symfony/polyfill-intl-icu' => 'v1.22.1@af1842919c7e7364aaaa2798b29839e3ba168588',
   'symfony/polyfill-intl-idn' => 'v1.22.1@2d63434d922daf7da8dd863e7907e67ee3031483',
@@ -113,7 +112,6 @@ final class Versions
   'symfony/security-guard' => 'v5.2.8@8137325674edfdecf7367e40804d8ee9525b87e0',
   'symfony/security-http' => 'v5.2.8@c55a8f70fb2a04cf8ec3263d337abb3f22fc0132',
   'symfony/serializer' => 'v5.2.7@3698d2611c4917d3689ff89c0a0dcaa761c8e771',
-  'symfony/serializer-pack' => 'v1.0.4@61173947057d5e1bf1c79e2a6ab6a8430be0602e',
   'symfony/service-contracts' => 'v2.4.0@f040a30e04b57fbcc9c6cbcf4dbaa96bd318b9bb',
   'symfony/stopwatch' => 'v5.2.7@d99310c33e833def36419c284f60e8027d359678',
   'symfony/string' => 'v5.2.8@01b35eb64cac8467c3f94cd0ce2d0d376bb7d1db',
@@ -121,7 +119,6 @@ final class Versions
   'symfony/translation-contracts' => 'v2.4.0@95c812666f3e91db75385749fe219c5e494c7f95',
   'symfony/twig-bridge' => 'v5.2.8@dcdc60ace03264f50258978113c4f2a33bdc439f',
   'symfony/twig-bundle' => 'v5.2.4@5ebbb5f0e8bfaa0b4b37cb25ff97f83b18caf221',
-  'symfony/twig-pack' => 'v1.0.1@08a73e833e07921c464336deb7630f93e85ef930',
   'symfony/validator' => 'v5.2.7@b0be0360bfbf15059308d815da7f4151bd448b37',
   'symfony/var-dumper' => 'v5.2.8@d693200a73fae179d27f8f1b16b4faf3e8569eba',
   'symfony/var-exporter' => 'v5.2.8@d26db2d2b2d7eb2c1adb8545179f8803998b8237',
@@ -134,17 +131,14 @@ final class Versions
   'symfony/browser-kit' => 'v5.2.7@b1c9d5701273a255da3a580f85066b83bd94e97d',
   'symfony/css-selector' => 'v5.2.7@59a684f5ac454f066ecbe6daecce6719aed283fb',
   'symfony/debug-bundle' => 'v5.2.4@ec21bd26d24dab02ac40e4bec362b3f4032486e8',
-  'symfony/debug-pack' => 'v1.0.9@cfd5093378e9cafe500f05c777a22fe8a64a9342',
   'symfony/dom-crawler' => 'v5.2.4@400e265163f65aceee7e904ef532e15228de674b',
   'symfony/maker-bundle' => 'v1.31.1@4f57a44cef0b4555043160b8bf223fcde8a7a59a',
   'symfony/phpunit-bridge' => 'v5.2.8@b3cf2c3f7f6196fb498002920c1ae9036d9e5619',
-  'symfony/profiler-pack' => 'v1.0.5@29ec66471082b4eb068db11eb4f0a48c277653f7',
-  'symfony/test-pack' => 'v1.0.7@e61756c97cbedae00b7cf43b87abcfadfeb2746c',
   'symfony/web-profiler-bundle' => 'v5.2.8@68aea5b0ca1328c2a1ae3df04cce50302a5106f9',
-  'symfony/polyfill-ctype' => '*@',
-  'symfony/polyfill-iconv' => '*@',
-  'symfony/polyfill-php72' => '*@',
-  'symfony/website-skeleton' => 'v5.2.99@',
+  'symfony/polyfill-ctype' => '*@873c2f85e33dc5d5cae278dd279978453ad6faea',
+  'symfony/polyfill-iconv' => '*@873c2f85e33dc5d5cae278dd279978453ad6faea',
+  'symfony/polyfill-php72' => '*@873c2f85e33dc5d5cae278dd279978453ad6faea',
+  '__root__' => 'dev-master@873c2f85e33dc5d5cae278dd279978453ad6faea',
 );
 
     private function __construct()

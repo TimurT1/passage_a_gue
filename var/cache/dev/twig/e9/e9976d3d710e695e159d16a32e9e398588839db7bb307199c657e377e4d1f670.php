@@ -642,6 +642,6 @@ class __TwigTemplate_cad230dd14b6ea95338568c6eb52e8669ec64eaecaf7f2376a3c8bdcc85
         }());
     </script>
 {% endblock %}
-", "@WebProfiler/Profiler/layout.html.twig", "C:\\Users\\Fg\\passageAGue\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\layout.html.twig");
+", "@WebProfiler/Profiler/layout.html.twig", "C:\\Users\\samyg\\Desktop\\Stage\\passage_a_gue\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\layout.html.twig");
     }
 }

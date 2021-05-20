@@ -174,6 +174,6 @@ class __TwigTemplate_e46857bca00befbc27e79f0a7f4ba237ad1b915a2f1fa5dcd875a7e7c26
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Profiler/open.html.twig", "C:\\Users\\Fg\\passageAGue\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\open.html.twig");
+", "@WebProfiler/Profiler/open.html.twig", "C:\\Users\\samyg\\Desktop\\Stage\\passage_a_gue\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\open.html.twig");
     }
 }

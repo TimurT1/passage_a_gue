@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\User;
-//use App\Form\RegistrationType;
+
+use App\Form\LoginFormType;
+
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,40 +18,40 @@ class SecurityController extends AbstractController
 {
 
     /**
-     * @Route("/inscription", name="inscription")
+     * @Route("/inscription", name="app_registration")
      */
-    public function inscription(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
-    {
+    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder){
         $user = new User();
-
-        $form = $this->createForm(RegistrationType::class, $user);
-
+        $form = $this->createForm(LoginFormType::class, $user);
         $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid()) {
+        if($form->isSubmitted() && $form->isValid()){
+            if($user->getPhotoUtilisateur() == null){
+                $user->setPhotoUtilisateur("ma super photo");
+            }
+            $user->setRoles(["ROLE_ADMIN"]);
             $hash = $encoder->encodePassword($user, $user->getPassword());
-
-            $user->setPassword($hash);
-
+            $user->setPassword($hash); 
             $manager->persist($user);
             $manager->flush();
-
-            return $this->redirectToRoute("security_login");
+            return $this->redirectToRoute("app_login");
         }
 
         return $this->render('security/registration.html.twig', [
-            'form' => $form->createView()
-        ]);    
+            'form'=> $form->createView()
+        ]);
     }
+    
 
     /**
      * @Route("/login", name="app_login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
+
+        if ($this->getUser()) {
+            return $this->redirectToRoute('accueil');
+        }
+
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();

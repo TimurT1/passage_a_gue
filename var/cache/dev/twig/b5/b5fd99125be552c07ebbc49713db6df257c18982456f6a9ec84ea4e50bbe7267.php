@@ -27,6 +27,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
         $this->parent = false;
 
         $this->blocks = [
+            'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
         ];
@@ -46,54 +47,54 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 <html>
     <head>
         <meta charset=\"UTF-8\">        
-        
+        <title>";
+        // line 5
+        $this->displayBlock('title', $context, $blocks);
+        echo "</title>
+        <link rel=\"stylesheet\" href=\"https://bootswatch.com/5/yeti/bootstrap.css\">
+        <link rel=\"stylesheet\" href=\"style.css\">
         ";
-        // line 6
+        // line 8
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
-        echo "
-    </head>
+        // line 16
+        echo "    </head>
     <body>       
         <header> 
                
                
             <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
             <div class=\"container-fluid\">
+
                 <figure class=\"logotype\">
                     <img src=\"./img/site/logotypeSite.png\" alt=\"Logotype Afpa\">
                 </figure>  
                 <a class=\"navbar-brand\" href=\"";
-        // line 22
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
         echo "\">Pagué</a>
+
+                <!--a class=\"navbar-brand\" href=\"";
+        // line 29
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
+        echo "\"> <img class=\"logo\" src=\"./img/site/logo.png\" alt=\"logo du site\"> Pagué</a-->
+
                 <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
                 </button>
 
                 <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
-                <ul class=\"navbar-nav me-auto\">               
-                    <li class=\"nav-item debut-nav\">
+                
+
+                <ul class=\"navbar-nav me-auto\">
+                    <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"#\">Recherche</a>
                     </li>
-                    <li class=\"nav-item fin-nav\">
-                        <a class=\"nav-link\" href=\"";
-        // line 33
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        echo "\">Connexion</a>
-                    </li>
-                    <li class=\"nav-item fin-nav\">
-                        <a class=\"nav-link\" href=\"#\">Inscription</a>
-                    </li>
-                    <li class=\"nav-item fin-nav\">
-                        <a class=\"nav-link\" href=\"";
-        // line 39
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        echo "\">Déconnexion</a>
-                    </li>
-                    <li class=\"nav-item debut-nav\">
+                    
+                    <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"#\">Création</a>
                     </li>
-                    <li class=\"nav-item debut-nav\">
+                    <li class=\"nav-item\">
+
                         <a class=\"nav-link\" href=\"#\">Tables de paramétrages</a>
                     </li>
                     <!--li class=\"nav-item dropdown\">
@@ -108,11 +109,34 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                     </li-->
                     
                 </ul>
+
                 <span class=\"userIcon\"><i class=\"fa fa-user-times fa-4x\" aria-hidden=\"true\"></i><p>Utilisateur</p></span>
                 <!--span class=\"userIcon\"> <i class=\"fa fa-user-plus fa-4x\" aria-hidden=\"true\"></i></i><p>Utilisateur</p></span-->
 
                
                 
+
+                <ul class=\"navbar-nav\">
+                <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+        // line 71
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\">Connexion</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+        // line 74
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_registration");
+        echo "\">Inscription</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"";
+        // line 77
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        echo "\">Déconnexion</a>
+                    </li>
+                    </ul>
+
                 <!--form class=\"d-flex\">
                     <input class=\"form-control me-sm-2\" type=\"text\" placeholder=\"Search\">
                     <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>
@@ -123,9 +147,9 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
         </header>
         <main>
             ";
-        // line 73
+        // line 90
         $this->displayBlock('body', $context, $blocks);
-        // line 74
+        // line 91
         echo "        </main>
         <footer>
             <a href=\"https://www.cerema.fr/\" >
@@ -159,7 +183,25 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     }
 
-    // line 6
+    // line 5
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 8
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -169,10 +211,13 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 7
-        echo "            <link rel=\"stylesheet\" href=\"https://bootswatch.com/5/yeti/bootstrap.css\">
+        // line 9
+        echo "
+            <link rel=\"stylesheet\" href=\"https://bootswatch.com/5/yeti/bootstrap.css\">
             <link rel=\"stylesheet\" href=\"font-awesome-4.7.0/css/font-awesome.min.css\">
             <link rel=\"stylesheet\" href=\"style.css\">            
+
+
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -182,7 +227,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     }
 
-    // line 73
+    // line 90
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -212,7 +257,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     public function getDebugInfo()
     {
-        return array (  186 => 73,  173 => 7,  163 => 6,  129 => 74,  127 => 73,  90 => 39,  81 => 33,  67 => 22,  54 => 11,  52 => 6,  45 => 1,);
+        return array (  231 => 90,  215 => 9,  205 => 8,  187 => 5,  153 => 91,  151 => 90,  135 => 77,  129 => 74,  123 => 71,  78 => 29,  73 => 27,  60 => 16,  58 => 8,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -221,13 +266,17 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 <html>
     <head>
         <meta charset=\"UTF-8\">        
-        
+        <title>{% block title %}{% endblock %}</title>
+        <link rel=\"stylesheet\" href=\"https://bootswatch.com/5/yeti/bootstrap.css\">
+        <link rel=\"stylesheet\" href=\"style.css\">
         {% block stylesheets %}
+
             <link rel=\"stylesheet\" href=\"https://bootswatch.com/5/yeti/bootstrap.css\">
             <link rel=\"stylesheet\" href=\"font-awesome-4.7.0/css/font-awesome.min.css\">
             <link rel=\"stylesheet\" href=\"style.css\">            
-        {% endblock %}
 
+
+        {% endblock %}
     </head>
     <body>       
         <header> 
@@ -235,32 +284,31 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                
             <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
             <div class=\"container-fluid\">
+
                 <figure class=\"logotype\">
                     <img src=\"./img/site/logotypeSite.png\" alt=\"Logotype Afpa\">
                 </figure>  
                 <a class=\"navbar-brand\" href=\"{{ path('accueil') }}\">Pagué</a>
+
+                <!--a class=\"navbar-brand\" href=\"{{ path('accueil') }}\"> <img class=\"logo\" src=\"./img/site/logo.png\" alt=\"logo du site\"> Pagué</a-->
+
                 <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                 <span class=\"navbar-toggler-icon\"></span>
                 </button>
 
                 <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
-                <ul class=\"navbar-nav me-auto\">               
-                    <li class=\"nav-item debut-nav\">
+                
+
+                <ul class=\"navbar-nav me-auto\">
+                    <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"#\">Recherche</a>
                     </li>
-                    <li class=\"nav-item fin-nav\">
-                        <a class=\"nav-link\" href=\"{{ path('app_login') }}\">Connexion</a>
-                    </li>
-                    <li class=\"nav-item fin-nav\">
-                        <a class=\"nav-link\" href=\"#\">Inscription</a>
-                    </li>
-                    <li class=\"nav-item fin-nav\">
-                        <a class=\"nav-link\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
-                    </li>
-                    <li class=\"nav-item debut-nav\">
+                    
+                    <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"#\">Création</a>
                     </li>
-                    <li class=\"nav-item debut-nav\">
+                    <li class=\"nav-item\">
+
                         <a class=\"nav-link\" href=\"#\">Tables de paramétrages</a>
                     </li>
                     <!--li class=\"nav-item dropdown\">
@@ -275,11 +323,25 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                     </li-->
                     
                 </ul>
+
                 <span class=\"userIcon\"><i class=\"fa fa-user-times fa-4x\" aria-hidden=\"true\"></i><p>Utilisateur</p></span>
                 <!--span class=\"userIcon\"> <i class=\"fa fa-user-plus fa-4x\" aria-hidden=\"true\"></i></i><p>Utilisateur</p></span-->
 
                
                 
+
+                <ul class=\"navbar-nav\">
+                <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{ path('app_login') }}\">Connexion</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{ path('app_registration') }}\">Inscription</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
+                    </li>
+                    </ul>
+
                 <!--form class=\"d-flex\">
                     <input class=\"form-control me-sm-2\" type=\"text\" placeholder=\"Search\">
                     <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>

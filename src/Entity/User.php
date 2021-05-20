@@ -6,6 +6,9 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
@@ -31,9 +34,15 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+
+     * @Assert\Length(min="8", minMessage="Votre mot de passe doit faire au moins 8 caractères")
      */
     private $password;
-   
+
+    /**
+     * @Assert\EqualTo(propertyPath="password", message="Vos mots de passes doivent être identiques")
+     */
+
     private $checkPassword;
 
     /**
@@ -117,6 +126,18 @@ class User implements UserInterface
         return $this;
     }
 
+
+    public function getCheckPassword(): string
+    {
+        return $this->checkPassword;
+    }
+
+    public function setcheckPassword(string $checkPassword): self
+    {
+        $this->checkPassword = $checkPassword;
+        return $this;
+    }
+
     /**
      * Returning a salt is only needed, if you are not using a modern
      * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
@@ -178,7 +199,9 @@ class User implements UserInterface
         return $this->photoUtilisateur;
     }
 
-    public function setPhotoUtilisateur(?string $photoUtilisateur): self
+
+    public function setPhotoUtilisateur(string $photoUtilisateur): self
+
     {
         $this->photoUtilisateur = $photoUtilisateur;
 

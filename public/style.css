@@ -1,3 +1,4 @@
+
 html{
     height: 100%;
 }
@@ -59,6 +60,45 @@ footer {
     flex-flow: row;
 }
 
+/*
+.bg-primary{
+    background-color: rgb(239, 119, 87) !important;
+}
+.btn-info{
+    background-color: rgb(255, 154, 128) !important;
+    border-color: #ffbcab !important;
+}
+.btn-success{
+    background-color: #8ec641 !important;
+    border-color: #B0E469 !important;
+}
+
+
+
+html{
+    height: 100%;
+}
+.logo{
+    height: 50px;
+}
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction : column;
+}
+header{
+    border-bottom: 2px solid black;
+}
+main{
+    height: 100%;
+}
+footer {
+    display: flex;
+    flex-flow: row;
+}
+*/
+
 figure:nth-child(0) {
     background-color: burlywood;
 }
@@ -78,6 +118,7 @@ figure img:nth-child(2) {
 }
 .bouton {
     margin: auto;
+
     border-radius: 10px;
 }
 /*
@@ -107,4 +148,16 @@ ul li:nth-of-type(3) {
     
 } 
 
+/*
+}
+.btn {
+	border-radius: 10px 0 10px 0;
+	border: 1px;
+	box-shadow: 0 0 0 rgba(0,0,0,0.3);
+	transition: 0.3s ease-out all;
+}
+.btn:hover {
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.7);
+}
 
+*/
