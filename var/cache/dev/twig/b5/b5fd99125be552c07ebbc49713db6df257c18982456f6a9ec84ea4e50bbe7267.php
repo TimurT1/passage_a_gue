@@ -66,15 +66,16 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
             <div class=\"container-fluid\">
 
                 <figure class=\"logotype\">
-                    <img src=\"./img/site/logotypeSite.png\" alt=\"Logotype Afpa\">
-                </figure>  
+                        <img src=\"./img/site/logotypeSite.png\" alt=\"Logotype du site\">
+                </figure>
+                  
                 <a class=\"navbar-brand\" href=\"";
-        // line 27
+        // line 28
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
         echo "\">Pagué</a>
 
                 <!--a class=\"navbar-brand\" href=\"";
-        // line 29
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
         echo "\"> <img class=\"logo\" src=\"./img/site/logo.png\" alt=\"logo du site\"> Pagué</a-->
 
@@ -110,7 +111,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                     
                 </ul>
 
-                <span class=\"userIcon\"><i class=\"fa fa-user-times fa-4x\" aria-hidden=\"true\"></i><p>Utilisateur</p></span>
+                <span class=\"userIcon fin-nav\"><i class=\"fa fa-user-times fa-4x\" aria-hidden=\"true\"></i><p>Utilisateur</p></span>
                 <!--span class=\"userIcon\"> <i class=\"fa fa-user-plus fa-4x\" aria-hidden=\"true\"></i></i><p>Utilisateur</p></span-->
 
                
@@ -119,19 +120,19 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                 <ul class=\"navbar-nav\">
                 <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-        // line 71
+        // line 72
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\">Connexion</a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-        // line 74
+        // line 75
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_registration");
         echo "\">Inscription</a>
                     </li>
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-        // line 77
+        // line 78
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">Déconnexion</a>
                     </li>
@@ -147,9 +148,9 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
         </header>
         <main>
             ";
-        // line 90
-        $this->displayBlock('body', $context, $blocks);
         // line 91
+        $this->displayBlock('body', $context, $blocks);
+        // line 92
         echo "        </main>
         <footer>
             <a href=\"https://www.cerema.fr/\" >
@@ -227,7 +228,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     }
 
-    // line 90
+    // line 91
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -257,7 +258,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     public function getDebugInfo()
     {
-        return array (  231 => 90,  215 => 9,  205 => 8,  187 => 5,  153 => 91,  151 => 90,  135 => 77,  129 => 74,  123 => 71,  78 => 29,  73 => 27,  60 => 16,  58 => 8,  52 => 5,  46 => 1,);
+        return array (  232 => 91,  216 => 9,  206 => 8,  188 => 5,  154 => 92,  152 => 91,  136 => 78,  130 => 75,  124 => 72,  79 => 30,  74 => 28,  60 => 16,  58 => 8,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -286,8 +287,9 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
             <div class=\"container-fluid\">
 
                 <figure class=\"logotype\">
-                    <img src=\"./img/site/logotypeSite.png\" alt=\"Logotype Afpa\">
-                </figure>  
+                        <img src=\"./img/site/logotypeSite.png\" alt=\"Logotype du site\">
+                </figure>
+                  
                 <a class=\"navbar-brand\" href=\"{{ path('accueil') }}\">Pagué</a>
 
                 <!--a class=\"navbar-brand\" href=\"{{ path('accueil') }}\"> <img class=\"logo\" src=\"./img/site/logo.png\" alt=\"logo du site\"> Pagué</a-->
@@ -324,7 +326,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                     
                 </ul>
 
-                <span class=\"userIcon\"><i class=\"fa fa-user-times fa-4x\" aria-hidden=\"true\"></i><p>Utilisateur</p></span>
+                <span class=\"userIcon fin-nav\"><i class=\"fa fa-user-times fa-4x\" aria-hidden=\"true\"></i><p>Utilisateur</p></span>
                 <!--span class=\"userIcon\"> <i class=\"fa fa-user-plus fa-4x\" aria-hidden=\"true\"></i></i><p>Utilisateur</p></span-->
 
                

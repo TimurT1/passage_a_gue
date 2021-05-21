@@ -1,4 +1,5 @@
-
+                        /* Global */
+/*/////////////////////////////////////////////////////////////////////////////*/
 html{
     height: 100%;
 }
@@ -9,12 +10,17 @@ body{
     flex-direction : column;
 }
 
+
+                        /* main */
+/*/////////////////////////////////////////////////////////////////////////////*/
 main{
     height: 100%;
+    background-color: #B2ECF1;
 }
 
 
-                        /* logotype */
+                        /* logotype du site */
+/*/////////////////////////////////////////////////////////////////////////////*/
 .logotype{
     width: 140px !important;
     height: 100px !important;
@@ -22,134 +28,124 @@ main{
     padding: 0 !important;
 }
 
+
                         /* image de logotype */
+/*/////////////////////////////////////////////////////////////////////////////*/                    
 .logotype img{
-    width: 100%;
-    height: 80%;
+    width: 120px;
+    height: 100px;     
 }
+
 
                         /* nav-bar */
-
+/*/////////////////////////////////////////////////////////////////////////////*/
 .bg-primary{
    /* background-color: #ef7757!important;*/
-    background: linear-gradient(#ffbcab,#ef7757);
+    background: linear-gradient(#ef7757, #ffbcab);
 }
 
+
                         /* Bouton de debut dans la navbar */
+/*/////////////////////////////////////////////////////////////////////////////*/                     
 .debut-nav{
     order: 0;
 }
+
                         /* Bouton a la fin dans la navbar */
+/*/////////////////////////////////////////////////////////////////////////////*/
 .fin-nav{
     order: 1;
 }
 
+
+                        /* L'Icone d'utilisateur */
+/*/////////////////////////////////////////////////////////////////////////////*/
 .userIcon{
     color: rgb(178, 236, 241);     
 }
 
+
+                        /* 	Pseudo d'utilisateur */
+/*/////////////////////////////////////////////////////////////////////////////*/
 .userIcon p{
     color: black;
     font-size: 16px;    
 }
 
 
-                        /**/
+                        /* Footer */
+/*/////////////////////////////////////////////////////////////////////////////*/
 footer {
     display: flex;
     flex-flow: row;
 }
 
-/*
+
+header{
+    border-bottom: black;
+}
+
+
+                        /* Footer Logotype Cerema */
+/*/////////////////////////////////////////////////////////////////////////////*/
+footer a:nth-of-type(1) img {
+    width: 200px;
+    height: 130px; 
+    padding-right: 25px;
+    
+}
+                        /* Footer Logotype MIIAM */
+/*/////////////////////////////////////////////////////////////////////////////*/
+footer a:nth-of-type(2) img {
+    width: 130px;
+    height: 130px; 
+    padding-right: 25px;
+    
+}
+
+                        /* Footer Logotype Afpa */
+/*/////////////////////////////////////////////////////////////////////////////*/
+footer a:nth-of-type(3) img {
+    width: 130px;
+    height: 130px; 
+    padding-right: 5px;
+    
+}
+
+
+                        /* Bouton */
+/*/////////////////////////////////////////////////////////////////////////////*/
+.bouton {
+    margin: auto;
+    border-radius: 10px;
+}
+
 .bg-primary{
     background-color: rgb(239, 119, 87) !important;
 }
+
+/* Timur
+.btn-secondary{
+    background-color: #B2ECF1 !important;
+}
+*/
+
+.btn-info {
+    background-color: #d75432!important;
+    border-color: #d75432!important;    
+} 
+
+/* Samy
 .btn-info{
     background-color: rgb(255, 154, 128) !important;
     border-color: #ffbcab !important;
-}
+}*/
+
 .btn-success{
     background-color: #8ec641 !important;
     border-color: #B0E469 !important;
 }
 
-
-
-html{
-    height: 100%;
-}
-.logo{
-    height: 50px;
-}
-body{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction : column;
-}
-header{
-    border-bottom: 2px solid black;
-}
-main{
-    height: 100%;
-}
-footer {
-    display: flex;
-    flex-flow: row;
-}
-*/
-
-figure:nth-child(0) {
-    background-color: burlywood;
-}
-
-figure img:nth-child(0){
-    width: 200px;
-    height: 180px;   
-}
-
-figure img:nth-child(1){
-    width: 100px;
-    height: 105px;
-}
-figure img:nth-child(2) {
-    width: 120px;
-    height: 100px;
-}
-.bouton {
-    margin: auto;
-
-    border-radius: 10px;
-}
-/*
-ul li:nth-of-type(1) {
-    order: 0;
-    background-color: black;
-}
-
-ul li:nth-of-type(2) {
-    order: 2;
-    background-color: rgb(153, 61, 61);
-}
-
-ul li:nth-of-type(3) {
-    order: 1;
-    background-color: rgb(79, 153, 61);
-}*/
-
-.btn-secondary{
-    background-color: #B2ECF1 !important;
-}
-
-
-.btn-info {
-    background-color: #d75432!important;
-    border-color: #d75432!important;
-    
-} 
-
-/*
-}
 .btn {
 	border-radius: 10px 0 10px 0;
 	border: 1px;
@@ -160,4 +156,3 @@ ul li:nth-of-type(3) {
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.7);
 }
 
-*/

@@ -161,8 +161,15 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
         >
 
         ";
-        // line 87
-        echo "        <br>
+        // line 80
+        echo "
+            <div class=\"checkbox mb-3\">
+                <label>
+                    <input type=\"checkbox\" name=\"_remember_me\"> Remember me
+                </label>
+            </div>
+       
+        <br>
         <button class=\"btn btn-lg btn-success\" type=\"submit\">Connexion</button>
     </form>
 </div>
@@ -189,7 +196,7 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
 
     public function getDebugInfo()
     {
-        return array (  165 => 87,  159 => 74,  145 => 63,  139 => 59,  131 => 56,  128 => 55,  126 => 54,  123 => 53,  117 => 51,  115 => 50,  110 => 47,  100 => 46,  89 => 43,  79 => 42,  60 => 40,  37 => 1,);
+        return array (  165 => 80,  159 => 74,  145 => 63,  139 => 59,  131 => 56,  128 => 55,  126 => 54,  123 => 53,  117 => 51,  115 => 50,  110 => 47,  100 => 46,  89 => 43,  79 => 42,  60 => 40,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -272,14 +279,14 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
 
         {#
             Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-            See https://symfony.com/doc/current/security/remember_me.html
+            See https://symfony.com/doc/current/security/remember_me.html  #}
 
             <div class=\"checkbox mb-3\">
                 <label>
                     <input type=\"checkbox\" name=\"_remember_me\"> Remember me
                 </label>
             </div>
-        #}
+       
         <br>
         <button class=\"btn btn-lg btn-success\" type=\"submit\">Connexion</button>
     </form>
