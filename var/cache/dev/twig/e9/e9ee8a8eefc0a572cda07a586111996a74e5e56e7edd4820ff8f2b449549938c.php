@@ -27,7 +27,7 @@ class __TwigTemplate_435fbadc4072785e3d979b78cdf5384f7d8428793d7db9fdb043a56e8b9
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
-            'body' => [$this, 'block_body'],
+            'main' => [$this, 'block_main'],
         ];
     }
 
@@ -100,17 +100,17 @@ class __TwigTemplate_435fbadc4072785e3d979b78cdf5384f7d8428793d7db9fdb043a56e8b9
     }
 
     // line 12
-    public function block_body($context, array $blocks = [])
+    public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
-        // line 13
-        echo "    <div class=\"formulaire\">
+        echo "<!--  Page d'inscription  -->
+    <div class=\"formulaire\">
         
         ";
         // line 15
@@ -177,7 +177,7 @@ class __TwigTemplate_435fbadc4072785e3d979b78cdf5384f7d8428793d7db9fdb043a56e8b9
 
     public function getDebugInfo()
     {
-        return array (  155 => 26,  150 => 24,  146 => 23,  142 => 22,  138 => 21,  134 => 20,  130 => 19,  126 => 18,  122 => 17,  117 => 15,  113 => 13,  103 => 12,  92 => 9,  82 => 8,  63 => 5,  52 => 1,  50 => 3,  37 => 1,);
+        return array (  155 => 26,  150 => 24,  146 => 23,  142 => 22,  138 => 21,  134 => 20,  130 => 19,  126 => 18,  122 => 17,  117 => 15,  103 => 12,  92 => 9,  82 => 8,  63 => 5,  52 => 1,  50 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -193,7 +193,7 @@ class __TwigTemplate_435fbadc4072785e3d979b78cdf5384f7d8428793d7db9fdb043a56e8b9
     <link rel=\"stylesheet\" href=\"./css/form.css\">
 {% endblock %}
 
-{% block body %}
+{% block main %}<!--  Page d'inscription  -->
     <div class=\"formulaire\">
         
         {{ form_start(form) }}

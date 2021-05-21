@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/form.css">
 {% endblock %}
 
-{% block body %}
+{% block main %}
 <div class="formulaire">
 
     <form method="post">
@@ -36,19 +36,12 @@
         <input type="hidden" name="_csrf_token"
             value="{{ csrf_token('authenticate') }}"
         >
-
-        {#
-            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-            See https://symfony.com/doc/current/security/remember_me.html
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Remember me
-                </label>
-            </div>
-        #}
+        <div class="checkbox mb-3">
+            <label><input type="checkbox" name="_remember_me">Rester connecté</label>
+        </div>
         <br>
-        <button class="btn btn-lg btn-success" type="submit">Connexion</button>
+        <button class="btn btn-lg btn-success center" type="submit">Connexion</button><br>
+        <a class="btn center" href="{{ path('app_registration') }}">Inscription</a>
     </form>
 </div>
 

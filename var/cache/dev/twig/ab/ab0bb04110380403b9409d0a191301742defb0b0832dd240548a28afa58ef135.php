@@ -26,7 +26,7 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
+            'main' => [$this, 'block_main'],
         ];
     }
 
@@ -75,17 +75,18 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
     }
 
     // line 5
-    public function block_body($context, array $blocks = [])
+    public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         // line 6
         echo "<h1>Page d'acceuil</h1>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -116,8 +117,9 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
 
 {% block title %}Accueil{% endblock %}
 
-{% block body %}
+{% block main %}
 <h1>Page d'acceuil</h1>
+
 {% endblock %}
 ", "passage/index.html.twig", "C:\\Users\\samyg\\Desktop\\Stage\\passage_a_gue\\templates\\passage\\index.html.twig");
     }
