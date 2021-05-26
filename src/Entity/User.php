@@ -48,7 +48,7 @@ class User implements UserInterface
      *      message="Votre mot de passe doit comporter au moins 1 chiffre."
      * )
      * @Assert\Regex(
-     *      pattern="/^(?=.[@$!%.?&])/",
+     *      pattern="/^(?=.*[@$!%*.?&])/",
      *      message="Votre mot de passe doit comporter au moins 1 symbole parmis @ $ ! % * . ? &."
      * )
      */

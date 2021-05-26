@@ -27,7 +27,7 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
-            'body' => [$this, 'block_body'],
+            'main' => [$this, 'block_main'],
         ];
     }
 
@@ -97,14 +97,14 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
     }
 
     // line 46
-    public function block_body($context, array $blocks = [])
+    public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         // line 47
         echo "<div class=\"formulaire\">
@@ -159,18 +159,22 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
         >
-
+        
         ";
         // line 80
         echo "
             <div class=\"checkbox mb-3\">
                 <label>
-                    <input type=\"checkbox\" name=\"_remember_me\"> Remember me
+                    <input type=\"checkbox\" name=\"_remember_me\"> Rester connecté
                 </label>
-            </div>
-       
+            </div>       
+
         <br>
-        <button class=\"btn btn-lg btn-success\" type=\"submit\">Connexion</button>
+        <button class=\"btn btn-lg btn-success center\" type=\"submit\">Connexion</button><br>
+        <a class=\"btn center\" href=\"";
+        // line 89
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_registration");
+        echo "\">Inscription</a>
     </form>
 </div>
 
@@ -196,7 +200,7 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
 
     public function getDebugInfo()
     {
-        return array (  165 => 80,  159 => 74,  145 => 63,  139 => 59,  131 => 56,  128 => 55,  126 => 54,  123 => 53,  117 => 51,  115 => 50,  110 => 47,  100 => 46,  89 => 43,  79 => 42,  60 => 40,  37 => 1,);
+        return array (  176 => 89,  165 => 80,  159 => 74,  145 => 63,  139 => 59,  131 => 56,  128 => 55,  126 => 54,  123 => 53,  117 => 51,  115 => 50,  110 => 47,  100 => 46,  89 => 43,  79 => 42,  60 => 40,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -246,7 +250,7 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
     <link rel=\"stylesheet\" href=\"./css/form.css\">
 {% endblock %}
 
-{% block body %}
+{% block main %}
 <div class=\"formulaire\">
 
     <form method=\"post\">
@@ -276,19 +280,20 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
         <input type=\"hidden\" name=\"_csrf_token\"
             value=\"{{ csrf_token('authenticate') }}\"
         >
-
+        
         {#
             Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
             See https://symfony.com/doc/current/security/remember_me.html  #}
 
             <div class=\"checkbox mb-3\">
                 <label>
-                    <input type=\"checkbox\" name=\"_remember_me\"> Remember me
+                    <input type=\"checkbox\" name=\"_remember_me\"> Rester connecté
                 </label>
-            </div>
-       
+            </div>       
+
         <br>
-        <button class=\"btn btn-lg btn-success\" type=\"submit\">Connexion</button>
+        <button class=\"btn btn-lg btn-success center\" type=\"submit\">Connexion</button><br>
+        <a class=\"btn center\" href=\"{{ path('app_registration') }}\">Inscription</a>
     </form>
 </div>
 
