@@ -1,8 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}PassageAGue index{% endblock %}
 
 {% block main %}
-<h1>Page d'acceuil</h1>
+    <h1>PassageAGue index</h1>
 
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>GpsX</th>
+                <th>GpsY</th>
+                <th>FrequenceSubmersion</th>
+                <th>LargeurPassage</th>
+                <th>LongueurPassage</th>
+                <th>TraficJournalier</th>
+                <th>BoolLimitationRespectee</th>
+                <th>BoolArchive</th>
+                <th>TauxAccidentalite</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for passage_a_gue in passage_a_gues %}
+            <tr>
+                <td>{{ passage_a_gue.id }}</td>
+                <td>{{ passage_a_gue.gpsX }}</td>
+                <td>{{ passage_a_gue.gpsY }}</td>
+                <td>{{ passage_a_gue.frequenceSubmersion }}</td>
+                <td>{{ passage_a_gue.largeurPassage }}</td>
+                <td>{{ passage_a_gue.longueurPassage }}</td>
+                <td>{{ passage_a_gue.traficJournalier }}</td>
+                <td>{{ passage_a_gue.boolLimitationRespectee ? 'Yes' : 'No' }}</td>
+                <td>{{ passage_a_gue.boolArchive ? 'Yes' : 'No' }}</td>
+                <td>{{ passage_a_gue.tauxAccidentalite }}</td>
+                <td>
+                    <a href="{{ path('passage_a_gue_show', {'id': passage_a_gue.id}) }}">Voir + </a>
+                    <a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('creation') }}">Créer un nouveau passage</a>
 {% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création passage{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/form.css">
+{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block main %}
+    <div class="formulaire">
+        <h1>Création d'un passage</h1>
+
+        {{ include('passage/_form.html.twig') }}
+
+        <a href="{{ path('passage_a_gue_index') }}" class="btn">Retour</a>
+    </div>
+{% endblock %}

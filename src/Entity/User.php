@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -80,6 +82,16 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $photoUtilisateur;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=PassageAGue::class, inversedBy="users")
+     */
+    private $idPassageAGue;
+
+    public function __construct()
+    {
+        $this->idPassageAGue = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -222,5 +234,32 @@ class User implements UserInterface
         $this->photoUtilisateur = $photoUtilisateur;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|PassageAGue[]
+     */
+    public function getIdPassageAGue(): Collection
+    {
+        return $this->idPassageAGue;
+    }
+
+    public function addIdPassageAGue(PassageAGue $idPassageAGue): self
+    {
+        if (!$this->idPassageAGue->contains($idPassageAGue)) {
+            $this->idPassageAGue[] = $idPassageAGue;
+        }
+
+        return $this;
+    }
+
+    public function removeIdPassageAGue(PassageAGue $idPassageAGue): self
+    {
+        $this->idPassageAGue->removeElement($idPassageAGue);
+
+        return $this;
+    }
+    public function __toString() {
+        return $this->nomUtilisateur;
     }
 }

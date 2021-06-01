@@ -27,13 +27,6 @@ input{
 .petit-lien{
     font-size: 0.8em !important;
 }
-.center{
-    display: flex;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: auto;
-}
-
 
 .popup{
     width: 25%;

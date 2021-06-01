@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+
+    {{ form_row(form.gpsX, { 'label': "GPS - X", 'attr': {'placeholder' : "123.0123"}}) }}
+    {{ form_row(form.gpsY, { 'label': "GPS - Y", 'attr': {'placeholder' : "123.0123"}}) }}
+    {{ form_row(form.frequenceSubmersion, { 'label': "Fréquence de submersion", 'attr': {'placeholder' : "2 mois/an"}}) }}
+    {{ form_row(form.largeurPassage, { 'label': "Largeur du passsage (en m)", 'attr': {'placeholder' : "8"}}) }}
+    {{ form_row(form.longueurPassage, { 'label': "Longueur du passage (en m)", 'attr': {'placeholder' : "25"}}) }}
+    {{ form_row(form.traficJournalier, { 'label': "Trafic journalier (passages/jour)", 'attr': {'placeholder' : "10"}}) }}
+    {{ form_row(form.boolLimitationRespectee, { 'label': "Vitesse respectée", 'attr': {'placeholder' : "Oui"}}) }}
+    {{ form_row(form.tauxAccidentalite, { 'label': "Taux d'accidentalité", 'attr': {'placeholder' : "1 incident/an"}}) }}
+    {{ form_row(form.TypeOuvrage, { 'label': "Type d'ouvrage"}) }}
+    {{ form_row(form.CoursEau, { 'label': "Cours d'eau"}) }}
+    {{ form_row(form.localisation, { 'label': "Localisation"}) }}
+    {{ form_row(form.idUtilisateur, { 'label': "Nom du gestionnaire"}) }}
+    {{ form_row(form.boolArchive, { 'label': "Passage archivé", 'attr': {'placeholder' : "Oui"}}) }}
+    <div class="bouton-align">
+    <button class="btn btn-success center">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

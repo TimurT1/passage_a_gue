@@ -119,7 +119,7 @@ class __TwigTemplate_435fbadc4072785e3d979b78cdf5384f7d8428793d7db9fdb043a56e8b9
         <h1>Inscription</h1>
         ";
         // line 17
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "email", [], "any", false, false, false, 17), 'row', ["label" => "Email *", "attr" => ["placeholder" => "Email", "autofocus" => "enabled"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "email", [], "any", false, false, false, 17), 'row', ["label" => "Email *", "attr" => ["placeholder" => "Email", "autofocus" => "enabled", "required" => "required"]]);
         echo "
         
         <i id=\"button\" aria-describedby=\"tooltip\" class=\"fas fa-info-circle info\"></i>
@@ -129,23 +129,23 @@ class __TwigTemplate_435fbadc4072785e3d979b78cdf5384f7d8428793d7db9fdb043a56e8b9
         </div>
         ";
         // line 24
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "password", [], "any", false, false, false, 24), 'row', ["label" => "Mot de passe *", "attr" => ["placeholder" => "Mot de passe"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "password", [], "any", false, false, false, 24), 'row', ["label" => "Mot de passe *", "attr" => ["placeholder" => "Mot de passe", "required" => "required"]]);
         echo "
         ";
         // line 25
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "checkPassword", [], "any", false, false, false, 25), 'row', ["label" => "Confrimez le mot de passe *", "attr" => ["placeholder" => "Confirmez le mot de passe"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "checkPassword", [], "any", false, false, false, 25), 'row', ["label" => "Confrimez le mot de passe *", "attr" => ["placeholder" => "Confirmez le mot de passe", "required" => "required"]]);
         echo "
         ";
         // line 26
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "pseudoUtilisateur", [], "any", false, false, false, 26), 'row', ["label" => "Pseudonyme *", "attr" => ["placeholder" => "Le nom qui sera affiché"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "pseudoUtilisateur", [], "any", false, false, false, 26), 'row', ["label" => "Pseudonyme *", "attr" => ["placeholder" => "Le nom qui sera affiché", "required" => "required"]]);
         echo "
         ";
         // line 27
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 27, $this->source); })()), "nomUtilisateur", [], "any", false, false, false, 27), 'row', ["label" => "Nom *", "attr" => ["placeholder" => "Nom"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 27, $this->source); })()), "nomUtilisateur", [], "any", false, false, false, 27), 'row', ["label" => "Nom *", "attr" => ["placeholder" => "Nom", "required" => "required"]]);
         echo "
         ";
         // line 28
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), "prenomUtilisateur", [], "any", false, false, false, 28), 'row', ["label" => "Prénom *", "attr" => ["placeholder" => "Prénom"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), "prenomUtilisateur", [], "any", false, false, false, 28), 'row', ["label" => "Prénom *", "attr" => ["placeholder" => "Prénom", "required" => "required"]]);
         echo "
         ";
         // line 29
@@ -163,7 +163,7 @@ class __TwigTemplate_435fbadc4072785e3d979b78cdf5384f7d8428793d7db9fdb043a56e8b9
           
     </div>
     <script src=\"https://unpkg.com/@popperjs/core@2\"></script>
-    <script src=\"./js/form.js\"></script>
+    <script src=\"/js/form.js\"></script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -206,18 +206,18 @@ class __TwigTemplate_435fbadc4072785e3d979b78cdf5384f7d8428793d7db9fdb043a56e8b9
         
         {{ form_start(form) }}
         <h1>Inscription</h1>
-        {{ form_row(form.email, { 'label': \"Email *\", 'attr': { 'placeholder': \"Email\" , 'autofocus' : 'enabled'}}) }}
+        {{ form_row(form.email, { 'label': \"Email *\", 'attr': { 'placeholder': \"Email\" , 'autofocus' : 'enabled', required: 'required'}}) }}
         
         <i id=\"button\" aria-describedby=\"tooltip\" class=\"fas fa-info-circle info\"></i>
         <div id=\"tooltip\" role=\"tooltip\" class=\"popup\">
             <div id=\"arrow\" data-popper-arrow></div>
             le mot de passe doit faire au moins 8 caractères, avec au moins 1 majuscule, 1 minuscule, et 1 caractère spécial parmis @ \$ ! % * . ? &.
         </div>
-        {{ form_row(form.password, { 'label': \"Mot de passe *\", 'attr': { 'placeholder': \"Mot de passe\"}}) }}
-        {{ form_row(form.checkPassword, { 'label': \"Confrimez le mot de passe *\", 'attr': { 'placeholder': \"Confirmez le mot de passe\"}}) }}
-        {{ form_row(form.pseudoUtilisateur, { 'label': \"Pseudonyme *\",'attr': { 'placeholder': \"Le nom qui sera affiché\"}}) }}
-        {{ form_row(form.nomUtilisateur, { 'label': \"Nom *\",'attr': { 'placeholder': \"Nom\"}}) }}
-        {{ form_row(form.prenomUtilisateur, { 'label': \"Prénom *\",'attr': { 'placeholder': \"Prénom\"}}) }}
+        {{ form_row(form.password, { 'label': \"Mot de passe *\", 'attr': { 'placeholder': \"Mot de passe\", required: 'required'}}) }}
+        {{ form_row(form.checkPassword, { 'label': \"Confrimez le mot de passe *\", 'attr': { 'placeholder': \"Confirmez le mot de passe\", required: 'required'}}) }}
+        {{ form_row(form.pseudoUtilisateur, { 'label': \"Pseudonyme *\",'attr': { 'placeholder': \"Le nom qui sera affiché\", required: 'required'}}) }}
+        {{ form_row(form.nomUtilisateur, { 'label': \"Nom *\",'attr': { 'placeholder': \"Nom\", required: 'required'}}) }}
+        {{ form_row(form.prenomUtilisateur, { 'label': \"Prénom *\",'attr': { 'placeholder': \"Prénom\", required: 'required'}}) }}
         {{ form_row(form.photoUtilisateur, { 'label': \"Photo\",'attr': { 'placeholder': \"Ajoutez une photo \"}}) }}
         <a class=\"petit-lien\" href=\"{{ path('app_login') }}\">Déjà inscrit? Je me connecte</a><br>
         <button type=\"submit\" class=\"btn btn-lg btn-success center\">inscription</button>
@@ -225,7 +225,7 @@ class __TwigTemplate_435fbadc4072785e3d979b78cdf5384f7d8428793d7db9fdb043a56e8b9
           
     </div>
     <script src=\"https://unpkg.com/@popperjs/core@2\"></script>
-    <script src=\"./js/form.js\"></script>
-{% endblock %}", "security/registration.html.twig", "C:\\Users\\Fg\\passageAGue\\templates\\security\\registration.html.twig");
+    <script src=\"/js/form.js\"></script>
+{% endblock %}", "security/registration.html.twig", "C:\\Users\\samyg\\Desktop\\StageDev\\templates\\security\\registration.html.twig");
     }
 }

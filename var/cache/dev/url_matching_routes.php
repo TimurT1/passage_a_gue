@@ -13,12 +13,13 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\AutresElementsController::index'], null, null, null, false, false, null]],
         '/portail' => [[['_route' => 'portail', '_controller' => 'App\\Controller\\AutresElementsController::portail'], null, null, null, false, false, null]],
         '/mention' => [[['_route' => 'mention', '_controller' => 'App\\Controller\\AutresElementsController::mention'], null, null, null, false, false, null]],
         '/contact' => [[['_route' => 'contact', '_controller' => 'App\\Controller\\AutresElementsController::contact'], null, null, null, false, false, null]],
-        '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\PassageController::index'], null, null, null, false, false, null]],
-        '/creation' => [[['_route' => 'creation', '_controller' => 'App\\Controller\\PassageController::creation'], null, null, null, false, false, null]],
-        '/recherche' => [[['_route' => 'recherche', '_controller' => 'App\\Controller\\PassageController::recherche'], null, null, null, false, false, null]],
+        '/passage' => [[['_route' => 'passage_a_gue_index', '_controller' => 'App\\Controller\\PassageController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/passage/recherche' => [[['_route' => 'recherche', '_controller' => 'App\\Controller\\PassageController::recherche'], null, null, null, false, false, null]],
+        '/passage/creation' => [[['_route' => 'creation', '_controller' => 'App\\Controller\\PassageController::creation'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/inscription' => [[['_route' => 'app_registration', '_controller' => 'App\\Controller\\SecurityController::registration'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
@@ -42,7 +43,11 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/([^/]++)/edit(*:183)'
+                .'|/passage/([^/]++)(?'
+                    .'|(*:189)'
+                    .'|/edit(*:202)'
+                    .'|(*:210)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -53,8 +58,10 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        183 => [
-            [['_route' => 'edition', '_controller' => 'App\\Controller\\PassageController::creation'], ['id'], null, null, false, false, null],
+        189 => [[['_route' => 'passage_a_gue_show', '_controller' => 'App\\Controller\\PassageController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        202 => [[['_route' => 'passage_a_gue_edit', '_controller' => 'App\\Controller\\PassageController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        210 => [
+            [['_route' => 'passage_a_gue_delete', '_controller' => 'App\\Controller\\PassageController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

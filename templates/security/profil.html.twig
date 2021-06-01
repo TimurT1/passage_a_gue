@@ -1,8 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profil{% endblock %}
+{% block title %}Modifier mon profil{% endblock %}
 
-{% block main %}
-<h1>Profil</h1>
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="./css/form.css">
+{% endblock %}
+
+{% block main %}<!--  Page de modification du profil  -->
+    <div class="formulaire">
+        
+        {{ form_start(form) }}
+        <h1>Profil</h1>
+        {{ form_row(form.email, { 'label': "Email ", 'attr': { 'placeholder': "Email" , 'autofocus' : 'enabled'}}) }}
+        <i id="button" aria-describedby="tooltip" class="fas fa-info-circle info"></i>
+        <div id="tooltip" role="tooltip" class="popup">
+            <div id="arrow" data-popper-arrow></div>
+            le mot de passe doit faire au moins 8 caractères, avec au moins 1 majuscule, 1 minuscule, et 1 caractère spécial parmis @ $ ! % * . ? &.
+        </div>
+        {{ form_row(form.password, { 'label': "Mot de passe ", 'attr': { 'placeholder': "Mot de passe"}}) }}
+        {{ form_row(form.checkPassword, { 'label': "Confrimez le mot de passe ", 'attr': { 'placeholder': "Confirmez le mot de passe"}}) }}
+        {{ form_row(form.pseudoUtilisateur, { 'label': "Pseudonyme ",'attr': { 'placeholder': "Le nom qui sera affiché"}}) }}
+        {{ form_row(form.nomUtilisateur, { 'label': "Nom ",'attr': { 'placeholder': "Nom"}}) }}
+        {{ form_row(form.prenomUtilisateur, { 'label': "Prénom ",'attr': { 'placeholder': "Prénom"}}) }}
+        {{ form_row(form.photoUtilisateur, { 'label': "Photo",'attr': { 'placeholder': "Ajoutez une photo "}}) }}
+        <button type="submit" class="btn btn-lg btn-success center">Enregistrer les modifications</button>
+        {{ form_end(form) }}
+          
+    </div>
+    
+{% endblock %}
+
+{% block script %}
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="/js/form.js"></script>
 {% endblock %}

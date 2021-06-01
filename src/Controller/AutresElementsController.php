@@ -9,6 +9,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class AutresElementsController extends AbstractController
 {
     /**
+     * @Route("/", name="accueil")
+     */
+    public function index(): Response
+    {
+        return $this->render('autres_elements/index.html.twig');
+    }
+    
+    /**
      * @Route("/portail", name="portail")
      */
     public function portail(): Response
@@ -31,4 +39,6 @@ class AutresElementsController extends AbstractController
     {
         return $this->render('autres_elements/contact.html.twig');
     }
+
+    
 }

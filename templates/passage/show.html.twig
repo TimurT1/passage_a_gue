@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}PassageAGue{% endblock %}
+
+{% block main %}
+    <h1>PassageAGue</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Gérant(e)</th>
+                <td>{{ passage_a_gue.idUtilisateur }}</td>
+            </tr>
+            <tr>
+                <th>Type d'Ouvrage</th>
+                <td>{{ passage_a_gue.TypeOuvrage }}</td>
+            </tr>
+            <tr>
+                <th>Cours d'Eau</th>
+                <td>{{ passage_a_gue.coursEau }}</td>
+            </tr>
+            <tr>
+                <th>Localisation</th>
+                <td>{{ passage_a_gue.localisation }}</td>
+            </tr>             
+            <tr>
+                <th>GpsX</th>
+                <td>{{ passage_a_gue.gpsX }}</td>
+            </tr>
+            <tr>
+                <th>GpsY</th>
+                <td>{{ passage_a_gue.gpsY }}</td>
+            </tr>            
+            <tr>
+                <th>Largeur du Passage</th>
+                <td>{{ passage_a_gue.largeurPassage }}</td>
+            </tr>
+            <tr>
+                <th>Longueur du Passage</th>
+                <td>{{ passage_a_gue.longueurPassage }}</td>
+            </tr>
+            <tr>
+                <th>Trafic Journalier</th>
+                <td>{{ passage_a_gue.traficJournalier }}</td>
+            </tr>
+            <tr>
+                <th>Frequence de Submersion</th>
+                <td>{{ passage_a_gue.frequenceSubmersion }}</td>
+            </tr>
+            <tr>
+                <th>Présence de la Limitation Respectée</th>
+                <td>{{ passage_a_gue.boolLimitationRespectee ? 'Oui' : 'Non' }}</td>
+            </tr>
+            <tr>
+                <th>Taux d'Accidentalité</th>
+                <td>{{ passage_a_gue.tauxAccidentalite }}</td>
+            </tr> 
+            <tr>
+                <th>Archivé</th>
+                <td>{{ passage_a_gue.boolArchive ? 'Oui' : 'Non' }}</td>
+            </tr>                     
+        </tbody>
+    </table>
+
+    
+    <div class="bouton-align">
+        <div><a href="{{ path('passage_a_gue_index') }}" class="btn">Retour</a></div>
+        <div><a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}" class="btn btn-info" >Modifier</a></div>
+        <div>{{ include('passage/_delete_form.html.twig') }}</div>
+{% endblock %}
