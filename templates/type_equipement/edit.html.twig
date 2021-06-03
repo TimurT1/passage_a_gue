@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ type_equipement.nomTypeEquipement }}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/form.css">
+{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block main %}
+<div class="formulaire">
+    <h1>Edition type d'équipement</h1>
+
+    {{ include('type_equipement/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('type_equipement_index') }}" class="btn btn-secondary">Retour</a>
+
+    {{ include('type_equipement/_delete_form.html.twig') }}</div>
+</div>
+{% endblock %}

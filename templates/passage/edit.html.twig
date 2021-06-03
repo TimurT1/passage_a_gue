@@ -2,15 +2,14 @@
 
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
-{% block title %}Edit PassageAGue{% endblock %}
-
+{% block title %}Edition passage {{ passage_a_gue.id }}{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/form.css">
 {% endblock %}
 
 {% block main %}
     <div class="formulaire">
-        <h1>Edit PassageAGue</h1>
+        <h1>Edition passage à gué</h1>
 
         {{ include('passage/_form.html.twig', {'button_label': 'Modifier'}) }}
         {{ include('passage/_delete_form.html.twig') }}

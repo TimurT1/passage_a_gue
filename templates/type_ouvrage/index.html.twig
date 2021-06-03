@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Types d'ouvrage{% endblock %}
+
+{% block main %}
+{% if is_granted('ROLE_ADMIN') %}
+    <h1>Types d'ouvrage</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Famille</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_ouvrage in type_ouvrages %}
+            <tr>
+                <td>{{ type_ouvrage.FamilleOuvrage.NomFamilleOuvrage}}</td>
+                <td>{{ type_ouvrage.nomTypeOuvrage }}</td>
+                <td>
+                    <div class="bouton-align">
+                        <div>
+                            <a href="{{ path('type_ouvrage_edit', {'id': type_ouvrage.id}) }}" class="btn btn-info">Modifier</a>
+                        </div>
+                        <div>
+                            {{ include('type_ouvrage/_delete_form.html.twig') }}
+                        </div>
+                        
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas d'enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="bouton-align">
+        <a href="{{ path('type_ouvrage_new') }}" class="btn btn-success">Créer un nouveau type d'ouvrage</a>
+        <a href="{{ path('parametrage') }}" class="btn btn-secondary">Retour</a>
+    </div>
+{% else %}
+    <p>Accès interdit, veuillez contacter l'administrateur du site</p>
+{% endif %}
+{% endblock %}

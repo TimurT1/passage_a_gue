@@ -30,7 +30,7 @@
 
 
 /**
-*   Ici, c'est nos classes, et les balises HTML, par ordre d'apparition dans notre thème
+*   Ici, c'est nos classes, et les balises HTML
 */
 body{
     width: 100%;
@@ -90,6 +90,12 @@ figure img:nth-child(1){
 .bouton-align>div{
     display: flex;
 }
+
+thead>tr>th{
+    text-align: center;
+}
+
+
 /**
 *   css de popperjs
 */

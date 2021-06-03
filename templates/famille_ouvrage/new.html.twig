@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle famille d'ouvrage{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/form.css">
+{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block main %}
+<div class="formulaire">
+    <h1>Créer une nouvelle famille d'ouvrage</h1>
+
+    {{ include('famille_ouvrage/_form.html.twig') }}
+
+    <a href="{{ path('famille_ouvrage_index') }}" class="btn btn-secondary">Retour</a>
+</div>
+{% endblock %}

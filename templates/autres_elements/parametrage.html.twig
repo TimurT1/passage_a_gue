@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Parametrage{% endblock %}
+
+{% block main %}
+
+<div>
+<h1>Parametrage</h1>
+    <p>Que souhaitez-vous modifier?</p>
+    <div class="bouton-align">
+        <a href="{{ path('type_ouvrage_index') }}" class="btn btn-info">Les types d'ouvrages</a>
+        <a href="{{ path('famille_ouvrage_index') }}" class="btn btn-info">Les familles d'ouvrage</a>
+        <a href="{{ path('type_equipement_index') }}" class="btn btn-info">Les types d'équipement</a>
+        <a href="{{ path('user_index') }}" class="btn btn-info">Les utilisateurs</a>
+    </div>
+</div>
+    
+    
+    
+
+
+{% endblock %}

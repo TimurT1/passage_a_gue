@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau type d'ouvrage{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/form.css">
+{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block main %}
+<div class="formulaire">
+    <h1>Créer un nouveau type d'ouvrage</h1>
+
+    {{ include('type_ouvrage/_form.html.twig') }}
+
+    <a href="{{ path('type_ouvrage_index') }}" class="btn btn-secondary">Retour</a>
+</div>
+{% endblock %}

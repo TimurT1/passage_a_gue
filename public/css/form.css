@@ -17,12 +17,12 @@ form{
     display: flex;
     flex-direction: column;
 }
+form>div{
+    margin-bottom: 1em;
+}
 .info{
     display: flex;
     width: fit-content;
-}
-input{
-    margin-bottom: 1em;
 }
 .petit-lien{
     font-size: 0.8em !important;

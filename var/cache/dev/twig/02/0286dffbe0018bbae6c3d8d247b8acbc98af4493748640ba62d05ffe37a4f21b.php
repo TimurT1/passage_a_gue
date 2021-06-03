@@ -171,7 +171,7 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
 
         <br>
         <button class=\"btn btn-lg btn-success center\" type=\"submit\">Connexion</button><br>
-        <a class=\"btn center\" href=\"";
+        <a class=\"btn btn-secondary center\" href=\"";
         // line 52
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_registration");
         echo "\">Inscription</a>
@@ -256,7 +256,7 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
 
         <br>
         <button class=\"btn btn-lg btn-success center\" type=\"submit\">Connexion</button><br>
-        <a class=\"btn center\" href=\"{{ path('app_registration') }}\">Inscription</a>
+        <a class=\"btn btn-secondary center\" href=\"{{ path('app_registration') }}\">Inscription</a>
     </form>
 </div>
 

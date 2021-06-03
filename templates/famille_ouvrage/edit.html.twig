@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ famille_ouvrage.nomFamilleOuvrage }}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/form.css">
+{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block main %}
+<div class="formulaire">
+    <h1>Edition famille d'ouvrage</h1>
+
+    {{ include('famille_ouvrage/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('famille_ouvrage_index') }}" class="btn btn-secondary">Retour</a>
+
+    {{ include('famille_ouvrage/_delete_form.html.twig') }}</div>
+</div>
+{% endblock %}

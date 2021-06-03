@@ -15,7 +15,15 @@ class AutresElementsController extends AbstractController
     {
         return $this->render('autres_elements/index.html.twig');
     }
-    
+
+    /**
+     *@Route("/parametrage", name="parametrage")     
+     */
+    public function parametrage()
+    {
+        return $this->render('autres_elements/parametrage.html.twig');
+    }
+
     /**
      * @Route("/portail", name="portail")
      */
