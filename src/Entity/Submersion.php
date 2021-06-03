@@ -108,4 +108,16 @@ class Submersion
 
         return $this;
     }
+
+    public function getFullname(): ?string {
+
+        return $this->nomSubmersion . '  |' . $this->dateSubmersion->format('d-m-Y');
+
+    }
+
+    public function getDateSubmersion2(): ?string {
+
+        return $this->dateSubmersion->format('d-m-Y');
+
+    }
 }

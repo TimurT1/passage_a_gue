@@ -1,22 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}PassageAGue{% endblock %}
+
+{% block title %}Passage à gué{% endblock %}
 
 {% block main %}
-    <h1>PassageAGue</h1>
+    <h1>Passage à gué</h1>
 
-    <table class="table">
+    <table class="table table-sm table-hover">        
         <tbody>
             <tr>
-                <th>Gérant(e)</th>
-                <td>{{ passage_a_gue.idUtilisateur }}</td>
+                <th>Gestionnaire</th>
+                <td>
+                <table class="table table-sm"> 
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th> 
+                            <th>Email</th>                 
+                        </tr>             
+                    </thead>
+                     <tbody>
+                        <tr> 
+                            <td>{{ passage_a_gue.idUtilisateur.nomUtilisateur }}</td>
+                            <td>{{ passage_a_gue.idUtilisateur.prenomUtilisateur }}</td>
+                            <td>{{ passage_a_gue.idUtilisateur.email }}</td>
+                        </tr>
+                    </tbody>   
+                </table>
+                </td>
             </tr>
             <tr>
-                <th>Type d'Ouvrage</th>
+                <th>Type d'ouvrage</th>
                 <td>{{ passage_a_gue.TypeOuvrage }}</td>
             </tr>
             <tr>
-                <th>Cours d'Eau</th>
+                <th>Cours d'eau</th>
                 <td>{{ passage_a_gue.coursEau }}</td>
             </tr>
             <tr>
@@ -24,47 +42,103 @@
                 <td>{{ passage_a_gue.localisation }}</td>
             </tr>             
             <tr>
-                <th>GpsX</th>
+                <th>Gps X</th>
                 <td>{{ passage_a_gue.gpsX }}</td>
             </tr>
             <tr>
-                <th>GpsY</th>
+                <th>Gps Y</th>
                 <td>{{ passage_a_gue.gpsY }}</td>
             </tr>            
             <tr>
-                <th>Largeur du Passage</th>
+                <th>Largeur du passage</th>
                 <td>{{ passage_a_gue.largeurPassage }}</td>
             </tr>
             <tr>
-                <th>Longueur du Passage</th>
+                <th>Longueur du passage</th>
                 <td>{{ passage_a_gue.longueurPassage }}</td>
             </tr>
             <tr>
-                <th>Trafic Journalier</th>
+                <th>Trafic journalier</th>
                 <td>{{ passage_a_gue.traficJournalier }}</td>
             </tr>
             <tr>
-                <th>Frequence de Submersion</th>
+                <th>Fréquence de submersion</th>
                 <td>{{ passage_a_gue.frequenceSubmersion }}</td>
             </tr>
             <tr>
-                <th>Présence de la Limitation Respectée</th>
+                <th>Limitation respectée</th>
                 <td>{{ passage_a_gue.boolLimitationRespectee ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
-                <th>Taux d'Accidentalité</th>
+                <th>Taux d'accidentalité</th>
                 <td>{{ passage_a_gue.tauxAccidentalite }}</td>
             </tr> 
             <tr>
                 <th>Archivé</th>
                 <td>{{ passage_a_gue.boolArchive ? 'Oui' : 'Non' }}</td>
-            </tr>                     
+            </tr> 
+            <tr>
+                <th>Utilisateurs ayant accès aux données</th>                     
+                <td>               
+                    <table class="table table-sm table-hover"> 
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th> 
+                            <th>Email</th>                 
+                        </tr>
+                    </thead>
+                     <tbody>
+                 {% for user in passage_a_gue.users %}                    
+                    <tr>                        
+                        <td>{{ user.nomUtilisateur}}</td>                        
+                        <td>{{ user.prenomUtilisateur}}</td>  
+                        <td> {{ user.email}}</td>                
+                    </tr>  
+                 {% endfor %}
+                    </tbody>                 
+                    </table>
+                </td>                      
+            </tr>
+             <tr>
+                <th>Submersions</th>                     
+                <td>               
+                    <table class="table table-sm table-hover table-bordered"> 
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Date</th>                
+                        </tr>
+                    </thead> 
+                     <tbody>           
+                 {% for submersion in passage_a_gue.submersions %}
+                    <tr>                        
+                        <td>{{ submersion.nomSubmersion}}</td>                        
+                        <td>{{ submersion.getDateSubmersion2}}</td>                   
+                    </tr>     
+                 {% endfor %}
+                    </tbody>                 
+                    </table>
+                </td>                      
+            </tr> 
+            <tr>
+                <th>Route</th>                     
+                <td> 
+                    <table> 
+                    <tbody>                    
+                 {% for route in passage_a_gue.route %}
+                    <tr>                        
+                        <td>{{ route.numeroRoute }}</td>
+                    </tr> 
+                 {% endfor %} 
+                    <tbody>                
+                   </table>
+                </td>                      
+            </tr>                       
         </tbody>
     </table>
-
-    
     <div class="bouton-align">
-        <div><a href="{{ path('passage_a_gue_index') }}" class="btn">Retour</a></div>
+        <div><a href="{{ path('passage_a_gue_index') }}" class="btn btn-secondary">Retour</a></div>
         <div><a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}" class="btn btn-info" >Modifier</a></div>
         <div>{{ include('passage/_delete_form.html.twig') }}</div>
 {% endblock %}

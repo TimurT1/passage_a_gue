@@ -1,51 +1,96 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}PassageAGue index{% endblock %}
+{% block title %}Passage à gué{% endblock %}
 
 {% block main %}
-    <h1>PassageAGue index</h1>
+    <h1>Passage à gué</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>GpsX</th>
-                <th>GpsY</th>
-                <th>FrequenceSubmersion</th>
-                <th>LargeurPassage</th>
-                <th>LongueurPassage</th>
-                <th>TraficJournalier</th>
-                <th>BoolLimitationRespectee</th>
-                <th>BoolArchive</th>
-                <th>TauxAccidentalite</th>
+                <th>Gps X</th>
+                <th>Gps Y</th>
+                <th>Fréquence de submersion</th>
+                <th>Largeur du passage</th>
+                <th>Longueur du passage</th>
+                <th>Trafic journalier</th>
+                <th>Limitation respectée</th>
+                <th>Archive</th>
+                <th>Taux d'accidentalité</th>
+                <th>Type d'ouvrage</th>
+                <th>Cours d'eau</th>
+                <th>Localisation</th>
+                <th>Gestionnaire</th>
+                <th>Utilisateurs ayant accès aux données</th>
+                <th>Submersions</th>
+                <th>Route</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for passage_a_gue in passage_a_gues %}
             <tr>
-                <td>{{ passage_a_gue.id }}</td>
                 <td>{{ passage_a_gue.gpsX }}</td>
                 <td>{{ passage_a_gue.gpsY }}</td>
                 <td>{{ passage_a_gue.frequenceSubmersion }}</td>
                 <td>{{ passage_a_gue.largeurPassage }}</td>
                 <td>{{ passage_a_gue.longueurPassage }}</td>
                 <td>{{ passage_a_gue.traficJournalier }}</td>
-                <td>{{ passage_a_gue.boolLimitationRespectee ? 'Yes' : 'No' }}</td>
-                <td>{{ passage_a_gue.boolArchive ? 'Yes' : 'No' }}</td>
+                <td>{{ passage_a_gue.boolLimitationRespectee ? 'Oui' : 'Non' }}</td>
+                <td>{{ passage_a_gue.boolArchive ? 'Oui' : 'Non' }}</td>
                 <td>{{ passage_a_gue.tauxAccidentalite }}</td>
+                <td>{{ passage_a_gue.TypeOuvrage }}</td> 
+                <td>{{ passage_a_gue.CoursEau }}</td> 
+                <td>{{ passage_a_gue.localisation }}</td>  
+                <td>{{ passage_a_gue.idUtilisateur.fullname }}</td>                
                 <td>
-                    <a href="{{ path('passage_a_gue_show', {'id': passage_a_gue.id}) }}">Voir + </a>
-                    <a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}">Modifier</a>
+                    <select name="" id=""> 
+                        <option>Utilisateurs</option>
+                    {% for user in passage_a_gue.users %}
+                        <option>
+                        {{ user.fullname }} 
+                        </option> 
+                    {% endfor %}                 
+                    </select>
+                </td>
+                <td>               
+                    <select name="" id=""> 
+                        <option>Submersions</option>
+                    {% for submersion in passage_a_gue.submersions %}
+                        <option>
+                        {{ submersion.fullname ~ ';'}} 
+                        </option>
+                    {% endfor %}                 
+                </select>   
+                </td> 
+                <td>               
+                    <select name="" id=""> 
+                        <option>Routes</option>
+                    {% for route in passage_a_gue.route %}
+                        <option>
+                        {{ route.numeroRoute }} 
+                        </option> 
+                    {% endfor %}                 
+                    </select>   
+                </td>         
+
+                <td>
+                    <div class="bouton-align">
+                        <a href="{{ path('passage_a_gue_show', {'id': passage_a_gue.id}) }}" class="btn btn-info">Voir + </a>
+                        <a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}" class="btn btn-primary">Modifier</a>
+                        {{ include('passage/_delete_form.html.twig') }}
+                    </div>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="11">no records found</td>
+                <td colspan="11">Pas d'enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('creation') }}">Créer un nouveau passage</a>
+    <div class="bouton-align">
+        <a href="{{ path('creation') }}" class="btn btn-success">Créer un nouveau passage</a>
+        <a href="{{ path('accueil') }}" class="btn btn-secondary">Retour</a>
+    </div>
 {% endblock %}

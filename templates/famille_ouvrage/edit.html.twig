@@ -10,9 +10,7 @@
     <h1>Edition famille d'ouvrage</h1>
 
     {{ include('famille_ouvrage/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-
-    <a href="{{ path('famille_ouvrage_index') }}" class="btn btn-secondary">Retour</a>
-
     {{ include('famille_ouvrage/_delete_form.html.twig') }}</div>
+    <a href="{{ path('famille_ouvrage_index') }}" class="btn btn-secondary">Retour</a>
 </div>
 {% endblock %}

@@ -10,9 +10,7 @@
     <h1>Edition type d'équipement</h1>
 
     {{ include('type_equipement/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-
-    <a href="{{ path('type_equipement_index') }}" class="btn btn-secondary">Retour</a>
-
     {{ include('type_equipement/_delete_form.html.twig') }}</div>
+    <a href="{{ path('type_equipement_index') }}" class="btn btn-secondary">Retour</a>
 </div>
 {% endblock %}

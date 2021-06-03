@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerS1rOMNT\App_KernelDevDebugContainer([
     'container.build_hash' => 'S1rOMNT',
-    'container.build_id' => '37466ec1',
-    'container.build_time' => 1622710564,
+    'container.build_id' => '2639c63e',
+    'container.build_time' => 1622732774,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerS1rOMNT');

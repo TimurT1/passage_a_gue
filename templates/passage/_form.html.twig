@@ -13,6 +13,9 @@
     {{ form_row(form.localisation, { 'label': "Localisation"}) }}
     {{ form_row(form.idUtilisateur, { 'label': "Nom du gestionnaire"}) }}
     {{ form_row(form.boolArchive, { 'label': "Passage archivé", 'attr': {'placeholder' : "Oui"}}) }}
+    {{ form_row(form.users, { 'label': "Permettre l'utilisateur à accéder aux données" }) }}
+    {{ form_row(form.submersions, { 'label': "Submersions" }) }}
+    {{ form_row(form.route, { 'label': "Route" }) }}
     <div class="bouton-align">
     <button class="btn btn-success center">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}

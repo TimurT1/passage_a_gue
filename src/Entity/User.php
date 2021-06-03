@@ -262,4 +262,7 @@ class User implements UserInterface
     public function __toString() {
         return $this->nomUtilisateur;
     }
+    public function getFullname(): ?string {
+        return $this->nomUtilisateur . ' ' . $this->prenomUtilisateur. ' | ' .$this->email;
+    }
 }

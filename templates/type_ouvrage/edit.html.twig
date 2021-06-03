@@ -10,9 +10,7 @@
     <h1>Edition le type d'ouvrage</h1>
 
     {{ include('type_ouvrage/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-
-    <a href="{{ path('type_ouvrage_index') }}" class="btn btn-secondary">Retour</a>
-
     {{ include('type_ouvrage/_delete_form.html.twig') }}</div>
+    <a href="{{ path('type_ouvrage_index') }}" class="btn btn-secondary">Retour</a>
 </div>
 {% endblock %}

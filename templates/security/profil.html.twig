@@ -25,7 +25,12 @@
         {{ form_row(form.nomUtilisateur, { 'label': "Nom ",'attr': { 'placeholder': "Nom"}}) }}
         {{ form_row(form.prenomUtilisateur, { 'label': "Prénom ",'attr': { 'placeholder': "Prénom"}}) }}
         {{ form_row(form.photoUtilisateur, { 'label': "Photo",'attr': { 'placeholder': "Ajoutez une photo "}}) }}
-        <button type="submit" class="btn btn-lg btn-success center">Enregistrer les modifications</button>
+        <div>
+            <button type="submit" class="btn btn-lg btn-success center">Enregistrer les modifications</button>
+        </div>
+        <div class="center">
+            <a href="{{ path('accueil') }}" class="btn btn-secondary">Retour</a>
+        </div>
         {{ form_end(form) }}
           
     </div>
