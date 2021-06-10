@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="oStzz1j" resname="Recherche">
+        <source>Recherche</source>
+        <target>Search</target>
+      </trans-unit>
+      <trans-unit id="8dfZcQj" resname="Création">
+        <source>Création</source>
+        <target>Create</target>
+      </trans-unit>
+      <trans-unit id="BfT4wuQ" resname="Tables de paramétrages">
+        <source>Tables de paramétrages</source>
+        <target>Admin</target>
+      </trans-unit>
+      <trans-unit id="W51KTK." resname="Connecté en tant que">
+        <source>Connecté en tant que</source>
+        <target>Connected as</target>
+      </trans-unit>
+      <trans-unit id="q0Uca0i" resname="Mon profil">
+        <source>Mon profil</source>
+        <target>My profile</target>
+      </trans-unit>
+      <trans-unit id="_1_eksG" resname="Déconnexion">
+        <source>Déconnexion</source>
+        <target>Logout</target>
+      </trans-unit>
+      <trans-unit id="YdaVBBA" resname="Connexion">
+        <source>Connexion</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="z7GsDIB" resname="Inscription">
+        <source>Inscription</source>
+        <target>Registration</target>
+      </trans-unit>
+      <trans-unit id=".fkKfE2" resname="Portail technique">
+        <source>Portail technique</source>
+        <target>Technical assistance</target>
+      </trans-unit>
+      <trans-unit id="zOnAobl" resname="Mentions légales">
+        <source>Mentions légales</source>
+        <target>Legal notice</target>
+      </trans-unit>
+      <trans-unit id=".7sOZLh" resname="Contactez-nous!">
+        <source>Contactez-nous!</source>
+        <target>Contact us!</target>
+      </trans-unit>
+      <trans-unit id="UzFhc1Y" resname="Accueil">
+        <source>Accueil</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="zrDjlB2" resname="Page d'acceuil">
+        <source>Page d'acceuil</source>
+        <target>Home page</target>
+      </trans-unit>
+      <trans-unit id="8sCEK3o" resname="Passage à gué">
+        <source>Passage à gué</source>
+        <target>Path</target>
+      </trans-unit>
+      <trans-unit id="kWa4J7j" resname="Envoyer un message">
+        <source>Envoyer un message</source>
+        <target>Send Message</target>
+      </trans-unit>
+      <trans-unit id="KWUekAn" resname="Nom *">
+        <source>Nom *</source>
+        <target>Name *</target>
+      </trans-unit>
+      <trans-unit id="K1w9JnI" resname="Contact">
+        <source>Contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="2CDY3nD" resname="Mention">
+        <source>Mention</source>
+        <target>Notice</target>
+      </trans-unit>
+      <trans-unit id="zowHJnb" resname="Parametrage">
+        <source>Parametrage</source>
+        <target>Setting</target>
+      </trans-unit>
+      <trans-unit id="CHYjGb1" resname="Que souhaitez-vous modifier?">
+        <source>Que souhaitez-vous modifier?</source>
+        <target>What do you want to change?</target>
+      </trans-unit>
+      <trans-unit id="jdQHxZU" resname="Les types d'ouvrages">
+        <source>Les types d'ouvrages</source>
+        <target>Type of work</target>
+      </trans-unit>
+      <trans-unit id="3UvgxRO" resname="Les familles d'ouvrage">
+        <source>Les familles d'ouvrage</source>
+        <target>Familly of work</target>
+      </trans-unit>
+      <trans-unit id="gjChw5m" resname="Les types d'équipement">
+        <source>Les types d'équipement</source>
+        <target>Type of equipment</target>
+      </trans-unit>
+      <trans-unit id="Wm0jCIW" resname="Les utilisateurs">
+        <source>Les utilisateurs</source>
+        <target>Users</target>
+      </trans-unit>
+      <trans-unit id="mB82Qeh" resname="Portail">
+        <source>Portail</source>
+        <target>Portal</target>
+      </trans-unit>
+      <trans-unit id="QPblr.N" resname="MENTIONS LEGALES">
+        <source>MENTIONS LEGALES</source>
+        <target>LEGAL NOTICE</target>
+      </trans-unit>
+      <trans-unit id="8Y5P9LU" resname="Le site Passage à gué est un site dédié à l’information sur la localisation et les caractéristiques de cette catégorie d’ouvrages. Il est géré par la MIIAM DREAL.&#10;Pour toute information sur le site vous pouvez contacter la MIIAM DREAL à l’adresse suivante :&#10;(à renseigner)&#10; Le site est soumis à la législation française et européenne et les utilisateurs en visitant ce site en accepte les principes.">
+        <source>Le site Passage à gué est un site dédié à l’information sur la localisation et les caractéristiques de cette catégorie d’ouvrages. Il est géré par la MIIAM DREAL.
+Pour toute information sur le site vous pouvez contacter la MIIAM DREAL à l’adresse suivante :
+(à renseigner)
+ Le site est soumis à la législation française et européenne et les utilisateurs en visitant ce site en accepte les principes.</source>
+        <target>The Passage à ford site is a site dedicated to information on the location and characteristics of this category of structures. It is managed by MIIAM DREAL.
+For any information on the site, you can contact MIIAM DREAL at the following address:
+(to inform)
+ The site is subject to French and European legislation and users by visiting this site accept their principles.</target>
+      </trans-unit>
+      <trans-unit id="tsRVUc." resname="Utilisation du site">
+        <source>Utilisation du site</source>
+        <target>Use of the site</target>
+      </trans-unit>
+      <trans-unit id="NU6wFwK" resname="En utilisant ce site, vous acceptez les conditions générales d'utilisation énoncées ci-après. &#10;La visite du site est librement réservée à un usage personnel et la MIIAM - DREAL se réserve le droit de modifier les présentes dispositions à tout moment, sans avis préalable.&#10;De même, elle se réserve le droit d’interrompre à tout moment l’accès au site pour, notamment des questions de sécurité ou de maintenance et mise à jour, et ce sans préavis.&#10;&#10;A cet effet, la responsabilité de l’éditeur ne saurait être engagée en cas d’impossibilité d’accès à ce site et/ou d’utilisation des services, de même que la visite est libre, la MIIAM - DREAL ne peut pas garantir le bon fonctionnement continue du site ni le fait que le serveur soit exempt de virus ou autre problème pouvant nuire à son utilisation par le visiteur, même si la MIIAM – DREAL met tout en œuvre pour que de tels inconvénients ne viennent troubler la visite du site.&#10;En conclusion, la MIIAM – DREAL ne saurait être tenue pour responsable de quelconques dommages dus à des dysfonctionnements de ce site, lesquels seraient de fait indépendants de sa volonté.">
+        <source>En utilisant ce site, vous acceptez les conditions générales d'utilisation énoncées ci-après. 
+La visite du site est librement réservée à un usage personnel et la MIIAM - DREAL se réserve le droit de modifier les présentes dispositions à tout moment, sans avis préalable.
+De même, elle se réserve le droit d’interrompre à tout moment l’accès au site pour, notamment des questions de sécurité ou de maintenance et mise à jour, et ce sans préavis.
+
+A cet effet, la responsabilité de l’éditeur ne saurait être engagée en cas d’impossibilité d’accès à ce site et/ou d’utilisation des services, de même que la visite est libre, la MIIAM - DREAL ne peut pas garantir le bon fonctionnement continue du site ni le fait que le serveur soit exempt de virus ou autre problème pouvant nuire à son utilisation par le visiteur, même si la MIIAM – DREAL met tout en œuvre pour que de tels inconvénients ne viennent troubler la visite du site.
+En conclusion, la MIIAM – DREAL ne saurait être tenue pour responsable de quelconques dommages dus à des dysfonctionnements de ce site, lesquels seraient de fait indépendants de sa volonté.</source>
+        <target>By using this site, you accept the general conditions of use set out below.
+Visiting the site is freely reserved for personal use and MIIAM - DREAL reserves the right to modify these provisions at any time, without prior notice.
+Likewise, it reserves the right to interrupt access to the site at any time, particularly for security or maintenance and updating issues, without notice.
+
+To this end, the publisher cannot be held liable in the event of impossibility of access to this site and / or use of the services, as well as the visit is free, the MIIAM - DREAL cannot guarantee the continued good functioning of the site nor the fact that the server is free of viruses or other problems that could affect its use by the visitor, even if the MIIAM - DREAL does everything in its power to ensure that such inconveniences do not disturb the visit of the site .
+In conclusion, MIIAM - DREAL cannot be held responsible for any damage due to malfunctions of this site, which are in fact beyond its control.</target>
+      </trans-unit>
+      <trans-unit id="SmMfA4P" resname="Contenu du site">
+        <source>Contenu du site</source>
+        <target>Content of the site</target>
+      </trans-unit>
+      <trans-unit id="qVRCqLF" resname="La MIIAM - DREAL a mis en œuvre une organisation permettant d’assurer une information la plus exacte possible et une diffusion la plus régulière possible de celle-ci. Pour autant, la  MIIAM – DREAL ne saurait non plus garantir l’absolue exactitude des informations diffusées au moment de leur mise en ligne et il appartient de fait, aux visiteurs d’utiliser le formulaire de contact pour signaler toute annonce ou erreur d’information relayée par le site, et le cas échéant la MIIAM - DREAL mettra tout en œuvre pour corriger les éventuelles erreurs dans les meilleurs délais possibles.&#10;En conséquence, ce site, purement informatif sur les passages à gué, leur implantation, leur description technique concourent à un meilleur partage de connaissance sur ces ouvrages d’art particulier. Pour autant la MIIAM - DREAL ne saurait être tenue responsable quant à la pertinence de ces informations au regard des attentes des visiteurs.&#10;En conséquence, en consultant le site, le visiteur s’engage à ne pas engager de poursuites à l’encontre de la MIIAM - DREAL quant à la diffusion sur ce site d’information erronées. Le visiteur est engagé à utiliser le formulaire de contact afin de demander la rectification des éventuelles erreurs. La MIIAM - DREAL mettra alors tout en œuvre pour vérifier les attendus de la requête ainsi déposée et s’engage le cas échéant à procéder à toute correction nécessaire.">
+        <source>La MIIAM - DREAL a mis en œuvre une organisation permettant d’assurer une information la plus exacte possible et une diffusion la plus régulière possible de celle-ci. Pour autant, la  MIIAM – DREAL ne saurait non plus garantir l’absolue exactitude des informations diffusées au moment de leur mise en ligne et il appartient de fait, aux visiteurs d’utiliser le formulaire de contact pour signaler toute annonce ou erreur d’information relayée par le site, et le cas échéant la MIIAM - DREAL mettra tout en œuvre pour corriger les éventuelles erreurs dans les meilleurs délais possibles.
+En conséquence, ce site, purement informatif sur les passages à gué, leur implantation, leur description technique concourent à un meilleur partage de connaissance sur ces ouvrages d’art particulier. Pour autant la MIIAM - DREAL ne saurait être tenue responsable quant à la pertinence de ces informations au regard des attentes des visiteurs.
+En conséquence, en consultant le site, le visiteur s’engage à ne pas engager de poursuites à l’encontre de la MIIAM - DREAL quant à la diffusion sur ce site d’information erronées. Le visiteur est engagé à utiliser le formulaire de contact afin de demander la rectification des éventuelles erreurs. La MIIAM - DREAL mettra alors tout en œuvre pour vérifier les attendus de la requête ainsi déposée et s’engage le cas échéant à procéder à toute correction nécessaire.</source>
+        <target>MIIAM - DREAL has implemented an organization to ensure the most accurate information possible and the most regular dissemination possible. However, the MIIAM - DREAL cannot guarantee the absolute accuracy of the information disseminated when it is put online and it is therefore the responsibility of visitors to use the contact form to report any announcement or information error. relayed by the site, and if necessary the MIIAM - DREAL will do everything possible to correct any errors as soon as possible.
+As a result, this site, which is purely informative on fords, their location, their technical description, contributes to a better sharing of knowledge on these particular works of art. However, MIIAM - DREAL cannot be held responsible for the relevance of this information with regard to visitors' expectations.
+Consequently, by consulting the site, the visitor agrees not to take legal action against MIIAM - DREAL regarding the dissemination on this site of erroneous information. The visitor is committed to using the contact form to request the rectification of any errors. MIIAM - DREAL will then make every effort to verify the expectations of the request thus filed and undertake, if necessary, to make any necessary corrections.</target>
+      </trans-unit>
+      <trans-unit id="HR20_Nn" resname="Liens vers des sites externes">
+        <source>Liens vers des sites externes</source>
+        <target>Links to external sites</target>
+      </trans-unit>
+      <trans-unit id="YsDnhXr" resname="Le site peut contenir des liens vers des sites externes. Dans ces cas-là, la MIIAM - DREAL ne pouvant assurer un contrôle de ces sites alerte le visiteur en indiquant la redirection vers un autre site au moyen d’une fenêtre séparée. Le lien vers l’autre site est clairement indiqué au visiteur qui ainsi peut ne pas cliquer sur le lien.&#10;La MIIAM - DREAL met tout en œuvre pour veiller à ne pas renvoyer le visiteur vers des sites dont le contenu est contraire aux lois françaises et européennes ni aux bonnes mœurs, et dans la mesure du possible qui ne contreviennent pas aux intérêts des organismes représentés ou cités ici.">
+        <source>Le site peut contenir des liens vers des sites externes. Dans ces cas-là, la MIIAM - DREAL ne pouvant assurer un contrôle de ces sites alerte le visiteur en indiquant la redirection vers un autre site au moyen d’une fenêtre séparée. Le lien vers l’autre site est clairement indiqué au visiteur qui ainsi peut ne pas cliquer sur le lien.
+La MIIAM - DREAL met tout en œuvre pour veiller à ne pas renvoyer le visiteur vers des sites dont le contenu est contraire aux lois françaises et européennes ni aux bonnes mœurs, et dans la mesure du possible qui ne contreviennent pas aux intérêts des organismes représentés ou cités ici.</source>
+        <target>The site may contain links to external sites. In these cases, the MIIAM - DREAL cannot ensure a control of these sites alerts the visitor by indicating the redirection to another site by means of a separate window. The link to the other site is clearly indicated to the visitor who thus may not click on the link.
+The MIIAM - DREAL makes every effort to ensure that the visitor does not refer to sites whose content is contrary to French and European laws or to good morals, and as far as possible that do not contravene the interests of the organizations represented or cited here.</target>
+      </trans-unit>
+      <trans-unit id="s0Y5g02" resname="Propriété intellectuelle">
+        <source>Propriété intellectuelle</source>
+        <target>Intellectual property </target>
+      </trans-unit>
+      <trans-unit id="FZQXm28" resname="Les contenus, les textes, les photos, les marques, les logos, qui apparaissent ou sont disponibles sur le site, sont protégés par le droit de la propriété intellectuelle. Ils sont pour la plupart la propriété de la MIIAM – DREAL ou de ses partenaires institutionnels ainsi que de leurs auteurs respectifs auprès desquels la MIIAM - DREAL aura obtenu le consentement à la diffusion sur le site. &#10;A cet effet, le visiteur s’engage expressément à ne pas copier, traduire, reproduire, commercialiser, publier, exploiter et diffuser partiellement ou intégralement des contenus du site protégés par le droit de la propriété intellectuelle, sans autorisation préalable et écrite de la MIIAM - DREAL.">
+        <source>Les contenus, les textes, les photos, les marques, les logos, qui apparaissent ou sont disponibles sur le site, sont protégés par le droit de la propriété intellectuelle. Ils sont pour la plupart la propriété de la MIIAM – DREAL ou de ses partenaires institutionnels ainsi que de leurs auteurs respectifs auprès desquels la MIIAM - DREAL aura obtenu le consentement à la diffusion sur le site. 
+A cet effet, le visiteur s’engage expressément à ne pas copier, traduire, reproduire, commercialiser, publier, exploiter et diffuser partiellement ou intégralement des contenus du site protégés par le droit de la propriété intellectuelle, sans autorisation préalable et écrite de la MIIAM - DREAL.</source>
+        <target>The content, texts, photos, brands, logos, which appear or are available on the site, are protected by intellectual property rights. For the most part, they are the property of MIIAM - DREAL or its institutional partners as well as their respective authors from whom MIIAM - DREAL will have obtained consent for dissemination on the site.
+To this end, the visitor expressly undertakes not to copy, translate, reproduce, market, publish, exploit and distribute, partially or fully, the contents of the site protected by intellectual property rights, without the prior written authorization of MIIAM. - DREAL.</target>
+      </trans-unit>
+      <trans-unit id="5gpMl9n" resname="Vie privée et données personnelles">
+        <source>Vie privée et données personnelles</source>
+        <target>Privacy and personal data</target>
+      </trans-unit>
+      <trans-unit id="j7s4ncN" resname="La MIIAM - DREAL est amenée à travers ce site et pour une utilisation strictement encadrée, à utiliser certaines informations déposées par le visiteur sur le site (voir ci-après). &#10;La MIIAM - DREAL, s’engage à ne pas divulguer à des tiers les informations que celui-ci lui a communiquées. Celles-ci sont ainsi réputées confidentielles et ne seront utilisées que pour les besoins du service attendu par le visiteur. Cela concerne notamment les informations recueillies au travers du formulaire de contact. La MIIAM – DREAL s’engage à respecter la confidentialité des messages reçus au travers de ce moyen.&#10; &#10;Les abonnements et newsletters&#10;Les adresses électroniques recueillies dans le cadre des abonnements et des newsletters ne sont utilisées que pour l'envoi des informations pour lesquelles le visiteur s'est expressément inscrit. L’abonné peut à tout moment demander sa désinscription.">
+        <source>La MIIAM - DREAL est amenée à travers ce site et pour une utilisation strictement encadrée, à utiliser certaines informations déposées par le visiteur sur le site (voir ci-après). 
+La MIIAM - DREAL, s’engage à ne pas divulguer à des tiers les informations que celui-ci lui a communiquées. Celles-ci sont ainsi réputées confidentielles et ne seront utilisées que pour les besoins du service attendu par le visiteur. Cela concerne notamment les informations recueillies au travers du formulaire de contact. La MIIAM – DREAL s’engage à respecter la confidentialité des messages reçus au travers de ce moyen.
+ 
+Les abonnements et newsletters
+Les adresses électroniques recueillies dans le cadre des abonnements et des newsletters ne sont utilisées que pour l'envoi des informations pour lesquelles le visiteur s'est expressément inscrit. L’abonné peut à tout moment demander sa désinscription.</source>
+        <target>The MIIAM - DREAL is led through this site and for a strictly supervised use, to use certain information deposited by the visitor on the site (see below).
+MIIAM - DREAL undertakes not to disclose to third parties the information that it has communicated to it. These are thus deemed confidential and will only be used for the needs of the service expected by the visitor. This concerns in particular the information collected through the contact form. MIIAM - DREAL undertakes to respect the confidentiality of messages received through this means.
+ 
+Subscriptions and newsletters
+The e-mail addresses collected as part of subscriptions and newsletters are only used to send information for which the visitor has expressly registered. The subscriber can request to unsubscribe at any time.</target>
+      </trans-unit>
+      <trans-unit id="JIPrLnY" resname="Lois et règlements">
+        <source>Lois et règlements</source>
+        <target>Laws and regulations</target>
+      </trans-unit>
+      <trans-unit id="Hghm2Q4" resname="Le présent site répond à la réglementation relative à l’informatique, aux fichiers et aux libertés telle que définie par la loi n°78-17 du 6 janvier 1978 modifiée.&#10;&#10;Conformément à l’article 34 de la Loi informatique et libertés, tout visiteur inscrit dispose d’un droit d’accès, de modification, de rectification et de suppression des données qui le concerne par simple demande :&#10;- par courrier :&#10;(à renseigner)&#10;-&#9;Par messagerie :&#10;En utilisant le formulaire de contact présent sur le site">
+        <source>Le présent site répond à la réglementation relative à l’informatique, aux fichiers et aux libertés telle que définie par la loi n°78-17 du 6 janvier 1978 modifiée.
+
+Conformément à l’article 34 de la Loi informatique et libertés, tout visiteur inscrit dispose d’un droit d’accès, de modification, de rectification et de suppression des données qui le concerne par simple demande :
+- par courrier :
+(à renseigner)
+-	Par messagerie :
+En utilisant le formulaire de contact présent sur le site</source>
+        <target>This site complies with the regulations relating to data processing, files and freedoms as defined by law n ° 78-17 of January 6, 1978 as amended.
+
+In accordance with Article 34 of the Data Protection Act, any registered visitor has the right to access, modify, rectify and delete data concerning him by simple request:
+- by mail :
+(to inform)
+- By messaging:
+By using the contact form on the site</target>
+      </trans-unit>
+      <trans-unit id="4ONqcJD" resname="Informations sur les cookies">
+        <source>Informations sur les cookies</source>
+        <target>Information about cookies</target>
+      </trans-unit>
+      <trans-unit id="lkCuxXD" resname="Les cookies sont des informations déposées sur le disque dur de l’utilisateur par le serveur du site visité. Les cookies sont gérés automatiquement par le navigateur du visiteur. Les cookies concourent à un meilleur fonctionnement du site notamment en facilitant la navigation sur le site par le visiteur en fonction de ses préférences.">
+        <source>Les cookies sont des informations déposées sur le disque dur de l’utilisateur par le serveur du site visité. Les cookies sont gérés automatiquement par le navigateur du visiteur. Les cookies concourent à un meilleur fonctionnement du site notamment en facilitant la navigation sur le site par le visiteur en fonction de ses préférences.</source>
+        <target>Cookies are information placed on the user's hard drive by the server of the site visited. Cookies are managed automatically by the visitor's browser. Cookies help the site to function better, in particular by making it easier for visitors to navigate the site according to their preferences.</target>
+      </trans-unit>
+      <trans-unit id="NO_XveZ" resname="&quot;return confirm('Voulez-vous vraiment supprimer cet élément?');&quot;">
+        <source>"return confirm('Voulez-vous vraiment supprimer cet élément?');"</source>
+        <target>"return confirm('Do you really want to delete this item?');"</target>
+      </trans-unit>
+      <trans-unit id="Xl0CFs4" resname="Supprimer">
+        <source>Supprimer</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="LQT6vg6" resname="Message envoyé avec succès">
+        <source>Message envoyé avec succès</source>
+        <target>Message send successfully</target>
+      </trans-unit>
+      <trans-unit id="Qom01AV" resname="Création effectuée avec succès">
+        <source>Création effectuée avec succès</source>
+        <target>Created successfully</target>
+      </trans-unit>
+      <trans-unit id="H2KZZss" resname="Modification effectuée avec succès">
+        <source>Modification effectuée avec succès</source>
+        <target>Edited successfully</target>
+      </trans-unit>
+      <trans-unit id="7qHKNra" resname="Suppression effectuée avec succès">
+        <source>Suppression effectuée avec succès</source>
+        <target>Deleted successfully</target>
+      </trans-unit>
+      <trans-unit id="2raDzsJ" resname="Inscription effectuée avec succès">
+        <source>Inscription effectuée avec succès</source>
+        <target>Registered successfully</target>
+      </trans-unit>
+      <trans-unit id="GCxuJ9U" resname="Edition famille d'ouvrage">
+        <source>Edition famille d'ouvrage</source>
+        <target>Edit familly of work</target>
+      </trans-unit>
+      <trans-unit id="7yOllAJ" resname="Retour">
+        <source>Retour</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="9SBURy." resname="Familles d'ouvrage">
+        <source>Familles d'ouvrage</source>
+        <target>Familly of work</target>
+      </trans-unit>
+      <trans-unit id="8UtdafL" resname="Famille">
+        <source>Famille</source>
+        <target>Familly</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="QuN2BLY" resname="Modifier">
+        <source>Modifier</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="JTo.TcP" resname="Aucun enregistrement trouvé">
+        <source>Aucun enregistrement trouvé</source>
+        <target>No registery found</target>
+      </trans-unit>
+      <trans-unit id="p4NtdE6" resname="Créer une nouvelle famille">
+        <source>Créer une nouvelle famille</source>
+        <target>Create new familly</target>
+      </trans-unit>
+      <trans-unit id="GOavuh6" resname="Accès interdit, veuillez contacter l'administrateur du site">
+        <source>Accès interdit, veuillez contacter l'administrateur du site</source>
+        <target>Access denied, please contact administrator of the site</target>
+      </trans-unit>
+      <trans-unit id="SNNbM6n" resname="Nouvelle famille d'ouvrage">
+        <source>Nouvelle famille d'ouvrage</source>
+        <target>New familly of work</target>
+      </trans-unit>
+      <trans-unit id="ljxaKMz" resname="Créer une nouvelle famille d'ouvrage">
+        <source>Créer une nouvelle famille d'ouvrage</source>
+        <target>Create new familly of work</target>
+      </trans-unit>
+      <trans-unit id="yFoqVIY" resname="Edition passage">
+        <source>Edition passage</source>
+        <target>Edit path</target>
+      </trans-unit>
+      <trans-unit id="9f30Fbr" resname="Edition passage à gué">
+        <source>Edition passage à gué</source>
+        <target>Edit path</target>
+      </trans-unit>
+      <trans-unit id="vqTC8WM" resname="Gps - X">
+        <source>Gps - X</source>
+        <target>Gps - X</target>
+      </trans-unit>
+      <trans-unit id="ICTaafU" resname="Gps - Y">
+        <source>Gps - Y</source>
+        <target>Gps - Y</target>
+      </trans-unit>
+      <trans-unit id="48u3PHB" resname="Fréquence de submersion">
+        <source>Fréquence de submersion</source>
+        <target>submersion frequency</target>
+      </trans-unit>
+      <trans-unit id="RdfFIv5" resname="Largeur du passage">
+        <source>Largeur du passage</source>
+        <target>passage width</target>
+      </trans-unit>
+      <trans-unit id="t06SKn3" resname="Longueur du passage">
+        <source>Longueur du passage</source>
+        <target>passage length</target>
+      </trans-unit>
+      <trans-unit id="bTl0oDA" resname="Trafic journalier">
+        <source>Trafic journalier</source>
+        <target>daily traffic</target>
+      </trans-unit>
+      <trans-unit id="EQZ5dN6" resname="Limitation respectée">
+        <source>Limitation respectée</source>
+        <target>limitation respected</target>
+      </trans-unit>
+      <trans-unit id="ZvSATuI" resname="Archive">
+        <source>Archive</source>
+        <target>Archive</target>
+      </trans-unit>
+      <trans-unit id="FsescSI" resname="Taux d'accidentalité">
+        <source>Taux d'accidentalité</source>
+        <target>accident rate</target>
+      </trans-unit>
+      <trans-unit id="Alt7nwv" resname="Type d'ouvrage">
+        <source>Type d'ouvrage</source>
+        <target>Type of work</target>
+      </trans-unit>
+      <trans-unit id="otax_De" resname="Cours d'eau">
+        <source>Cours d'eau</source>
+        <target>Stream</target>
+      </trans-unit>
+      <trans-unit id="8x9PyFE" resname="Localisation">
+        <source>Localisation</source>
+        <target>Location</target>
+      </trans-unit>
+      <trans-unit id="jzt5vOa" resname="Gestionnaire">
+        <source>Gestionnaire</source>
+        <target>Manager</target>
+      </trans-unit>
+      <trans-unit id="PyAYzX2" resname="Utilisateurs ayant accès aux données">
+        <source>Utilisateurs ayant accès aux données</source>
+        <target>users with access to data</target>
+      </trans-unit>
+      <trans-unit id="pbxhHIZ" resname="Submersions">
+        <source>Submersions</source>
+        <target>Submersions</target>
+      </trans-unit>
+      <trans-unit id="rcdHBNZ" resname="Route">
+        <source>Route</source>
+        <target>Road</target>
+      </trans-unit>
+      <trans-unit id="Kw3N1AA" resname="actions">
+        <source>actions</source>
+        <target>actions</target>
+      </trans-unit>
+      <trans-unit id="I9OTi17" resname="Utilisateurs">
+        <source>Utilisateurs</source>
+        <target>Users</target>
+      </trans-unit>
+      <trans-unit id="LFtmm83" resname="Routes">
+        <source>Routes</source>
+        <target>Roads</target>
+      </trans-unit>
+      <trans-unit id="vlXGHV6" resname="Voir +">
+        <source>Voir +</source>
+        <target>Show more</target>
+      </trans-unit>
+      <trans-unit id="iY_K1xA" resname="Pas d'enregistrement trouvé">
+        <source>Pas d'enregistrement trouvé</source>
+        <target>No registery found</target>
+      </trans-unit>
+      <trans-unit id="M1Q36TU" resname="Créer un nouveau passage">
+        <source>Créer un nouveau passage</source>
+        <target>Create new path</target>
+      </trans-unit>
+      <trans-unit id="3Azwvcv" resname="Création passage">
+        <source>Création passage</source>
+        <target>Create path</target>
+      </trans-unit>
+      <trans-unit id="euwe96K" resname="Création d'un passage">
+        <source>Création d'un passage</source>
+        <target>Create a path</target>
+      </trans-unit>
+      <trans-unit id="viKGxX3" resname="&quot;return confirm('Voulez-vous vraiment supprimer ce passage?');&quot;">
+        <source>"return confirm('Voulez-vous vraiment supprimer ce passage?');"</source>
+        <target>"return confirm('Do you really want to delete this path?');"</target>
+      </trans-unit>
+      <trans-unit id="OhWKkYO" resname="Vous êtes déjà connecté avec">
+        <source>Vous êtes déjà connecté avec</source>
+        <target>Already connected as</target>
+      </trans-unit>
+      <trans-unit id="iAkgLAg" resname="deconnexion">
+        <source>deconnexion</source>
+        <target>logout</target>
+      </trans-unit>
+      <trans-unit id="JLff1s." resname="Email :">
+        <source>Email :</source>
+        <target>Email :</target>
+      </trans-unit>
+      <trans-unit id="AFPac0a" resname="Mot de passe :">
+        <source>Mot de passe :</source>
+        <target>Password :</target>
+      </trans-unit>
+      <trans-unit id="RR5Fv0N" resname="Rester connecté">
+        <source>Rester connecté</source>
+        <target>Remember me</target>
+      </trans-unit>
+      <trans-unit id="DzVWenS" resname="Modifier mon profil">
+        <source>Modifier mon profil</source>
+        <target>Edit my profile</target>
+      </trans-unit>
+      <trans-unit id="4mfTQ4I" resname="Profil">
+        <source>Profil</source>
+        <target>Profile</target>
+      </trans-unit>
+      <trans-unit id="Ogyjg6y" resname="le mot de passe doit faire au moins 8 caractères, avec au moins 1 majuscule, 1 minuscule, et 1 caractère spécial parmis @ $ ! % * . ? &amp;.">
+        <source>le mot de passe doit faire au moins 8 caractères, avec au moins 1 majuscule, 1 minuscule, et 1 caractère spécial parmis @ $ ! % * . ? &amp;.</source>
+        <target><![CDATA[the password must be at least 8 characters long, with at least 1 uppercase, 1 lowercase, and 1 special character among @ $ ! % * . ? &.]]></target>
+      </trans-unit>
+      <trans-unit id="RZUfasG" resname="Enregistrer les modifications">
+        <source>Enregistrer les modifications</source>
+        <target>Save modifications</target>
+      </trans-unit>
+      <trans-unit id="Biv21LO" resname="Déjà inscrit? Je me connecte">
+        <source>Déjà inscrit? Je me connecte</source>
+        <target>Already registered? Connect</target>
+      </trans-unit>
+      <trans-unit id="GuGIgR_" resname="inscription">
+        <source>inscription</source>
+        <target>Sign up</target>
+      </trans-unit>
+      <trans-unit id="9Hzm3eD" resname="Edition type d'équipement">
+        <source>Edition type d'équipement</source>
+        <target>Edit type of equipment</target>
+      </trans-unit>
+      <trans-unit id="eZkQIC8" resname="Types d'équipements">
+        <source>Types d'équipements</source>
+        <target>Types of equipment</target>
+      </trans-unit>
+      <trans-unit id="ssEkU20" resname="Nom">
+        <source>Nom</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="Dzo5Cwc" resname="Créer un nouveau type d'équipement">
+        <source>Créer un nouveau type d'équipement</source>
+        <target>Create new type of equipment</target>
+      </trans-unit>
+      <trans-unit id="JZCx4g_" resname="Nouveau type d'équipement">
+        <source>Nouveau type d'équipement</source>
+        <target>New type of equipment</target>
+      </trans-unit>
+      <trans-unit id="xnOdjHr" resname="Edition le type d'ouvrage">
+        <source>Edition le type d'ouvrage</source>
+        <target>Edit type of work</target>
+      </trans-unit>
+      <trans-unit id="ZZnctfv" resname="Types d'ouvrage">
+        <source>Types d'ouvrage</source>
+        <target>Types of work</target>
+      </trans-unit>
+      <trans-unit id="uq3fcPt" resname="Type">
+        <source>Type</source>
+        <target>Type</target>
+      </trans-unit>
+      <trans-unit id="N92n578" resname="Créer un nouveau type d'ouvrage">
+        <source>Créer un nouveau type d'ouvrage</source>
+        <target>Create new type of work</target>
+      </trans-unit>
+      <trans-unit id="rtOKeuK" resname="Nouveau type d'ouvrage">
+        <source>Nouveau type d'ouvrage</source>
+        <target>New type of work</target>
+      </trans-unit>
+      <trans-unit id="hX2du0b" resname="Edition de l'utilisateur">
+        <source>Edition de l'utilisateur</source>
+        <target>Edit user</target>
+      </trans-unit>
+      <trans-unit id="NGdqgWZ" resname="Liste des utilisateurs">
+        <source>Liste des utilisateurs</source>
+        <target>List of users</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="ofyWfFW" resname="Rôle">
+        <source>Rôle</source>
+        <target>Role</target>
+      </trans-unit>
+      <trans-unit id="4yW.j5A" resname="Prénom">
+        <source>Prénom</source>
+        <target>First name</target>
+      </trans-unit>
+      <trans-unit id="BH9Ys5T" resname="Pseudo">
+        <source>Pseudo</source>
+        <target>Nickname</target>
+      </trans-unit>
+      <trans-unit id="2E7rrak" resname="Photo">
+        <source>Photo</source>
+        <target>Picture</target>
+      </trans-unit>
+      <trans-unit id="53Az_YO" resname="Administrateur">
+        <source>Administrateur</source>
+        <target>Admin</target>
+      </trans-unit>
+      <trans-unit id="xaaLt5H" resname="Technicien">
+        <source>Technicien</source>
+        <target>Technician</target>
+      </trans-unit>
+      <trans-unit id="ch5bKau" resname="Utilisateur">
+        <source>Utilisateur</source>
+        <target>User</target>
+      </trans-unit>
+      <trans-unit id="uv9olC1" resname="Créer un nouvel utilisateur">
+        <source>Créer un nouvel utilisateur</source>
+        <target>Create new user</target>
+      </trans-unit>
+      <trans-unit id="ktY84lx" resname="Création d'utilisateur">
+        <source>Création d'utilisateur</source>
+        <target>Create user</target>
+      </trans-unit>
+      <trans-unit id="WIjgblZ" resname="Créer un utilisateur">
+        <source>Créer un utilisateur</source>
+        <target>Create user</target>
+      </trans-unit>
+      <trans-unit id="wlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Roles</target>
+      </trans-unit>
+      <trans-unit id=".5yLjAZ" resname="Mot de passe">
+        <source>Mot de passe</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="xttkBIN" resname="retour">
+        <source>retour</source>
+        <target>Back</target>
+      </trans-unit>
+      <trans-unit id="he7rEx4" resname="&quot;return confirm('Souhaitez-vous vraiment supprimer cet utilisateur?');&quot;">
+        <source>"return confirm('Souhaitez-vous vraiment supprimer cet utilisateur?');"</source>
+        <target>"return confirm('Do you really want to delete this user?');"</target>
+      </trans-unit>
+      <trans-unit id="XJyAUMP" resname="GPS - X">
+        <source>GPS - X</source>
+        <target>GPS - X</target>
+      </trans-unit>
+      <trans-unit id="oorGLTe" resname="GPS - Y">
+        <source>GPS - Y</source>
+        <target>GPS - Y</target>
+      </trans-unit>
+      <trans-unit id="NCj9p9B" resname="2 mois/an">
+        <source>2 mois/an</source>
+        <target>2 months/year</target>
+      </trans-unit>
+      <trans-unit id="8u7nDrq" resname="Largeur du passsage (en m)">
+        <source>Largeur du passsage (en m)</source>
+        <target>Width of the path (in meter)</target>
+      </trans-unit>
+      <trans-unit id="BDGrMH0" resname="Longueur du passage (en m)">
+        <source>Longueur du passage (en m)</source>
+        <target>Length of the path (in meter)</target>
+      </trans-unit>
+      <trans-unit id="annScTs" resname="Trafic journalier (passages/jour)">
+        <source>Trafic journalier (passages/jour)</source>
+        <target>Daily trafic (number of vehicules per day)</target>
+      </trans-unit>
+      <trans-unit id="CpBAdjn" resname="Oui">
+        <source>Oui</source>
+        <target>Yes</target>
+      </trans-unit>
+      <trans-unit id="f2JJawy" resname="Non">
+        <source>Non</source>
+        <target>No</target>
+      </trans-unit>
+      <trans-unit id="XYPL40N" resname="Vitesse respectée">
+        <source>Vitesse respectée</source>
+        <target>Limit speed respected</target>
+      </trans-unit>
+      <trans-unit id="rWu4mga" resname="1 incident/an">
+        <source>1 incident/an</source>
+        <target>1 accident/year</target>
+      </trans-unit>
+      <trans-unit id="DZmPFv9" resname="Nom du gestionnaire">
+        <source>Nom du gestionnaire</source>
+        <target>Manager's name</target>
+      </trans-unit>
+      <trans-unit id="rtRv_q2" resname="Passage archivé">
+        <source>Passage archivé</source>
+        <target>Path archived</target>
+      </trans-unit>
+      <trans-unit id="0ugvKcH" resname="Permettre l'utilisateur à accéder aux données">
+        <source>Permettre l'utilisateur à accéder aux données</source>
+        <target>Permiss user to access data</target>
+      </trans-unit>
+      <trans-unit id="9tzOmq." resname="Mot de passe ">
+        <source>Mot de passe </source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="qzz1EH0" resname="Confrimez le mot de passe ">
+        <source>Confrimez le mot de passe </source>
+        <target>Confirm password </target>
+      </trans-unit>
+      <trans-unit id="G2Ug606" resname="Confrimez le mot de passe">
+        <source>Confrimez le mot de passe</source>
+        <target>Confirm password</target>
+      </trans-unit>
+      <trans-unit id="JWF.Fl2" resname="Pseudonyme ">
+        <source>Pseudonyme </source>
+        <target>Nickname </target>
+      </trans-unit>
+      <trans-unit id=".2B2LzG" resname="Le nom qui sera affiché">
+        <source>Le nom qui sera affiché</source>
+        <target>Public name</target>
+      </trans-unit>
+      <trans-unit id="AnSF4q8" resname="Nom ">
+        <source>Nom </source>
+        <target>Last name </target>
+      </trans-unit>
+      <trans-unit id="VqQMSw7" resname="Prénom ">
+        <source>Prénom </source>
+        <target>First name </target>
+      </trans-unit>
+      <trans-unit id="66iYkQj" resname="Ajoutez une photo ">
+        <source>Ajoutez une photo </source>
+        <target>Add photo </target>
+      </trans-unit>
+      <trans-unit id="AJVXpNo" resname="Email ">
+        <source>Email </source>
+        <target>Email </target>
+      </trans-unit>
+      <trans-unit id="5ljJDjg" resname="Confirmez le mot de passe">
+        <source>Confirmez le mot de passe</source>
+        <target>Confirm password</target>
+      </trans-unit>
+      <trans-unit id="2IqSt2E" resname="Nom type ouvrage">
+        <source>Nom type ouvrage</source>
+        <target>Name type of work</target>
+      </trans-unit>
+      <trans-unit id="7ZNhvcq" resname="Famille ouvrage">
+        <source>Famille ouvrage</source>
+        <target>Familly of work</target>
+      </trans-unit>
+      <trans-unit id="fQ7wbM7" resname="Nom famille ouvrage">
+        <source>Nom famille ouvrage</source>
+        <target>Name familly of work</target>
+      </trans-unit>
+      <trans-unit id="b8V.3_j" resname="Nom type equipement">
+        <source>Nom type equipement</source>
+        <target>Name equipment type</target>
+      </trans-unit>
+      <trans-unit id="ykiOk9y" resname="Description type equipement">
+        <source>Description type equipement</source>
+        <target>Description equipment type</target>
+      </trans-unit>
+      <trans-unit id="f9UDoym" resname="Rôles">
+        <source>Rôles</source>
+        <target>Roles</target>
+      </trans-unit>
+      <trans-unit id="Wl2ABzl" resname="Nom utilisateur">
+        <source>Nom utilisateur</source>
+        <target>User's last name</target>
+      </trans-unit>
+      <trans-unit id="02ad9ah" resname="Prenom utilisateur">
+        <source>Prenom utilisateur</source>
+        <target>User's first name</target>
+      </trans-unit>
+      <trans-unit id="CuYsRHn" resname="Pseudo utilisateur">
+        <source>Pseudo utilisateur</source>
+        <target>User's nickname</target>
+      </trans-unit>
+      <trans-unit id="3cPpo7e" resname="Photo utilisateur">
+        <source>Photo utilisateur</source>
+        <target>User's photo</target>
+      </trans-unit>
+      <trans-unit id="1lLVFeu" resname="Email *">
+        <source>Email *</source>
+        <target>Email *</target>
+      </trans-unit>
+      <trans-unit id="qXDNvZr" resname="Mot de passe *">
+        <source>Mot de passe *</source>
+        <target>Password *</target>
+      </trans-unit>
+      <trans-unit id="T_J.5OX" resname="Confrimez le mot de passe *">
+        <source>Confrimez le mot de passe *</source>
+        <target>Confirm password *</target>
+      </trans-unit>
+      <trans-unit id="KWsK4zH" resname="Pseudonyme *">
+        <source>Pseudonyme *</source>
+        <target>Nickname *</target>
+      </trans-unit>
+      <trans-unit id="y4nRl0l" resname="Prénom *">
+        <source>Prénom *</source>
+        <target>First name *</target>
+      </trans-unit>
+      <trans-unit id="uniZ5Wq" resname="suppression effectuée avec succès">
+        <source>suppression effectuée avec succès</source>
+        <target>deleted successfully</target>
+      </trans-unit>
+      <trans-unit id="TdpYUu2" resname="Archivage effectuée avec succès">
+        <source>Archivage effectuée avec succès</source>
+        <target>Path successfully archived</target>
+      </trans-unit>
+      <trans-unit id="WbeyFhT" resname="&quot;return confirm('Voulez-vous vraiment archiver ce passage?');&quot;">
+        <source>"return confirm('Voulez-vous vraiment archiver ce passage?');"</source>
+        <target>"return confirm('Do you really want to archive this path?');"</target>
+      </trans-unit>
+      <trans-unit id="hhTPAFh" resname="Archiver">
+        <source>Archiver</source>
+        <target>Archive</target>
+      </trans-unit>
+      <trans-unit id="yz.Q4YY" resname="Edition du mot de passe l'utilisateur">
+        <source>Edition du mot de passe l'utilisateur</source>
+        <target>Edit user's password</target>
+      </trans-unit>
+      <trans-unit id="oP7pSXH" resname="Changer le mot de passe">
+        <source>Changer le mot de passe</source>
+        <target>Change password</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

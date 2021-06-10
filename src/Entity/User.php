@@ -265,4 +265,9 @@ class User implements UserInterface
     public function getFullname(): ?string {
         return $this->nomUtilisateur . ' ' . $this->prenomUtilisateur. ' | ' .$this->email;
     }
+
+    public function getUserIdentifier()
+    {
+        
+    }
 }

@@ -69,6 +69,11 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
+    <parameter key="app.locales" type="collection">
+      <parameter>fr</parameter>
+      <parameter>en</parameter>
+      <parameter>ru</parameter>
+    </parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -97,7 +102,7 @@
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
-    <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="kernel.default_locale">fr</parameter>
     <parameter key="kernel.error_controller">error_controller</parameter>
     <parameter key="debug.file_link_format">null</parameter>
     <parameter key="cache.prefix.seed">_C:\Users\samyg\Desktop\StageDev.App_KernelDevDebugContainer</parameter>
@@ -392,6 +397,13 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\UserController"/>
       </call>
     </service>
+    <service id="App\EventSubscriber\LocaleSubscriber" class="App\EventSubscriber\LocaleSubscriber" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="container.hot_path"/>
+    </service>
+    <service id="App\Form\EmailType" class="App\Form\EmailType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\FamilleOuvrageType" class="App\Form\FamilleOuvrageType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -423,6 +435,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\DepartementRepository" class="App\Repository\DepartementRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\EmailRepository" class="App\Repository\EmailRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -504,7 +520,7 @@
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="request_stack"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="service" id="router.default" on-invalid="ignore"/>
     </service>
     <service id="validate_request_listener" class="Symfony\Component\HttpKernel\EventListener\ValidateRequestListener">
@@ -694,7 +710,7 @@
     </service>
     <service id="slugger" class="Symfony\Component\String\Slugger\AsciiSlugger">
       <tag name="kernel.locale_aware"/>
-      <argument>en</argument>
+      <argument>fr</argument>
     </service>
     <service id="container.getenv" class="Closure">
       <tag name="routing.expression_language_function" function="env"/>
@@ -917,7 +933,7 @@
       <argument type="service" id="translation.writer"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument>C:\Users\samyg\Desktop\StageDev/translations</argument>
       <argument>C:\Users\samyg\Desktop\StageDev/templates</argument>
       <argument type="collection">
@@ -965,6 +981,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\EmailType</argument>
         <argument>App\Form\FamilleOuvrageType</argument>
         <argument>App\Form\LoginFormType</argument>
         <argument>App\Form\PassageAGueType</argument>
@@ -1330,7 +1347,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.rtgQcOW"/>
+      <argument type="service" id=".service_locator.ctOSeux"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -1506,6 +1523,12 @@
       <argument>null</argument>
     </service>
     <service id="mailer.transport_factory.abstract" class="Symfony\Component\Mailer\Transport\AbstractTransportFactory" abstract="true">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id=".debug.http_client" on-invalid="ignore"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+    </service>
+    <service id="mailer.transport_factory.gmail" class="Symfony\Component\Mailer\Bridge\Google\Transport\GmailTransportFactory">
+      <tag name="mailer.transport_factory"/>
       <argument type="service" id="debug.event_dispatcher"/>
       <argument type="service" id=".debug.http_client" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger" on-invalid="ignore"/>
@@ -1697,7 +1720,7 @@
       <tag name="kernel.locale_aware"/>
       <argument type="service" id=".service_locator.O24_MAy"/>
       <argument type="service" id="translator.formatter.default"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="collection">
         <argument key="translation.loader.php" type="collection">
           <argument>php</argument>
@@ -1801,6 +1824,9 @@
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\Users\samyg\Desktop\StageDev/translations\messages+intl-icu.en.xlf</argument>
+            <argument>C:\Users\samyg\Desktop\StageDev/translations\security.en.xlf</argument>
+            <argument>C:\Users\samyg\Desktop\StageDev/translations\validators.en.xlf</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
@@ -1830,6 +1856,9 @@
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\Users\samyg\Desktop\StageDev/translations\messages+intl-icu.fr.xlf</argument>
+            <argument>C:\Users\samyg\Desktop\StageDev/translations\security.fr.xlf</argument>
+            <argument>C:\Users\samyg\Desktop\StageDev/translations\validators.fr.xlf</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
@@ -1935,6 +1964,9 @@
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\Users\samyg\Desktop\StageDev/translations\messages+intl-icu.ru.xlf</argument>
+            <argument>C:\Users\samyg\Desktop\StageDev/translations\security.ru.xlf</argument>
+            <argument>C:\Users\samyg\Desktop\StageDev/translations\validators.ru.xlf</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>C:\Users\samyg\Desktop\StageDev\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
@@ -2050,7 +2082,7 @@
       </call>
       <call method="setFallbackLocales">
         <argument type="collection">
-          <argument>en</argument>
+          <argument>fr</argument>
         </argument>
       </call>
     </service>
@@ -2533,6 +2565,14 @@
           <argument>checkPassport</argument>
         </argument>
         <argument>2048</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="App\EventSubscriber\LocaleSubscriber"/>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>20</argument>
       </call>
       <call method="addListener">
         <argument>kernel.response</argument>
@@ -3081,7 +3121,7 @@
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="parameter_bag" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.router" on-invalid="ignore"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <call method="setConfigCacheFactory">
         <argument type="service" id="config_cache_factory"/>
       </call>
@@ -3600,6 +3640,14 @@
       </call>
       <call method="addRuntimeLoader">
         <argument type="service" id="twig.runtime_loader"/>
+      </call>
+      <call method="addGlobal">
+        <argument>locales</argument>
+        <argument type="collection">
+          <argument>fr</argument>
+          <argument>en</argument>
+          <argument>ru</argument>
+        </argument>
       </call>
       <call method="registerUndefinedFilterCallback">
         <argument type="collection">
@@ -4379,7 +4427,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.hMpfDcw"/>
+      <argument type="service" id=".service_locator.CEyUBCN"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4979,6 +5027,27 @@
         <argument type="service" id=".security.request_matcher.qecNRWT"/>
         <argument type="collection">
           <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.W5lPAXT"/>
+        <argument type="collection">
+          <argument>ROLE_GESTIONNAIRE</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.hkVJrCG"/>
+        <argument type="collection">
+          <argument>ROLE_TECHNICIEN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.PvQjWE0"/>
+        <argument type="collection">
+          <argument>ROLE_GESTIONNAIRE</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -5716,6 +5785,15 @@
     <service id=".security.request_matcher.qecNRWT" class="Symfony\Component\HttpFoundation\RequestMatcher">
       <argument>^/profil</argument>
     </service>
+    <service id=".security.request_matcher.W5lPAXT" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/passage/creation</argument>
+    </service>
+    <service id=".security.request_matcher.hkVJrCG" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/passage/\d+$/edit</argument>
+    </service>
+    <service id=".security.request_matcher.PvQjWE0" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/passage/\d+$/archive</argument>
+    </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand">
       <tag name="console.command" command="security:encode-password"/>
       <tag name="container.no_preload"/>
@@ -5749,6 +5827,10 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.App\EventSubscriber\LocaleSubscriber" class="App\EventSubscriber\LocaleSubscriber" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\EventSubscriber\LocaleSubscriber" class="App\EventSubscriber\LocaleSubscriber" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EmailType" class="App\Form\EmailType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EmailType" class="App\Form\EmailType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FamilleOuvrageType" class="App\Form\FamilleOuvrageType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\FamilleOuvrageType" class="App\Form\FamilleOuvrageType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LoginFormType" class="App\Form\LoginFormType" autowire="true" abstract="true"/>
@@ -5769,6 +5851,8 @@
     <service id=".abstract.instanceof.App\Repository\CoursEauRepository" class="App\Repository\CoursEauRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DepartementRepository" class="App\Repository\DepartementRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\DepartementRepository" class="App\Repository\DepartementRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EmailRepository" class="App\Repository\EmailRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\EmailRepository" class="App\Repository\EmailRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EquipementRepository" class="App\Repository\EquipementRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EquipementRepository" class="App\Repository\EquipementRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FamilleOuvrageRepository" class="App\Repository\FamilleOuvrageRepository" autowire="true" abstract="true"/>
@@ -6111,16 +6195,36 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.D4nGOut" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mailer" type="service_closure" id="mailer.mailer"/>
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
+      </argument>
+    </service>
     <service id=".service_locator.xdzrsg0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="familleOuvrageRepository" type="service_closure" id="App\Repository\FamilleOuvrageRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.mzjt3rI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
+      </argument>
+    </service>
     <service id=".service_locator.HwhnwNE" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="familleOuvrage" type="service_closure" id=".errored..service_locator.HwhnwNE.App\Entity\FamilleOuvrage"/>
+      </argument>
+    </service>
+    <service id=".service_locator.TigeQVb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="familleOuvrage" type="service_closure" id=".errored..service_locator.TigeQVb.App\Entity\FamilleOuvrage"/>
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
       </argument>
     </service>
     <service id=".service_locator.bQdaaNE" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6135,11 +6239,19 @@
         <argument key="passageAGue" type="service_closure" id=".errored..service_locator.rytAZjY.App\Entity\PassageAGue"/>
       </argument>
     </service>
-    <service id=".service_locator.Oi4_xhu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.zCOSvL3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="passageAGue" type="service_closure" id=".errored..service_locator.zCOSvL3.App\Entity\PassageAGue"/>
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
+      </argument>
+    </service>
+    <service id=".service_locator..jOl1R2" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="encoder" type="service_closure" id="security.user_password_encoder.generic"/>
         <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
       </argument>
     </service>
     <service id=".service_locator.UDgw6Ol" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6160,6 +6272,13 @@
         <argument key="typeEquipement" type="service_closure" id=".errored..service_locator.ATvSLhR.App\Entity\TypeEquipement"/>
       </argument>
     </service>
+    <service id=".service_locator.0zSVpvB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
+        <argument key="typeEquipement" type="service_closure" id=".errored..service_locator.0zSVpvB.App\Entity\TypeEquipement"/>
+      </argument>
+    </service>
     <service id=".service_locator.9EZNAuY" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6172,10 +6291,24 @@
         <argument key="typeOuvrage" type="service_closure" id=".errored..service_locator.3XJlFjF.App\Entity\TypeOuvrage"/>
       </argument>
     </service>
+    <service id=".service_locator.fvgUGPp" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
+        <argument key="typeOuvrage" type="service_closure" id=".errored..service_locator.fvgUGPp.App\Entity\TypeOuvrage"/>
+      </argument>
+    </service>
     <service id=".service_locator..Ae5NXw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.hRotkI1" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="encoder" type="service_closure" id="security.user_password_encoder.generic"/>
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
       </argument>
     </service>
     <service id=".service_locator.ch4Jgvl" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6184,31 +6317,54 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.ch4Jgvl.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.hssxZ0q" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.CW1AYwe" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\FamilleOuvrageController::delete" type="service_closure" id=".service_locator.HwhnwNE"/>
-        <argument key="App\Controller\FamilleOuvrageController::edit" type="service_closure" id=".service_locator.HwhnwNE"/>
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
+        <argument key="user" type="service_closure" id=".errored..service_locator.CW1AYwe.App\Entity\User"/>
+      </argument>
+    </service>
+    <service id=".service_locator.igbUHzf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="encoder" type="service_closure" id="security.user_password_encoder.generic"/>
+        <argument key="translator" type="service_closure" id="translator.data_collector"/>
+        <argument key="user" type="service_closure" id=".errored..service_locator.igbUHzf.App\Entity\User"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Y4eDmyT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\AutresElementsController::contact" type="service_closure" id=".service_locator.D4nGOut"/>
+        <argument key="App\Controller\FamilleOuvrageController::delete" type="service_closure" id=".service_locator.TigeQVb"/>
+        <argument key="App\Controller\FamilleOuvrageController::edit" type="service_closure" id=".service_locator.TigeQVb"/>
         <argument key="App\Controller\FamilleOuvrageController::index" type="service_closure" id=".service_locator.xdzrsg0"/>
+        <argument key="App\Controller\FamilleOuvrageController::new" type="service_closure" id=".service_locator.mzjt3rI"/>
         <argument key="App\Controller\FamilleOuvrageController::show" type="service_closure" id=".service_locator.HwhnwNE"/>
-        <argument key="App\Controller\PassageController::delete" type="service_closure" id=".service_locator.rytAZjY"/>
-        <argument key="App\Controller\PassageController::edit" type="service_closure" id=".service_locator.rytAZjY"/>
+        <argument key="App\Controller\PassageController::archive" type="service_closure" id=".service_locator.zCOSvL3"/>
+        <argument key="App\Controller\PassageController::creation" type="service_closure" id=".service_locator.mzjt3rI"/>
+        <argument key="App\Controller\PassageController::delete" type="service_closure" id=".service_locator.zCOSvL3"/>
+        <argument key="App\Controller\PassageController::edit" type="service_closure" id=".service_locator.zCOSvL3"/>
         <argument key="App\Controller\PassageController::index" type="service_closure" id=".service_locator.bQdaaNE"/>
         <argument key="App\Controller\PassageController::show" type="service_closure" id=".service_locator.rytAZjY"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
-        <argument key="App\Controller\SecurityController::profil" type="service_closure" id=".service_locator.Oi4_xhu"/>
-        <argument key="App\Controller\SecurityController::registration" type="service_closure" id=".service_locator.Oi4_xhu"/>
-        <argument key="App\Controller\TypeEquipementController::delete" type="service_closure" id=".service_locator.ATvSLhR"/>
-        <argument key="App\Controller\TypeEquipementController::edit" type="service_closure" id=".service_locator.ATvSLhR"/>
+        <argument key="App\Controller\SecurityController::profil" type="service_closure" id=".service_locator..jOl1R2"/>
+        <argument key="App\Controller\SecurityController::registration" type="service_closure" id=".service_locator..jOl1R2"/>
+        <argument key="App\Controller\TypeEquipementController::delete" type="service_closure" id=".service_locator.0zSVpvB"/>
+        <argument key="App\Controller\TypeEquipementController::edit" type="service_closure" id=".service_locator.0zSVpvB"/>
         <argument key="App\Controller\TypeEquipementController::indexTypeEquipement" type="service_closure" id=".service_locator.PQiTGWB"/>
+        <argument key="App\Controller\TypeEquipementController::new" type="service_closure" id=".service_locator.mzjt3rI"/>
         <argument key="App\Controller\TypeEquipementController::show" type="service_closure" id=".service_locator.ATvSLhR"/>
-        <argument key="App\Controller\TypeOuvrageController::delete" type="service_closure" id=".service_locator.3XJlFjF"/>
-        <argument key="App\Controller\TypeOuvrageController::edit" type="service_closure" id=".service_locator.3XJlFjF"/>
+        <argument key="App\Controller\TypeOuvrageController::delete" type="service_closure" id=".service_locator.fvgUGPp"/>
+        <argument key="App\Controller\TypeOuvrageController::edit" type="service_closure" id=".service_locator.fvgUGPp"/>
         <argument key="App\Controller\TypeOuvrageController::index" type="service_closure" id=".service_locator.9EZNAuY"/>
+        <argument key="App\Controller\TypeOuvrageController::new" type="service_closure" id=".service_locator.mzjt3rI"/>
         <argument key="App\Controller\TypeOuvrageController::show" type="service_closure" id=".service_locator.3XJlFjF"/>
-        <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.CW1AYwe"/>
+        <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.CW1AYwe"/>
+        <argument key="App\Controller\UserController::editMotDePasse" type="service_closure" id=".service_locator.igbUHzf"/>
         <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\UserController::new" type="service_closure" id=".service_locator.hRotkI1"/>
         <argument key="App\Controller\UserController::show" type="service_closure" id=".service_locator.ch4Jgvl"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
@@ -6216,28 +6372,36 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
-        <argument key="App\Controller\FamilleOuvrageController:delete" type="service_closure" id=".service_locator.HwhnwNE"/>
-        <argument key="App\Controller\FamilleOuvrageController:edit" type="service_closure" id=".service_locator.HwhnwNE"/>
+        <argument key="App\Controller\AutresElementsController:contact" type="service_closure" id=".service_locator.D4nGOut"/>
+        <argument key="App\Controller\FamilleOuvrageController:delete" type="service_closure" id=".service_locator.TigeQVb"/>
+        <argument key="App\Controller\FamilleOuvrageController:edit" type="service_closure" id=".service_locator.TigeQVb"/>
         <argument key="App\Controller\FamilleOuvrageController:index" type="service_closure" id=".service_locator.xdzrsg0"/>
+        <argument key="App\Controller\FamilleOuvrageController:new" type="service_closure" id=".service_locator.mzjt3rI"/>
         <argument key="App\Controller\FamilleOuvrageController:show" type="service_closure" id=".service_locator.HwhnwNE"/>
-        <argument key="App\Controller\PassageController:delete" type="service_closure" id=".service_locator.rytAZjY"/>
-        <argument key="App\Controller\PassageController:edit" type="service_closure" id=".service_locator.rytAZjY"/>
+        <argument key="App\Controller\PassageController:archive" type="service_closure" id=".service_locator.zCOSvL3"/>
+        <argument key="App\Controller\PassageController:creation" type="service_closure" id=".service_locator.mzjt3rI"/>
+        <argument key="App\Controller\PassageController:delete" type="service_closure" id=".service_locator.zCOSvL3"/>
+        <argument key="App\Controller\PassageController:edit" type="service_closure" id=".service_locator.zCOSvL3"/>
         <argument key="App\Controller\PassageController:index" type="service_closure" id=".service_locator.bQdaaNE"/>
         <argument key="App\Controller\PassageController:show" type="service_closure" id=".service_locator.rytAZjY"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
-        <argument key="App\Controller\SecurityController:profil" type="service_closure" id=".service_locator.Oi4_xhu"/>
-        <argument key="App\Controller\SecurityController:registration" type="service_closure" id=".service_locator.Oi4_xhu"/>
-        <argument key="App\Controller\TypeEquipementController:delete" type="service_closure" id=".service_locator.ATvSLhR"/>
-        <argument key="App\Controller\TypeEquipementController:edit" type="service_closure" id=".service_locator.ATvSLhR"/>
+        <argument key="App\Controller\SecurityController:profil" type="service_closure" id=".service_locator..jOl1R2"/>
+        <argument key="App\Controller\SecurityController:registration" type="service_closure" id=".service_locator..jOl1R2"/>
+        <argument key="App\Controller\TypeEquipementController:delete" type="service_closure" id=".service_locator.0zSVpvB"/>
+        <argument key="App\Controller\TypeEquipementController:edit" type="service_closure" id=".service_locator.0zSVpvB"/>
         <argument key="App\Controller\TypeEquipementController:indexTypeEquipement" type="service_closure" id=".service_locator.PQiTGWB"/>
+        <argument key="App\Controller\TypeEquipementController:new" type="service_closure" id=".service_locator.mzjt3rI"/>
         <argument key="App\Controller\TypeEquipementController:show" type="service_closure" id=".service_locator.ATvSLhR"/>
-        <argument key="App\Controller\TypeOuvrageController:delete" type="service_closure" id=".service_locator.3XJlFjF"/>
-        <argument key="App\Controller\TypeOuvrageController:edit" type="service_closure" id=".service_locator.3XJlFjF"/>
+        <argument key="App\Controller\TypeOuvrageController:delete" type="service_closure" id=".service_locator.fvgUGPp"/>
+        <argument key="App\Controller\TypeOuvrageController:edit" type="service_closure" id=".service_locator.fvgUGPp"/>
         <argument key="App\Controller\TypeOuvrageController:index" type="service_closure" id=".service_locator.9EZNAuY"/>
+        <argument key="App\Controller\TypeOuvrageController:new" type="service_closure" id=".service_locator.mzjt3rI"/>
         <argument key="App\Controller\TypeOuvrageController:show" type="service_closure" id=".service_locator.3XJlFjF"/>
-        <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.ch4Jgvl"/>
-        <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.ch4Jgvl"/>
+        <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.CW1AYwe"/>
+        <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.CW1AYwe"/>
+        <argument key="App\Controller\UserController:editMotDePasse" type="service_closure" id=".service_locator.igbUHzf"/>
         <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator..Ae5NXw"/>
+        <argument key="App\Controller\UserController:new" type="service_closure" id=".service_locator.hRotkI1"/>
         <argument key="App\Controller\UserController:show" type="service_closure" id=".service_locator.ch4Jgvl"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
@@ -6303,9 +6467,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.rtgQcOW" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ctOSeux" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\EmailType" type="service_closure" id="App\Form\EmailType"/>
         <argument key="App\Form\FamilleOuvrageType" type="service_closure" id="App\Form\FamilleOuvrageType"/>
         <argument key="App\Form\LoginFormType" type="service_closure" id="App\Form\LoginFormType"/>
         <argument key="App\Form\PassageAGueType" type="service_closure" id="App\Form\PassageAGueType"/>
@@ -6493,13 +6658,14 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.hMpfDcw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.CEyUBCN" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AutreInfoRepository" type="service_closure" id="App\Repository\AutreInfoRepository"/>
         <argument key="App\Repository\CommentaireRepository" type="service_closure" id="App\Repository\CommentaireRepository"/>
         <argument key="App\Repository\CoursEauRepository" type="service_closure" id="App\Repository\CoursEauRepository"/>
         <argument key="App\Repository\DepartementRepository" type="service_closure" id="App\Repository\DepartementRepository"/>
+        <argument key="App\Repository\EmailRepository" type="service_closure" id="App\Repository\EmailRepository"/>
         <argument key="App\Repository\EquipementRepository" type="service_closure" id="App\Repository\EquipementRepository"/>
         <argument key="App\Repository\FamilleOuvrageRepository" type="service_closure" id="App\Repository\FamilleOuvrageRepository"/>
         <argument key="App\Repository\LocalisationRepository" type="service_closure" id="App\Repository\LocalisationRepository"/>
@@ -6789,12 +6955,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.hssxZ0q"/>
+      <argument type="service" id=".service_locator.Y4eDmyT"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.hssxZ0q"/>
+      <argument type="service" id=".service_locator.Y4eDmyT"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6813,10 +6979,16 @@
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.HwhnwNE.App\Entity\FamilleOuvrage" class="App\Entity\FamilleOuvrage"/>
+    <service id=".errored..service_locator.TigeQVb.App\Entity\FamilleOuvrage" class="App\Entity\FamilleOuvrage"/>
     <service id=".errored..service_locator.rytAZjY.App\Entity\PassageAGue" class="App\Entity\PassageAGue"/>
+    <service id=".errored..service_locator.zCOSvL3.App\Entity\PassageAGue" class="App\Entity\PassageAGue"/>
     <service id=".errored..service_locator.ATvSLhR.App\Entity\TypeEquipement" class="App\Entity\TypeEquipement"/>
+    <service id=".errored..service_locator.0zSVpvB.App\Entity\TypeEquipement" class="App\Entity\TypeEquipement"/>
     <service id=".errored..service_locator.3XJlFjF.App\Entity\TypeOuvrage" class="App\Entity\TypeOuvrage"/>
+    <service id=".errored..service_locator.fvgUGPp.App\Entity\TypeOuvrage" class="App\Entity\TypeOuvrage"/>
     <service id=".errored..service_locator.ch4Jgvl.App\Entity\User" class="App\Entity\User"/>
+    <service id=".errored..service_locator.CW1AYwe.App\Entity\User" class="App\Entity\User"/>
+    <service id=".errored..service_locator.igbUHzf.App\Entity\User" class="App\Entity\User"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
       <argument type="service" id=".service_locator.AMKMDT8"/>
@@ -7244,7 +7416,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.hssxZ0q"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Y4eDmyT"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

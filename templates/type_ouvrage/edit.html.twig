@@ -3,14 +3,15 @@
 {% block title %}{{ type_ouvrage.nomTypeOuvrage }}{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/admin.css">
 {% endblock %}
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block main %}
 <div class="formulaire">
-    <h1>Edition le type d'ouvrage</h1>
+    <h1>{% trans %}Edition le type d'ouvrage{% endtrans %}</h1>
 
     {{ include('type_ouvrage/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
     {{ include('type_ouvrage/_delete_form.html.twig') }}</div>
-    <a href="{{ path('type_ouvrage_index') }}" class="btn btn-secondary">Retour</a>
+    <a href="{{ path('type_ouvrage_index') }}" class="btn btn-secondary">{% trans %}Retour{% endtrans %}</a>
 </div>
 {% endblock %}

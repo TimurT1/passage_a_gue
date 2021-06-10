@@ -1,23 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modifier mon profil{% endblock %}
+{% block title %}{% trans %}Modifier mon profil{% endtrans %}{% endblock %}
 
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="/css/form.css">
 {% endblock %}
 
 {% block main %}<!--  Page de modification du profil  -->
     <div class="formulaire">
         
         {{ form_start(form) }}
-        <h1>Profil</h1>
+        <h1>{% trans %}Profil{% endtrans %}</h1>
         {{ form_row(form.email, { 'label': "Email ", 'attr': { 'placeholder': "Email" , 'autofocus' : 'enabled'}}) }}
         <i id="button" aria-describedby="tooltip" class="fas fa-info-circle info"></i>
         <div id="tooltip" role="tooltip" class="popup">
             <div id="arrow" data-popper-arrow></div>
-            le mot de passe doit faire au moins 8 caractères, avec au moins 1 majuscule, 1 minuscule, et 1 caractère spécial parmis @ $ ! % * . ? &.
+            {% trans %}le mot de passe doit faire au moins 8 caractères, avec au moins 1 majuscule, 1 minuscule, et 1 caractère spécial parmis @ $ ! % * . ? &.{% endtrans %}
         </div>
         {{ form_row(form.password, { 'label': "Mot de passe ", 'attr': { 'placeholder': "Mot de passe"}}) }}
         {{ form_row(form.checkPassword, { 'label': "Confrimez le mot de passe ", 'attr': { 'placeholder': "Confirmez le mot de passe"}}) }}
@@ -26,10 +26,10 @@
         {{ form_row(form.prenomUtilisateur, { 'label': "Prénom ",'attr': { 'placeholder': "Prénom"}}) }}
         {{ form_row(form.photoUtilisateur, { 'label': "Photo",'attr': { 'placeholder': "Ajoutez une photo "}}) }}
         <div>
-            <button type="submit" class="btn btn-lg btn-success center">Enregistrer les modifications</button>
+            <button type="submit" class="btn btn-lg btn-success center">{% trans %}Enregistrer les modifications{% endtrans %}</button>
         </div>
         <div class="center">
-            <a href="{{ path('accueil') }}" class="btn btn-secondary">Retour</a>
+            <a href="{{ path('accueil') }}" class="btn btn-secondary">{% trans %}Retour{% endtrans %}</a>
         </div>
         {{ form_end(form) }}
           

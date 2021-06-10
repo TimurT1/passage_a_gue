@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -18,9 +19,9 @@ class SecurityController extends AbstractController
 {
 
     /**
-     * @Route("/inscription", name="app_registration")
+     * @Route("/{_locale}/inscription", name="app_registration")
      */
-    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder){
+    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, TranslatorInterface $translator){
         $user = new User();
         $form = $this->createForm(LoginFormType::class, $user);
         $form->handleRequest($request);
@@ -33,6 +34,9 @@ class SecurityController extends AbstractController
             $user->setPassword($hash); 
             $manager->persist($user);
             $manager->flush();
+
+            $success = $translator->trans('Inscription effectuée avec succès');
+            $this->addFlash('message', $success);
             return $this->redirectToRoute("app_login");
         }
 
@@ -43,7 +47,7 @@ class SecurityController extends AbstractController
     
 
     /**
-     * @Route("/login", name="app_login")
+     * @Route("/{_locale}/login", name="app_login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
@@ -62,7 +66,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/logout", name="app_logout")
+     * @Route("/{_locale}/logout", name="app_logout")
      */
     public function logout()
     {
@@ -70,9 +74,9 @@ class SecurityController extends AbstractController
     }
 
     /**
-     *@Route("/profil", name="profil")     
+     *@Route("/{_locale}/profil", name="profil")     
      */
-    public function profil(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder)
+    public function profil(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, TranslatorInterface $translator)
     {
         $user = $this->getUser();
         $form = $this->createForm(LoginFormType::class, $user);
@@ -82,6 +86,9 @@ class SecurityController extends AbstractController
             $user->setPassword($hash); 
             $manager->persist($user);
             $manager->flush();
+
+            $success = $translator->trans('Modification effectuée avec succès');
+            $this->addFlash('message', $success);
             return $this->redirectToRoute("app_logout");
         }
         return $this->render('security/profil.html.twig', [
@@ -91,9 +98,3 @@ class SecurityController extends AbstractController
     }
 
 }
-
-
-//Timur test remeber me 
-
-
-

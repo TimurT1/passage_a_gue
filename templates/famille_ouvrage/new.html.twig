@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouvelle famille d'ouvrage{% endblock %}
+{% block title %}{% trans %}Nouvelle famille d'ouvrage{% endtrans %}{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/admin.css">
 {% endblock %}
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block main %}
 <div class="formulaire">
-    <h1>Créer une nouvelle famille d'ouvrage</h1>
+    <h1>{% trans %}Créer une nouvelle famille d'ouvrage{% endtrans %}</h1>
 
     {{ include('famille_ouvrage/_form.html.twig') }}
 
-    <a href="{{ path('famille_ouvrage_index') }}" class="btn btn-secondary">Retour</a>
+    <a href="{{ path('famille_ouvrage_index') }}" class="btn btn-secondary">{% trans %}Retour{% endtrans %}</a>
 </div>
 {% endblock %}

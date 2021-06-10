@@ -81,18 +81,22 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                         <a class=\"nav-link\" href=\"";
         // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("passage_a_gue_index");
-        echo "\">Recherche</a>
+        echo "\">";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Recherche", [], "messages");
+        echo "</a>
                     </li>
                     ";
         // line 28
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_GESTIONNAIRE")) {
             // line 29
-            echo "                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"";
+            echo "                        <li class=\"nav-item\">
+                            <a class=\"nav-link\" href=\"";
             // line 30
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("creation");
-            echo "\">Création</a>
-                    </li>
+            echo "\">";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Création", [], "messages");
+            echo "</a>
+                        </li>
                     ";
         }
         // line 33
@@ -103,7 +107,9 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                             <a class=\"nav-link\" href=\"";
             // line 35
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("parametrage");
-            echo "\">Tables de paramétrages</a>
+            echo "\">";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Tables de paramétrages", [], "messages");
+            echo "</a>
                         </li>
                     ";
         }
@@ -117,8 +123,10 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
             // line 42
             echo "                <ul class=\"navbar-nav me-auto\">
                     <li class=\"nav-item\">
-                        <span>Connecté en tant que ";
+                        <span>";
             // line 44
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Connecté en tant que", [], "messages");
+            echo " ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44), "pseudoUtilisateur", [], "any", false, false, false, 44), "html", null, true);
             echo " \t&nbsp;</span>
                     </li>
@@ -134,49 +142,105 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                 <ul class=\"navbar-nav\">
                     ";
         // line 54
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "user", [], "any", false, false, false, 54)) {
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["locales"]) || array_key_exists("locales", $context) ? $context["locales"] : (function () { throw new RuntimeError('Variable "locales" does not exist.', 54, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["locale"]) {
             // line 55
-            echo "                        <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"";
-            // line 56
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profil");
-            echo "\">Mon profil</a>
-                        </li>
-                        <li class=\"nav-item\">                
-                            <a class=\"nav-link\" href=\"";
-            // line 59
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Déconnexion</a>
-                        </li>
-                    ";
-        } else {
+            echo "                        ";
+            if ((0 !== twig_compare($context["locale"], twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 55, $this->source); })()), "request", [], "any", false, false, false, 55), "locale", [], "any", false, false, false, 55)))) {
+                // line 56
+                echo "                            <li class=\"nav-item\">
+                                <a class=\"nav-link\" href=\"";
+                // line 57
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("change_locale", ["locale" => $context["locale"]]), "html", null, true);
+                echo "\"><img class=\"langue\" src=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("img/site/" . $context["locale"]) . ".png")), "html", null, true);
+                echo "\" alt=\"";
+                echo twig_escape_filter($this->env, $context["locale"], "html", null, true);
+                echo "\"></a>
+                            </li>
+                        ";
+            }
+            // line 60
+            echo "                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['locale'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 61
+        echo "                    ";
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "user", [], "any", false, false, false, 61)) {
             // line 62
             echo "                        <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
             // line 63
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profil");
+            echo "\">";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Mon profil", [], "messages");
+            echo "</a>
+                        </li>
+                        <li class=\"nav-item\">                
+                            <a class=\"nav-link\" href=\"";
+            // line 66
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Déconnexion", [], "messages");
+            echo "</a>
+                        </li>
+                    ";
+        } else {
+            // line 69
+            echo "                        <li class=\"nav-item\">
+                            <a class=\"nav-link\" href=\"";
+            // line 70
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo "\">Connexion</a>
+            echo "\">";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Connexion", [], "messages");
+            echo "</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-            // line 66
+            // line 73
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_registration");
-            echo "\">Inscription</a>
+            echo "\">";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Inscription", [], "messages");
+            echo "</a>
                         </li>
                     ";
         }
-        // line 69
+        // line 76
         echo "                </ul>
             </div>
         </div>
         </nav>
     </header>
 
+    <section><!--  Dans notre section, nos messages d'erreurs / de validations...etc   -->
+        ";
+        // line 83
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 83, $this->source); })()), "flashes", [0 => "message"], "method", false, false, false, 83));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 84
+            echo "            <div class=\"alert alert-success\" role=\"alert\">
+                ";
+            // line 85
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+            </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 88
+        echo "    </section>
+
     <main><!--  Dans notre main, on surcharge notre main :)   -->
         ";
-        // line 76
+        // line 91
         $this->displayBlock('main', $context, $blocks);
-        // line 77
+        // line 92
         echo "    </main>
 
     <footer><!--  Notre footer contient les liens vers d'autres sites, et vers les informations \"secondaires\"  -->
@@ -199,25 +263,31 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
         </div>
         <div>
             <a href=\"";
-        // line 98
+        // line 113
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("portail");
-        echo "\" class=\"btn btn-secondary bouton\">Portail technique</a>
+        echo "\" class=\"btn btn-secondary bouton\">";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Portail technique", [], "messages");
+        echo "</a>
             <a href=\"";
-        // line 99
+        // line 114
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mention");
-        echo "\" class=\"btn btn-secondary bouton\">Mentions légales</a>
+        echo "\" class=\"btn btn-secondary bouton\">";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Mentions légales", [], "messages");
+        echo "</a>
             <a href=\"";
-        // line 100
+        // line 115
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
-        echo "\" class=\"btn btn-info bouton\">Contactez-nous!</a>
+        echo "\" class=\"btn btn-info bouton\">";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Contactez-nous!", [], "messages");
+        echo "</a>
         </div>
         
     </footer>
     <script src=\"https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js\"></script><!--  Script js bootstrap  -->
     ";
-        // line 105
+        // line 120
         $this->displayBlock('script', $context, $blocks);
-        // line 106
+        // line 121
         echo "</body>     
 </html>
 ";
@@ -265,7 +335,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     }
 
-    // line 76
+    // line 91
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -283,7 +353,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     }
 
-    // line 105
+    // line 120
     public function block_script($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -313,7 +383,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     public function getDebugInfo()
     {
-        return array (  287 => 105,  269 => 76,  251 => 10,  233 => 5,  221 => 106,  219 => 105,  211 => 100,  207 => 99,  203 => 98,  180 => 77,  178 => 76,  169 => 69,  163 => 66,  157 => 63,  154 => 62,  148 => 59,  142 => 56,  139 => 55,  137 => 54,  132 => 51,  122 => 44,  118 => 42,  116 => 41,  111 => 38,  105 => 35,  102 => 34,  99 => 33,  93 => 30,  90 => 29,  88 => 28,  83 => 26,  71 => 17,  61 => 10,  53 => 5,  47 => 1,);
+        return array (  357 => 120,  339 => 91,  321 => 10,  303 => 5,  291 => 121,  289 => 120,  279 => 115,  273 => 114,  267 => 113,  244 => 92,  242 => 91,  237 => 88,  228 => 85,  225 => 84,  221 => 83,  212 => 76,  204 => 73,  196 => 70,  193 => 69,  185 => 66,  177 => 63,  174 => 62,  171 => 61,  165 => 60,  155 => 57,  152 => 56,  149 => 55,  145 => 54,  140 => 51,  128 => 44,  124 => 42,  122 => 41,  117 => 38,  109 => 35,  106 => 34,  103 => 33,  95 => 30,  92 => 29,  90 => 28,  83 => 26,  71 => 17,  61 => 10,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -343,16 +413,16 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
             <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
                 <ul class=\"navbar-nav me-auto\"><!--  cette liste est classé par droits d'accès  -->
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"{{ path('passage_a_gue_index') }}\">Recherche</a>
+                        <a class=\"nav-link\" href=\"{{ path('passage_a_gue_index') }}\">{% trans %}Recherche{% endtrans %}</a>
                     </li>
                     {% if is_granted('ROLE_GESTIONNAIRE') %}
-                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"{{ path('creation') }}\">Création</a>
-                    </li>
+                        <li class=\"nav-item\">
+                            <a class=\"nav-link\" href=\"{{ path('creation') }}\">{% trans %}Création{% endtrans %}</a>
+                        </li>
                     {% endif %}
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"{{ path('parametrage') }}\">Tables de paramétrages</a>
+                            <a class=\"nav-link\" href=\"{{ path('parametrage') }}\">{% trans %}Tables de paramétrages{% endtrans %}</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -361,7 +431,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                 {% if app.user %}
                 <ul class=\"navbar-nav me-auto\">
                     <li class=\"nav-item\">
-                        <span>Connecté en tant que {{app.user.pseudoUtilisateur}} \t&nbsp;</span>
+                        <span>{% trans %}Connecté en tant que{% endtrans %} {{app.user.pseudoUtilisateur}} \t&nbsp;</span>
                     </li>
                     <li class=\"nav-item\">
                         <i class=\"fas fa-user-secret fa-lg\"></i>
@@ -371,19 +441,26 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
                 <!--  connexion et inscription vont ensemble, mais déconnexion apparait uniquement si on est connecté  -->
                 <ul class=\"navbar-nav\">
+                    {% for locale in locales %}
+                        {% if locale != app.request.locale %}
+                            <li class=\"nav-item\">
+                                <a class=\"nav-link\" href=\"{{path('change_locale', {'locale': locale}) }}\"><img class=\"langue\" src=\"{{ asset('img/site/'~locale~'.png') }}\" alt=\"{{ locale }}\"></a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                     {% if app.user %}
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"{{ path('profil') }}\">Mon profil</a>
+                            <a class=\"nav-link\" href=\"{{ path('profil') }}\">{% trans %}Mon profil{% endtrans %}</a>
                         </li>
                         <li class=\"nav-item\">                
-                            <a class=\"nav-link\" href=\"{{ path('app_logout') }}\">Déconnexion</a>
+                            <a class=\"nav-link\" href=\"{{ path('app_logout') }}\">{% trans %}Déconnexion{% endtrans %}</a>
                         </li>
                     {% else %}
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"{{ path('app_login') }}\">Connexion</a>
+                            <a class=\"nav-link\" href=\"{{ path('app_login') }}\">{% trans %}Connexion{% endtrans %}</a>
                         </li>
                         <li class=\"nav-item\">
-                            <a class=\"nav-link\" href=\"{{ path('app_registration') }}\">Inscription</a>
+                            <a class=\"nav-link\" href=\"{{ path('app_registration') }}\">{% trans %}Inscription{% endtrans %}</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -391,6 +468,14 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
         </div>
         </nav>
     </header>
+
+    <section><!--  Dans notre section, nos messages d'erreurs / de validations...etc   -->
+        {% for message in app.flashes('message') %}
+            <div class=\"alert alert-success\" role=\"alert\">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </section>
 
     <main><!--  Dans notre main, on surcharge notre main :)   -->
         {% block main %}{% endblock %}
@@ -415,9 +500,9 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
             </a>
         </div>
         <div>
-            <a href=\"{{ path('portail') }}\" class=\"btn btn-secondary bouton\">Portail technique</a>
-            <a href=\"{{ path('mention') }}\" class=\"btn btn-secondary bouton\">Mentions légales</a>
-            <a href=\"{{ path('contact') }}\" class=\"btn btn-info bouton\">Contactez-nous!</a>
+            <a href=\"{{ path('portail') }}\" class=\"btn btn-secondary bouton\">{% trans %}Portail technique{% endtrans %}</a>
+            <a href=\"{{ path('mention') }}\" class=\"btn btn-secondary bouton\">{% trans %}Mentions légales{% endtrans %}</a>
+            <a href=\"{{ path('contact') }}\" class=\"btn btn-info bouton\">{% trans %}Contactez-nous!{% endtrans %}</a>
         </div>
         
     </footer>

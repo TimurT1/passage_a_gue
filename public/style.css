@@ -95,6 +95,9 @@ thead>tr>th{
     text-align: center;
 }
 
+.langue{
+    height: 32px;
+}
 
 /**
 *   css de popperjs

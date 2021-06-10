@@ -1,30 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}TypeEquipement{% endblock %}
-
+{% block title %}{% trans %}Type d'équipement{% trans %}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/admin.css">
+{% endblock %}
 {% block main %}
-    <h1>TypeEquipement</h1>
+    <h1>{% trans %}Type d'équipement{% endtrans %}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ type_equipement.id }}</td>
-            </tr>
-            <tr>
-                <th>NomTypeEquipement</th>
+                <th>{% trans %}Nom{% endtrans %}</th>
                 <td>{{ type_equipement.nomTypeEquipement }}</td>
             </tr>
             <tr>
-                <th>DescriptionTypeEquipement</th>
+                <th>{% trans %}Description{% endtrans %}</th>
                 <td>{{ type_equipement.descriptionTypeEquipement }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('type_equipement_index') }}">back to list</a>
+    <a href="{{ path('type_equipement_index') }}">{% trans %}Retour{% endtrans %}</a>
 
-    <a href="{{ path('type_equipement_edit', {'id': type_equipement.id}) }}">edit</a>
+    <a href="{{ path('type_equipement_edit', {'id': type_equipement.id}) }}">{% trans %}Modifier{% endtrans %}</a>
 
     {{ include('type_equipement/_delete_form.html.twig') }}
 {% endblock %}

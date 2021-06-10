@@ -48,6 +48,9 @@ security:
     access_control:
          - { path: ^/parametrage, roles: ROLE_ADMIN }
          - { path: ^/profil, roles: ROLE_USER }
+         - { path: ^/passage/creation, roles: ROLE_GESTIONNAIRE}
+         - { path: ^/passage/\d+$/edit, roles: ROLE_TECHNICIEN}
+         - { path: ^/passage/\d+$/archive, roles: ROLE_GESTIONNAIRE}
     role_hierarchy:
             ROLE_TECHNICIEN:    [ROLE_USER]
             ROLE_GESTIONNAIRE:  [ROLE_TECHNICIEN]

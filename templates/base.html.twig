@@ -23,16 +23,16 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto"><!--  cette liste est classé par droits d'accès  -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('passage_a_gue_index') }}">Recherche</a>
+                        <a class="nav-link" href="{{ path('passage_a_gue_index') }}">{% trans %}Recherche{% endtrans %}</a>
                     </li>
                     {% if is_granted('ROLE_GESTIONNAIRE') %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('creation') }}">Création</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('creation') }}">{% trans %}Création{% endtrans %}</a>
+                        </li>
                     {% endif %}
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('parametrage') }}">Tables de paramétrages</a>
+                            <a class="nav-link" href="{{ path('parametrage') }}">{% trans %}Tables de paramétrages{% endtrans %}</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -41,7 +41,7 @@
                 {% if app.user %}
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <span>Connecté en tant que {{app.user.pseudoUtilisateur}} 	&nbsp;</span>
+                        <span>{% trans %}Connecté en tant que{% endtrans %} {{app.user.pseudoUtilisateur}} 	&nbsp;</span>
                     </li>
                     <li class="nav-item">
                         <i class="fas fa-user-secret fa-lg"></i>
@@ -51,19 +51,26 @@
 
                 <!--  connexion et inscription vont ensemble, mais déconnexion apparait uniquement si on est connecté  -->
                 <ul class="navbar-nav">
+                    {% for locale in locales %}
+                        {% if locale != app.request.locale %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('change_locale', {'locale': locale}) }}"><img class="langue" src="{{ asset('img/site/'~locale~'.png') }}" alt="{{ locale }}"></a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                     {% if app.user %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('profil') }}">Mon profil</a>
+                            <a class="nav-link" href="{{ path('profil') }}">{% trans %}Mon profil{% endtrans %}</a>
                         </li>
                         <li class="nav-item">                
-                            <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+                            <a class="nav-link" href="{{ path('app_logout') }}">{% trans %}Déconnexion{% endtrans %}</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+                            <a class="nav-link" href="{{ path('app_login') }}">{% trans %}Connexion{% endtrans %}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_registration') }}">Inscription</a>
+                            <a class="nav-link" href="{{ path('app_registration') }}">{% trans %}Inscription{% endtrans %}</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -71,6 +78,14 @@
         </div>
         </nav>
     </header>
+
+    <section><!--  Dans notre section, nos messages d'erreurs / de validations...etc   -->
+        {% for message in app.flashes('message') %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </section>
 
     <main><!--  Dans notre main, on surcharge notre main :)   -->
         {% block main %}{% endblock %}
@@ -95,9 +110,9 @@
             </a>
         </div>
         <div>
-            <a href="{{ path('portail') }}" class="btn btn-secondary bouton">Portail technique</a>
-            <a href="{{ path('mention') }}" class="btn btn-secondary bouton">Mentions légales</a>
-            <a href="{{ path('contact') }}" class="btn btn-info bouton">Contactez-nous!</a>
+            <a href="{{ path('portail') }}" class="btn btn-secondary bouton">{% trans %}Portail technique{% endtrans %}</a>
+            <a href="{{ path('mention') }}" class="btn btn-secondary bouton">{% trans %}Mentions légales{% endtrans %}</a>
+            <a href="{{ path('contact') }}" class="btn btn-info bouton">{% trans %}Contactez-nous!{% endtrans %}</a>
         </div>
         
     </footer>

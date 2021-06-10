@@ -5,13 +5,14 @@ namespace App\Controller;
 use App\Entity\FamilleOuvrage;
 use App\Form\FamilleOuvrageType;
 use App\Repository\FamilleOuvrageRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/parametrage/familleOuvrage")
+ * @Route("/{_locale}/parametrage/familleOuvrage")
  */
 class FamilleOuvrageController extends AbstractController
 {
@@ -28,17 +29,19 @@ class FamilleOuvrageController extends AbstractController
     /**
      * @Route("/new", name="famille_ouvrage_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, TranslatorInterface $translator): Response
     {
         $familleOuvrage = new FamilleOuvrage();
         $form = $this->createForm(FamilleOuvrageType::class, $familleOuvrage);
         $form->handleRequest($request);
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($familleOuvrage);
             $entityManager->flush();
 
+            $success = $translator->trans('Création effectuée avec succès');
+            $this->addFlash('message', $success);
             return $this->redirectToRoute('famille_ouvrage_index');
         }
 
@@ -61,7 +64,7 @@ class FamilleOuvrageController extends AbstractController
     /**
      * @Route("/{id}/edit", name="famille_ouvrage_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, FamilleOuvrage $familleOuvrage): Response
+    public function edit(Request $request, FamilleOuvrage $familleOuvrage, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(FamilleOuvrageType::class, $familleOuvrage);
         $form->handleRequest($request);
@@ -69,6 +72,8 @@ class FamilleOuvrageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $success = $translator->trans('Modification effectuée avec succès');
+            $this->addFlash('message', $success);
             return $this->redirectToRoute('famille_ouvrage_index');
         }
 
@@ -81,14 +86,15 @@ class FamilleOuvrageController extends AbstractController
     /**
      * @Route("/{id}", name="famille_ouvrage_delete", methods={"POST"})
      */
-    public function delete(Request $request, FamilleOuvrage $familleOuvrage): Response
+    public function delete(Request $request, FamilleOuvrage $familleOuvrage, TranslatorInterface $translator): Response
     {
         if ($this->isCsrfTokenValid('delete'.$familleOuvrage->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($familleOuvrage);
             $entityManager->flush();
         }
-
+        $success = $translator->trans('Suppression effectuée avec succès');
+        $this->addFlash('message', $success);
         return $this->redirectToRoute('famille_ouvrage_index');
     }
 }

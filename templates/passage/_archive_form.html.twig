@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('passage_a_gue_archive', {'id': passage_a_gue.id}) }}" onsubmit={% trans %}"return confirm('Voulez-vous vraiment archiver ce passage?');"{% endtrans %}>
+    <input type="hidden" name="token" value="{{ csrf_token('archive' ~ passage_a_gue.id) }}">
+    <button class="btn btn-danger" type="submit">{% trans %}Archiver{% endtrans %}</button></div>
+</form>

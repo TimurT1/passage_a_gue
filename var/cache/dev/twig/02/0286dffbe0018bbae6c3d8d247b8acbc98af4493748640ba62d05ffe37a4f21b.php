@@ -66,7 +66,7 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Connexion";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Connexion", [], "messages");
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -126,20 +126,30 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17)) {
             // line 18
             echo "            <div class=\"mb-3\">
-                Vous êtes déjà connecté avec ";
+                ";
             // line 19
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Vous êtes déjà connecté avec", [], "messages");
+            echo " ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "user", [], "any", false, false, false, 19), "username", [], "any", false, false, false, 19), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">deconnexion</a>
+            echo "\">";
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("deconnexion", [], "messages");
+            echo "</a>
             </div>
         ";
         }
         // line 22
         echo "
-        <h1>Connexion</h1>
+        <h1>";
+        // line 23
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Connexion", [], "messages");
+        echo "</h1>
         <div class=\"form-group\">
-            <label for=\"inputEmail\">Email :</label>
+            <label for=\"inputEmail\">";
+        // line 25
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Email :", [], "messages");
+        echo "</label>
             <input type=\"email\" value=\"";
         // line 26
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 26, $this->source); })()), "html", null, true);
@@ -147,7 +157,10 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
             id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
         </div>
         <div class=\"form-group\">
-            <label for=\"inputPassword\">Mot de passe :</label>
+            <label for=\"inputPassword\">";
+        // line 30
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Mot de passe :", [], "messages");
+        echo "</label>
             <input type=\"password\" name=\"password\" id=\"inputPassword\" placeholder=\"Mot de passe\"
             class=\"form-control\" autocomplete=\"current-password\" required>
         </div>
@@ -165,16 +178,24 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
         echo "
             <div class=\"checkbox mb-3\">
                 <label>
-                    <input type=\"checkbox\" name=\"_remember_me\"> Rester connecté
-                </label>
+                    <input type=\"checkbox\" name=\"_remember_me\"> ";
+        // line 46
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Rester connecté", [], "messages");
+        // line 47
+        echo "                </label>
             </div>       
 
         <br>
-        <button class=\"btn btn-lg btn-success center\" type=\"submit\">Connexion</button><br>
+        <button class=\"btn btn-lg btn-success center\" type=\"submit\">";
+        // line 51
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Connexion", [], "messages");
+        echo "</button><br>
         <a class=\"btn btn-secondary center\" href=\"";
         // line 52
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_registration");
-        echo "\">Inscription</a>
+        echo "\">";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Inscription", [], "messages");
+        echo "</a>
     </form>
 </div>
 
@@ -200,14 +221,14 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
 
     public function getDebugInfo()
     {
-        return array (  176 => 52,  165 => 43,  159 => 37,  145 => 26,  139 => 22,  131 => 19,  128 => 18,  126 => 17,  123 => 16,  117 => 14,  115 => 13,  110 => 10,  100 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  195 => 52,  191 => 51,  185 => 47,  183 => 46,  178 => 43,  172 => 37,  162 => 30,  155 => 26,  151 => 25,  146 => 23,  143 => 22,  131 => 19,  128 => 18,  126 => 17,  123 => 16,  117 => 14,  115 => 13,  110 => 10,  100 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Connexion{% endblock %}
+{% block title %}{% trans %}Connexion{% endtrans %}{% endblock %}
 
 {% block stylesheets %}
     <link rel=\"stylesheet\" href=\"/css/form.css\">
@@ -223,18 +244,18 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
 
         {% if app.user %}
             <div class=\"mb-3\">
-                Vous êtes déjà connecté avec {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">deconnexion</a>
+                {% trans %}Vous êtes déjà connecté avec{% endtrans %} {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">{% trans %}deconnexion{% endtrans %}</a>
             </div>
         {% endif %}
 
-        <h1>Connexion</h1>
+        <h1>{% trans %}Connexion{% endtrans %}</h1>
         <div class=\"form-group\">
-            <label for=\"inputEmail\">Email :</label>
+            <label for=\"inputEmail\">{% trans %}Email :{% endtrans %}</label>
             <input type=\"email\" value=\"{{ last_username }}\" placeholder=\"Email\" name=\"email\" 
             id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
         </div>
         <div class=\"form-group\">
-            <label for=\"inputPassword\">Mot de passe :</label>
+            <label for=\"inputPassword\">{% trans %}Mot de passe :{% endtrans %}</label>
             <input type=\"password\" name=\"password\" id=\"inputPassword\" placeholder=\"Mot de passe\"
             class=\"form-control\" autocomplete=\"current-password\" required>
         </div>
@@ -250,13 +271,13 @@ class __TwigTemplate_52e3675d391e70be93298b8b9709cb19c285bbcee5ee8c0f088f6da4bfc
 
             <div class=\"checkbox mb-3\">
                 <label>
-                    <input type=\"checkbox\" name=\"_remember_me\"> Rester connecté
+                    <input type=\"checkbox\" name=\"_remember_me\"> {% trans %}Rester connecté{% endtrans %}
                 </label>
             </div>       
 
         <br>
-        <button class=\"btn btn-lg btn-success center\" type=\"submit\">Connexion</button><br>
-        <a class=\"btn btn-secondary center\" href=\"{{ path('app_registration') }}\">Inscription</a>
+        <button class=\"btn btn-lg btn-success center\" type=\"submit\">{% trans %}Connexion{% endtrans %}</button><br>
+        <a class=\"btn btn-secondary center\" href=\"{{ path('app_registration') }}\">{% trans %}Inscription{% endtrans %}</a>
     </form>
 </div>
 

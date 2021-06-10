@@ -2,16 +2,18 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\PassageAGue;
 use App\Form\PassageAGueType;
 use App\Repository\PassageAGueRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/passage")
+ * @Route("/{_locale}/passage")
  */
 class PassageController extends AbstractController
 {
@@ -36,7 +38,7 @@ class PassageController extends AbstractController
     /**
     *@Route("/creation", name="creation", methods={"GET","POST"})
     */
-    public function creation(Request $request): Response
+    public function creation(Request $request, TranslatorInterface $translator): Response
     {
         $passageAGue = new PassageAGue();
         $form = $this->createForm(PassageAGueType::class, $passageAGue);
@@ -47,6 +49,8 @@ class PassageController extends AbstractController
             $entityManager->persist($passageAGue);
             $entityManager->flush();
 
+            $success = $translator->trans('Création effectuée avec succès');
+            $this->addFlash('message', $success);
             return $this->redirectToRoute('passage_a_gue_index');
         }
 
@@ -69,7 +73,7 @@ class PassageController extends AbstractController
     /**
      * @Route("/{id}/edit", name="passage_a_gue_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, PassageAGue $passageAGue): Response
+    public function edit(Request $request, PassageAGue $passageAGue, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(PassageAGueType::class, $passageAGue);
         $form->handleRequest($request);
@@ -77,6 +81,8 @@ class PassageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $success = $translator->trans('Modification effectuée avec succès');
+            $this->addFlash('message', $success);
             return $this->redirectToRoute('passage_a_gue_index');
         }
 
@@ -89,7 +95,7 @@ class PassageController extends AbstractController
     /**
      * @Route("/{id}", name="passage_a_gue_delete", methods={"POST"})
      */
-    public function delete(Request $request, PassageAGue $passageAGue): Response
+    public function delete(Request $request, PassageAGue $passageAGue, TranslatorInterface $translator): Response
     {
         if ($this->isCsrfTokenValid('delete'.$passageAGue->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -97,6 +103,26 @@ class PassageController extends AbstractController
             $entityManager->flush();
         }
 
+        $success = $translator->trans('suppression effectuée avec succès');
+        $this->addFlash('message', $success);
+        return $this->redirectToRoute('passage_a_gue_index');
+    }
+
+    /**
+     * @Route("/{id}/archive", name="passage_a_gue_archive", methods={"POST"})
+     */
+    public function archive(Request $request, PassageAGue $passageAGue, TranslatorInterface $translator): Response
+    {
+        
+        if ($this->isCsrfTokenValid('archive'.$passageAGue->getId(), $request->request->get('token'))) {
+            $passageAGue->setBoolArchive(true);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($passageAGue);
+            $entityManager->flush();
+        }
+
+        $success = $translator->trans('Archivage effectuée avec succès');
+        $this->addFlash('message', $success);
         return $this->redirectToRoute('passage_a_gue_index');
     }
 }

@@ -1,22 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Parametrage{% endblock %}
+{% block title %}{% trans %}Parametrage{% endtrans %}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/admin.css">
+{% endblock %}
 
 {% block main %}
-
 <div>
-<h1>Parametrage</h1>
-    <p>Que souhaitez-vous modifier?</p>
+<h1>{% trans %}Parametrage{% endtrans %}</h1>
+    <p>{% trans %}Que souhaitez-vous modifier?{% endtrans %}</p>
     <div class="bouton-align">
-        <a href="{{ path('type_ouvrage_index') }}" class="btn btn-info">Les types d'ouvrages</a>
-        <a href="{{ path('famille_ouvrage_index') }}" class="btn btn-info">Les familles d'ouvrage</a>
-        <a href="{{ path('type_equipement_index') }}" class="btn btn-info">Les types d'équipement</a>
-        <a href="{{ path('user_index') }}" class="btn btn-info">Les utilisateurs</a>
+        <a href="{{ path('type_ouvrage_index') }}" class="btn btn-info">{% trans %}Les types d'ouvrages{% endtrans %}</a>
+        <a href="{{ path('famille_ouvrage_index') }}" class="btn btn-info">{% trans %}Les familles d'ouvrage{% endtrans %}</a>
+        <a href="{{ path('type_equipement_index') }}" class="btn btn-info">{% trans %}Les types d'équipement{% endtrans %}</a>
+        <a href="{{ path('user_index') }}" class="btn btn-info">{% trans %}Les utilisateurs{% endtrans %}</a>
     </div>
 </div>
-    
-    
-    
-
-
 {% endblock %}

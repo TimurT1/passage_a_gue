@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Types d'ouvrage{% endblock %}
-
+{% block title %}{% trans %}Types d'ouvrage{% endtrans %}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/admin.css">
+{% endblock %}
 {% block main %}
 {% if is_granted('ROLE_ADMIN') %}
-    <h1>Types d'ouvrage</h1>
+    <h1>{% trans %}Types d'ouvrage{% endtrans %}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Famille</th>
-                <th>Type</th>
-                <th>Actions</th>
+                <th>{% trans %}Famille{% endtrans %}</th>
+                <th>{% trans %}Type{% endtrans %}</th>
+                <th>{% trans %}Actions{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +24,7 @@
                 <td>
                     <div class="bouton-align">
                         <div>
-                            <a href="{{ path('type_ouvrage_edit', {'id': type_ouvrage.id}) }}" class="btn btn-info">Modifier</a>
+                            <a href="{{ path('type_ouvrage_edit', {'id': type_ouvrage.id}) }}" class="btn btn-info">{% trans %}Modifier{% endtrans %}</a>
                         </div>
                         <div>
                             {{ include('type_ouvrage/_delete_form.html.twig') }}
@@ -33,16 +35,16 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">Pas d'enregistrement trouvé</td>
+                <td colspan="3">{% trans %}Pas d'enregistrement trouvé{% endtrans %}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
     <div class="bouton-align">
-        <a href="{{ path('type_ouvrage_new') }}" class="btn btn-success">Créer un nouveau type d'ouvrage</a>
-        <a href="{{ path('parametrage') }}" class="btn btn-secondary">Retour</a>
+        <a href="{{ path('type_ouvrage_new') }}" class="btn btn-success">{% trans %}Créer un nouveau type d'ouvrage{% endtrans %}</a>
+        <a href="{{ path('parametrage') }}" class="btn btn-secondary">{% trans %}Retour{% endtrans %}</a>
     </div>
 {% else %}
-    <p>Accès interdit, veuillez contacter l'administrateur du site</p>
+    <p>{% trans %}Accès interdit, veuillez contacter l'administrateur du site{% endtrans %}</p>
 {% endif %}
 {% endblock %}

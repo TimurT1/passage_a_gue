@@ -65,7 +65,7 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Passage à gué";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Passage à gué", [], "messages");
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,28 +85,81 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
         // line 6
-        echo "    <h1>Passage à gué</h1>
+        echo "    <h1>";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Passage à gué", [], "messages");
+        echo "</h1>
 
     <table class=\"table\">
         <thead>
             <tr>
-                <th>Gps X</th>
-                <th>Gps Y</th>
-                <th>Fréquence de submersion</th>
-                <th>Largeur du passage</th>
-                <th>Longueur du passage</th>
-                <th>Trafic journalier</th>
-                <th>Limitation respectée</th>
-                <th>Archive</th>
-                <th>Taux d'accidentalité</th>
-                <th>Type d'ouvrage</th>
-                <th>Cours d'eau</th>
-                <th>Localisation</th>
-                <th>Gestionnaire</th>
-                <th>Utilisateurs ayant accès aux données</th>
-                <th>Submersions</th>
-                <th>Route</th>
-                <th>actions</th>
+                <th>";
+        // line 11
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Gps - X", [], "messages");
+        echo "</th>
+                <th>";
+        // line 12
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Gps - Y", [], "messages");
+        echo "</th>
+                <th>";
+        // line 13
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Fréquence de submersion", [], "messages");
+        echo "</th>
+                <th>";
+        // line 14
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Largeur du passage", [], "messages");
+        echo "</th>
+                <th>";
+        // line 15
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Longueur du passage", [], "messages");
+        echo "</th>
+                <th>";
+        // line 16
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Trafic journalier", [], "messages");
+        echo "</th>
+                <th>";
+        // line 17
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Limitation respectée", [], "messages");
+        echo "</th>
+                <th>";
+        // line 18
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Archive", [], "messages");
+        echo "</th>
+                <th>";
+        // line 19
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Taux d'accidentalité", [], "messages");
+        echo "</th>
+                <th>";
+        // line 20
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Type d'ouvrage", [], "messages");
+        echo "</th>
+                <th>";
+        // line 21
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Cours d'eau", [], "messages");
+        echo "</th>
+                <th>";
+        // line 22
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Localisation", [], "messages");
+        echo "</th>
+                <th>";
+        // line 23
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Gestionnaire", [], "messages");
+        echo "</th>
+                <th>";
+        // line 24
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Utilisateurs ayant accès aux données", [], "messages");
+        echo "</th>
+                <th>";
+        // line 25
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Submersions", [], "messages");
+        echo "</th>
+                <th>";
+        // line 26
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Route", [], "messages");
+        echo "</th>
+                <th>";
+        // line 27
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("actions", [], "messages");
+        echo "</th>
             </tr>
         </thead>
         <tbody>
@@ -130,150 +183,189 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
         }
         foreach ($context['_seq'] as $context["_key"] => $context["passage_a_gue"]) {
             // line 32
-            echo "            <tr>
-                <td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "gpsX", [], "any", false, false, false, 33), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "gpsY", [], "any", false, false, false, 34), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "frequenceSubmersion", [], "any", false, false, false, 35), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "largeurPassage", [], "any", false, false, false, 36), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "longueurPassage", [], "any", false, false, false, 37), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "traficJournalier", [], "any", false, false, false, 38), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 39
-            echo ((twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "boolLimitationRespectee", [], "any", false, false, false, 39)) ? ("Oui") : ("Non"));
-            echo "</td>
-                <td>";
-            // line 40
-            echo ((twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "boolArchive", [], "any", false, false, false, 40)) ? ("Oui") : ("Non"));
-            echo "</td>
-                <td>";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "tauxAccidentalite", [], "any", false, false, false, 41), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "TypeOuvrage", [], "any", false, false, false, 42), "html", null, true);
-            echo "</td> 
-                <td>";
-            // line 43
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "CoursEau", [], "any", false, false, false, 43), "html", null, true);
-            echo "</td> 
-                <td>";
-            // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "localisation", [], "any", false, false, false, 44), "html", null, true);
-            echo "</td>  
-                <td>";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "idUtilisateur", [], "any", false, false, false, 45), "fullname", [], "any", false, false, false, 45), "html", null, true);
-            echo "</td>                
-                <td>
-                    <select name=\"\" id=\"\"> 
-                        <option>Utilisateurs</option>
-                    ";
-            // line 49
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "users", [], "any", false, false, false, 49));
-            foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
+            echo "            ";
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "boolArchive", [], "any", false, false, false, 32), 0))) {
+                // line 33
+                echo "                <tr>
+                    <td>";
+                // line 34
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "gpsX", [], "any", false, false, false, 34), "html", null, true);
+                echo "</td>
+                    <td>";
+                // line 35
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "gpsY", [], "any", false, false, false, 35), "html", null, true);
+                echo "</td>
+                    <td>";
+                // line 36
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "frequenceSubmersion", [], "any", false, false, false, 36), "html", null, true);
+                echo "</td>
+                    <td>";
+                // line 37
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "largeurPassage", [], "any", false, false, false, 37), "html", null, true);
+                echo "</td>
+                    <td>";
+                // line 38
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "longueurPassage", [], "any", false, false, false, 38), "html", null, true);
+                echo "</td>
+                    <td>";
+                // line 39
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "traficJournalier", [], "any", false, false, false, 39), "html", null, true);
+                echo "</td>
+                    <td>";
+                // line 40
+                echo ((twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "boolLimitationRespectee", [], "any", false, false, false, 40)) ? ("Oui") : ("Non"));
+                echo "</td>
+                    <td>";
+                // line 41
+                echo ((twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "boolArchive", [], "any", false, false, false, 41)) ? ("Oui") : ("Non"));
+                echo "</td>
+                    <td>";
+                // line 42
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "tauxAccidentalite", [], "any", false, false, false, 42), "html", null, true);
+                echo "</td>
+                    <td>";
+                // line 43
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "TypeOuvrage", [], "any", false, false, false, 43), "html", null, true);
+                echo "</td> 
+                    <td>";
+                // line 44
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "CoursEau", [], "any", false, false, false, 44), "html", null, true);
+                echo "</td> 
+                    <td>";
+                // line 45
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "localisation", [], "any", false, false, false, 45), "html", null, true);
+                echo "</td>  
+                    <td>";
+                // line 46
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "idUtilisateur", [], "any", false, false, false, 46), "fullname", [], "any", false, false, false, 46), "html", null, true);
+                echo "</td>                
+                    <td>
+                        <select name=\"\" id=\"\"> 
+                            <option>";
+                // line 49
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Utilisateurs", [], "messages");
+                echo "</option>
+                        ";
                 // line 50
-                echo "                        <option>
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "users", [], "any", false, false, false, 50));
+                foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
+                    // line 51
+                    echo "                            <option>
+                            ";
+                    // line 52
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "fullname", [], "any", false, false, false, 52), "html", null, true);
+                    echo " 
+                            </option> 
                         ";
-                // line 51
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "fullname", [], "any", false, false, false, 51), "html", null, true);
-                echo " 
-                        </option> 
-                    ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 53
-            echo "                 
-                    </select>
-                </td>
-                <td>               
-                    <select name=\"\" id=\"\"> 
-                        <option>Submersions</option>
-                    ";
-            // line 59
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "submersions", [], "any", false, false, false, 59));
-            foreach ($context['_seq'] as $context["_key"] => $context["submersion"]) {
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 54
+                echo "                 
+                        </select>
+                    </td>
+                    <td>               
+                        <select name=\"\" id=\"\"> 
+                            <option>";
+                // line 59
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Submersions", [], "messages");
+                echo "</option>
+                        ";
                 // line 60
-                echo "                        <option>
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "submersions", [], "any", false, false, false, 60));
+                foreach ($context['_seq'] as $context["_key"] => $context["submersion"]) {
+                    // line 61
+                    echo "                            <option>
+                            ";
+                    // line 62
+                    echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["submersion"], "fullname", [], "any", false, false, false, 62) . ";"), "html", null, true);
+                    echo " 
+                            </option>
                         ";
-                // line 61
-                echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["submersion"], "fullname", [], "any", false, false, false, 61) . ";"), "html", null, true);
-                echo " 
-                        </option>
-                    ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['submersion'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 63
-            echo "                 
-                </select>   
-                </td> 
-                <td>               
-                    <select name=\"\" id=\"\"> 
-                        <option>Routes</option>
-                    ";
-            // line 69
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "route", [], "any", false, false, false, 69));
-            foreach ($context['_seq'] as $context["_key"] => $context["route"]) {
-                // line 70
-                echo "                        <option>
-                        ";
-                // line 71
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "numeroRoute", [], "any", false, false, false, 71), "html", null, true);
-                echo " 
-                        </option> 
-                    ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['route'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 73
-            echo "                 
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['submersion'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 64
+                echo "                 
                     </select>   
-                </td>         
-
-                <td>
-                    <div class=\"bouton-align\">
-                        <a href=\"";
-            // line 79
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("passage_a_gue_show", ["id" => twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "id", [], "any", false, false, false, 79)]), "html", null, true);
-            echo "\" class=\"btn btn-info\">Voir + </a>
-                        <a href=\"";
-            // line 80
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("passage_a_gue_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "id", [], "any", false, false, false, 80)]), "html", null, true);
-            echo "\" class=\"btn btn-primary\">Modifier</a>
+                    </td> 
+                    <td>               
+                        <select name=\"\" id=\"\"> 
+                            <option>";
+                // line 69
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Routes", [], "messages");
+                echo "</option>
                         ";
-            // line 81
-            echo twig_include($this->env, $context, "passage/_delete_form.html.twig");
-            echo "
-                    </div>
-                </td>
-            </tr>
-        ";
+                // line 70
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "route", [], "any", false, false, false, 70));
+                foreach ($context['_seq'] as $context["_key"] => $context["route"]) {
+                    // line 71
+                    echo "                            <option>
+                            ";
+                    // line 72
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["route"], "numeroRoute", [], "any", false, false, false, 72), "html", null, true);
+                    echo " 
+                            </option> 
+                        ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['route'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 74
+                echo "                 
+                        </select>   
+                    </td>         
+
+                    <td>
+                        <div class=\"bouton-align\">
+                            <a href=\"";
+                // line 80
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("passage_a_gue_show", ["id" => twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "id", [], "any", false, false, false, 80)]), "html", null, true);
+                echo "\" class=\"btn btn-info\">";
+                echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Voir +", [], "messages");
+                echo "</a>
+                            ";
+                // line 81
+                if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_TECHNICIEN")) {
+                    // line 82
+                    echo "                                <a href=\"";
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("passage_a_gue_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "id", [], "any", false, false, false, 82)]), "html", null, true);
+                    echo "\" class=\"btn btn-primary\">";
+                    echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Modifier", [], "messages");
+                    echo "</a>
+                            ";
+                }
+                // line 84
+                echo "                            ";
+                if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_GESTIONNAIRE")) {
+                    // line 85
+                    echo "                                ";
+                    echo twig_include($this->env, $context, "passage/_archive_form.html.twig");
+                    echo "
+                            ";
+                }
+                // line 87
+                echo "                            ";
+                if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                    // line 88
+                    echo "                                ";
+                    echo twig_include($this->env, $context, "passage/_delete_form.html.twig");
+                    echo "
+                            ";
+                }
+                // line 90
+                echo "                        </div>
+                    </td>
+                </tr>
+            ";
+            }
+            // line 94
+            echo "        ";
             $context['_iterated'] = true;
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -285,27 +377,34 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
             }
         }
         if (!$context['_iterated']) {
-            // line 86
+            // line 95
             echo "            <tr>
-                <td colspan=\"11\">Pas d'enregistrement trouvé</td>
+                <td colspan=\"11\">";
+            // line 96
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Pas d'enregistrement trouvé", [], "messages");
+            echo "</td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['passage_a_gue'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 90
+        // line 99
         echo "        </tbody>
     </table>
     <div class=\"bouton-align\">
         <a href=\"";
-        // line 93
+        // line 102
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("creation");
-        echo "\" class=\"btn btn-success\">Créer un nouveau passage</a>
+        echo "\" class=\"btn btn-success\">";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Créer un nouveau passage", [], "messages");
+        echo "</a>
         <a href=\"";
-        // line 94
+        // line 103
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
-        echo "\" class=\"btn btn-secondary\">Retour</a>
+        echo "\" class=\"btn btn-secondary\">";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("Retour", [], "messages");
+        echo "</a>
     </div>
 ";
         
@@ -328,105 +427,114 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
 
     public function getDebugInfo()
     {
-        return array (  307 => 94,  303 => 93,  298 => 90,  289 => 86,  271 => 81,  267 => 80,  263 => 79,  255 => 73,  246 => 71,  243 => 70,  239 => 69,  231 => 63,  222 => 61,  219 => 60,  215 => 59,  207 => 53,  198 => 51,  195 => 50,  191 => 49,  184 => 45,  180 => 44,  176 => 43,  172 => 42,  168 => 41,  164 => 40,  160 => 39,  156 => 38,  152 => 37,  148 => 36,  144 => 35,  140 => 34,  136 => 33,  133 => 32,  115 => 31,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  404 => 103,  398 => 102,  393 => 99,  384 => 96,  381 => 95,  368 => 94,  362 => 90,  356 => 88,  353 => 87,  347 => 85,  344 => 84,  336 => 82,  334 => 81,  328 => 80,  320 => 74,  311 => 72,  308 => 71,  304 => 70,  300 => 69,  293 => 64,  284 => 62,  281 => 61,  277 => 60,  273 => 59,  266 => 54,  257 => 52,  254 => 51,  250 => 50,  246 => 49,  240 => 46,  236 => 45,  232 => 44,  228 => 43,  224 => 42,  220 => 41,  216 => 40,  212 => 39,  208 => 38,  204 => 37,  200 => 36,  196 => 35,  192 => 34,  189 => 33,  186 => 32,  168 => 31,  161 => 27,  157 => 26,  153 => 25,  149 => 24,  145 => 23,  141 => 22,  137 => 21,  133 => 20,  129 => 19,  125 => 18,  121 => 17,  117 => 16,  113 => 15,  109 => 14,  105 => 13,  101 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Passage à gué{% endblock %}
+{% block title %}{% trans %}Passage à gué{% endtrans %}{% endblock %}
 
 {% block main %}
-    <h1>Passage à gué</h1>
+    <h1>{% trans %}Passage à gué{% endtrans %}</h1>
 
     <table class=\"table\">
         <thead>
             <tr>
-                <th>Gps X</th>
-                <th>Gps Y</th>
-                <th>Fréquence de submersion</th>
-                <th>Largeur du passage</th>
-                <th>Longueur du passage</th>
-                <th>Trafic journalier</th>
-                <th>Limitation respectée</th>
-                <th>Archive</th>
-                <th>Taux d'accidentalité</th>
-                <th>Type d'ouvrage</th>
-                <th>Cours d'eau</th>
-                <th>Localisation</th>
-                <th>Gestionnaire</th>
-                <th>Utilisateurs ayant accès aux données</th>
-                <th>Submersions</th>
-                <th>Route</th>
-                <th>actions</th>
+                <th>{% trans %}Gps - X{% endtrans %}</th>
+                <th>{% trans %}Gps - Y{% endtrans %}</th>
+                <th>{% trans %}Fréquence de submersion{% endtrans %}</th>
+                <th>{% trans %}Largeur du passage{% endtrans %}</th>
+                <th>{% trans %}Longueur du passage{% endtrans %}</th>
+                <th>{% trans %}Trafic journalier{% endtrans %}</th>
+                <th>{% trans %}Limitation respectée{% endtrans %}</th>
+                <th>{% trans %}Archive{% endtrans %}</th>
+                <th>{% trans %}Taux d'accidentalité{% endtrans %}</th>
+                <th>{% trans %}Type d'ouvrage{% endtrans %}</th>
+                <th>{% trans %}Cours d'eau{% endtrans %}</th>
+                <th>{% trans %}Localisation{% endtrans %}</th>
+                <th>{% trans %}Gestionnaire{% endtrans %}</th>
+                <th>{% trans %}Utilisateurs ayant accès aux données{% endtrans %}</th>
+                <th>{% trans %}Submersions{% endtrans %}</th>
+                <th>{% trans %}Route{% endtrans %}</th>
+                <th>{% trans %}actions{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
         {% for passage_a_gue in passage_a_gues %}
-            <tr>
-                <td>{{ passage_a_gue.gpsX }}</td>
-                <td>{{ passage_a_gue.gpsY }}</td>
-                <td>{{ passage_a_gue.frequenceSubmersion }}</td>
-                <td>{{ passage_a_gue.largeurPassage }}</td>
-                <td>{{ passage_a_gue.longueurPassage }}</td>
-                <td>{{ passage_a_gue.traficJournalier }}</td>
-                <td>{{ passage_a_gue.boolLimitationRespectee ? 'Oui' : 'Non' }}</td>
-                <td>{{ passage_a_gue.boolArchive ? 'Oui' : 'Non' }}</td>
-                <td>{{ passage_a_gue.tauxAccidentalite }}</td>
-                <td>{{ passage_a_gue.TypeOuvrage }}</td> 
-                <td>{{ passage_a_gue.CoursEau }}</td> 
-                <td>{{ passage_a_gue.localisation }}</td>  
-                <td>{{ passage_a_gue.idUtilisateur.fullname }}</td>                
-                <td>
-                    <select name=\"\" id=\"\"> 
-                        <option>Utilisateurs</option>
-                    {% for user in passage_a_gue.users %}
-                        <option>
-                        {{ user.fullname }} 
-                        </option> 
-                    {% endfor %}                 
-                    </select>
-                </td>
-                <td>               
-                    <select name=\"\" id=\"\"> 
-                        <option>Submersions</option>
-                    {% for submersion in passage_a_gue.submersions %}
-                        <option>
-                        {{ submersion.fullname ~ ';'}} 
-                        </option>
-                    {% endfor %}                 
-                </select>   
-                </td> 
-                <td>               
-                    <select name=\"\" id=\"\"> 
-                        <option>Routes</option>
-                    {% for route in passage_a_gue.route %}
-                        <option>
-                        {{ route.numeroRoute }} 
-                        </option> 
-                    {% endfor %}                 
+            {% if passage_a_gue.boolArchive == 0 %}
+                <tr>
+                    <td>{{ passage_a_gue.gpsX }}</td>
+                    <td>{{ passage_a_gue.gpsY }}</td>
+                    <td>{{ passage_a_gue.frequenceSubmersion }}</td>
+                    <td>{{ passage_a_gue.largeurPassage }}</td>
+                    <td>{{ passage_a_gue.longueurPassage }}</td>
+                    <td>{{ passage_a_gue.traficJournalier }}</td>
+                    <td>{{ passage_a_gue.boolLimitationRespectee ? 'Oui' : 'Non' }}</td>
+                    <td>{{ passage_a_gue.boolArchive ? 'Oui' : 'Non' }}</td>
+                    <td>{{ passage_a_gue.tauxAccidentalite }}</td>
+                    <td>{{ passage_a_gue.TypeOuvrage }}</td> 
+                    <td>{{ passage_a_gue.CoursEau }}</td> 
+                    <td>{{ passage_a_gue.localisation }}</td>  
+                    <td>{{ passage_a_gue.idUtilisateur.fullname }}</td>                
+                    <td>
+                        <select name=\"\" id=\"\"> 
+                            <option>{% trans %}Utilisateurs{% endtrans %}</option>
+                        {% for user in passage_a_gue.users %}
+                            <option>
+                            {{ user.fullname }} 
+                            </option> 
+                        {% endfor %}                 
+                        </select>
+                    </td>
+                    <td>               
+                        <select name=\"\" id=\"\"> 
+                            <option>{% trans %}Submersions{% endtrans %}</option>
+                        {% for submersion in passage_a_gue.submersions %}
+                            <option>
+                            {{ submersion.fullname ~ ';'}} 
+                            </option>
+                        {% endfor %}                 
                     </select>   
-                </td>         
+                    </td> 
+                    <td>               
+                        <select name=\"\" id=\"\"> 
+                            <option>{% trans %}Routes{% endtrans %}</option>
+                        {% for route in passage_a_gue.route %}
+                            <option>
+                            {{ route.numeroRoute }} 
+                            </option> 
+                        {% endfor %}                 
+                        </select>   
+                    </td>         
 
-                <td>
-                    <div class=\"bouton-align\">
-                        <a href=\"{{ path('passage_a_gue_show', {'id': passage_a_gue.id}) }}\" class=\"btn btn-info\">Voir + </a>
-                        <a href=\"{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}\" class=\"btn btn-primary\">Modifier</a>
-                        {{ include('passage/_delete_form.html.twig') }}
-                    </div>
-                </td>
-            </tr>
+                    <td>
+                        <div class=\"bouton-align\">
+                            <a href=\"{{ path('passage_a_gue_show', {'id': passage_a_gue.id}) }}\" class=\"btn btn-info\">{% trans %}Voir + {% endtrans %}</a>
+                            {% if is_granted('ROLE_TECHNICIEN') %}
+                                <a href=\"{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}\" class=\"btn btn-primary\">{% trans %}Modifier{% endtrans %}</a>
+                            {% endif %}
+                            {% if is_granted('ROLE_GESTIONNAIRE') %}
+                                {{ include('passage/_archive_form.html.twig') }}
+                            {% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                {{ include('passage/_delete_form.html.twig') }}
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+            {% endif %}
         {% else %}
             <tr>
-                <td colspan=\"11\">Pas d'enregistrement trouvé</td>
+                <td colspan=\"11\">{% trans %}Pas d'enregistrement trouvé{% endtrans %}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
     <div class=\"bouton-align\">
-        <a href=\"{{ path('creation') }}\" class=\"btn btn-success\">Créer un nouveau passage</a>
-        <a href=\"{{ path('accueil') }}\" class=\"btn btn-secondary\">Retour</a>
+        <a href=\"{{ path('creation') }}\" class=\"btn btn-success\">{% trans %}Créer un nouveau passage{% endtrans %}</a>
+        <a href=\"{{ path('accueil') }}\" class=\"btn btn-secondary\">{% trans %}Retour{% endtrans %}</a>
     </div>
 {% endblock %}", "passage/index.html.twig", "C:\\Users\\samyg\\Desktop\\StageDev\\templates\\passage\\index.html.twig");
     }

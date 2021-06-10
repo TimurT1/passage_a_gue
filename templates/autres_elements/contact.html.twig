@@ -1,8 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact{% endblock %}
+{% block title %}{% trans %}Contact{% endtrans %}{% endblock %}
 
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/form.css">
+{% endblock %}
 {% block main %}
-<h1>Contact</h1>
+<div class="formulaire">
+<h1>{% trans %}Contact{% endtrans %}</h1>
 
+    {{ form_start(form) }}
+    {% if app.user %}
+    {{ form_row(form.nomEnvoyeur, { 'label': "Nom *", 'attr': { 'placeholder': "Nom" , 'autofocus' : 'enabled', required: 'required', 'value': app.user.NomUtilisateur }}) }}
+    {{ form_row(form.prenomEnvoyeur, { 'label': "Prénom *", 'attr': { 'placeholder': "Prénom" , required: 'required', 'value': app.user.PrenomUtilisateur}}) }}
+    {{ form_row(form.monEmail, { 'label': "Email *", 'attr': { 'placeholder': "Email" , required: 'required', 'value': app.user.Email}}) }}
+    {% else %}
+    {{ form_row(form.nomEnvoyeur, { 'label': "Nom *", 'attr': { 'placeholder': "Nom" , 'autofocus' : 'enabled', required: 'required'}}) }}
+    {{ form_row(form.prenomEnvoyeur, { 'label': "Prénom *", 'attr': { 'placeholder': "Prénom" , required: 'required'}}) }}
+    {{ form_row(form.monEmail, { 'label': "Email *", 'attr': { 'placeholder': "Email" , required: 'required'}}) }}
+    {% endif %}
+    {{ form_row(form.nomMessage, { 'label': "Titre du message *", 'attr': { 'placeholder': "Titre" , required: 'required'}}) }}
+    {{ form_row(form.message, { 'label': "Message *", 'attr': { 'placeholder': "Message", required: 'required'}}) }}
+
+    <button type="submit" class="btn btn-lg btn-success center">{% trans %}Envoyer un message{% endtrans %}</button>
+    {{ form_end(form) }}
+</div>
 {% endblock %}

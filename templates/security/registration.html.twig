@@ -2,24 +2,24 @@
 
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 
-{% block title %} Inscription {% endblock %}
+{% block title %} {% trans %}Inscription{% endtrans %} {% endblock %}
 
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="/css/form.css">
 {% endblock %}
 
 {% block main %}<!--  Page d'inscription  -->
     <div class="formulaire">
         
         {{ form_start(form) }}
-        <h1>Inscription</h1>
+        <h1>{% trans %}Inscription{% endtrans %}</h1>
         {{ form_row(form.email, { 'label': "Email *", 'attr': { 'placeholder': "Email" , 'autofocus' : 'enabled', required: 'required'}}) }}
         
         <i id="button" aria-describedby="tooltip" class="fas fa-info-circle info"></i>
         <div id="tooltip" role="tooltip" class="popup">
             <div id="arrow" data-popper-arrow></div>
-            le mot de passe doit faire au moins 8 caractères, avec au moins 1 majuscule, 1 minuscule, et 1 caractère spécial parmis @ $ ! % * . ? &.
+            {% trans %}le mot de passe doit faire au moins 8 caractères, avec au moins 1 majuscule, 1 minuscule, et 1 caractère spécial parmis @ $ ! % * . ? &.{% endtrans %}
         </div>
         {{ form_row(form.password, { 'label': "Mot de passe *", 'attr': { 'placeholder': "Mot de passe", required: 'required'}}) }}
         {{ form_row(form.checkPassword, { 'label': "Confrimez le mot de passe *", 'attr': { 'placeholder': "Confirmez le mot de passe", required: 'required'}}) }}
@@ -27,8 +27,8 @@
         {{ form_row(form.nomUtilisateur, { 'label': "Nom *",'attr': { 'placeholder': "Nom", required: 'required'}}) }}
         {{ form_row(form.prenomUtilisateur, { 'label': "Prénom *",'attr': { 'placeholder': "Prénom", required: 'required'}}) }}
         {{ form_row(form.photoUtilisateur, { 'label': "Photo",'attr': { 'placeholder': "Ajoutez une photo "}}) }}
-        <a class="petit-lien" href="{{ path('app_login') }}">Déjà inscrit? Je me connecte</a><br>
-        <button type="submit" class="btn btn-lg btn-success center">inscription</button>
+        <a class="petit-lien" href="{{ path('app_login') }}">{% trans %}Déjà inscrit? Je me connecte{% endtrans %}</a><br>
+        <button type="submit" class="btn btn-lg btn-success center">{% trans %}inscription{% endtrans %}</button>
         {{ form_end(form) }}
           
     </div>

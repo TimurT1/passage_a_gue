@@ -1,5 +1,32 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+{% if editMode == 0 or editMode == 3 %}
+    {{ form_row(form.email, { 'label': "Email ",'attr': { 'placeholder': "Email"}}) }}
+    {{ form_row(form.roles, { 'label': "Rôles ",'attr': { 'placeholder': "Rôles"}}) }}
+    {% if editMode == 0 %}
+    {{ form_row(form.password, { 'label': "   ",'attr': { 'placeholder': "Mot de passe", 'hidden': "hidden"}}) }}
+        <a href="{{ path('user_edit_password', {'id': user.id, 'user': user }) }}" class="btn btn-primary">{% trans %}Changer le mot de passe{% endtrans %}</a>
+    {% endif %}
+    {% if editMode == 3 %}
+    {{ form_row(form.password, { 'label': "Mot de passe",'attr': { 'placeholder': "Mot de passe"}}) }}
+    {% endif %}
+    {{ form_row(form.nomUtilisateur, { 'label': "Nom utilisateur ",'attr': { 'placeholder': "Nom utilisateur"}}) }}
+    {{ form_row(form.prenomUtilisateur, { 'label': "Prénom utilisateur ",'attr': { 'placeholder': "Prénom utilisateur"}}) }}
+    {{ form_row(form.pseudoUtilisateur, { 'label': "Pseudo utilisateur ",'attr': { 'placeholder': "Pseudo utilisateur"}}) }}
+    {{ form_row(form.photoUtilisateur, { 'label': "Photo ",'attr': { 'placeholder': "Photo"}}) }}
     <div class="bouton-align">
     <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+{% endif %}
+{% if editMode == 1 %}
+    {{ form_row(form.password, { 'label': "Mot de passe",'attr': { 'placeholder': "Mot de passe"}}) }}
+    <div class="bouton-align">
+    <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+    {{ form_row(form.roles, { 'label': "   ",'attr': { 'placeholder': "Rôles", 'hidden': "hidden"}}) }}
+    {{ form_row(form.email, { 'label': "   ",'attr': { 'placeholder': "Email", 'hidden': "hidden"}}) }}
+    {{ form_row(form.nomUtilisateur, { 'label': "    ",'attr': { 'placeholder': "Nom utilisateur", 'hidden': "hidden"}}) }}
+    {{ form_row(form.prenomUtilisateur, { 'label': "    ",'attr': { 'placeholder': "Prénom utilisateur", 'hidden': "hidden"}}) }}
+    {{ form_row(form.pseudoUtilisateur, { 'label': "    ",'attr': { 'placeholder': "Pseudo utilisateur", 'hidden': "hidden"}}) }}
+    {{ form_row(form.photoUtilisateur, { 'label': "    ",'attr': { 'placeholder': "Photo", 'hidden': "hidden"}}) }}
+{% endif %}
+{#{ dump(editMode, user.password) } DEBUG #}
+
 {{ form_end(form) }}

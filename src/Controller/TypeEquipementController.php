@@ -5,13 +5,14 @@ namespace App\Controller;
 use App\Entity\TypeEquipement;
 use App\Form\TypeEquipementType;
 use App\Repository\TypeEquipementRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/parametrage/typeEquipement")
+ * @Route("/{_locale}/parametrage/typeEquipement")
  */
 class TypeEquipementController extends AbstractController
 {
@@ -28,7 +29,7 @@ class TypeEquipementController extends AbstractController
     /**
      * @Route("/new", name="type_equipement_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, TranslatorInterface $translator): Response
     {
         $typeEquipement = new TypeEquipement();
         $form = $this->createForm(TypeEquipementType::class, $typeEquipement);
@@ -39,6 +40,8 @@ class TypeEquipementController extends AbstractController
             $entityManager->persist($typeEquipement);
             $entityManager->flush();
 
+            $success = $translator->trans('Création effectuée avec succès');
+            $this->addFlash('message', $success);
             return $this->redirectToRoute('type_equipement_index');
         }
 
@@ -61,7 +64,7 @@ class TypeEquipementController extends AbstractController
     /**
      * @Route("/{id}/edit", name="type_equipement_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, TypeEquipement $typeEquipement): Response
+    public function edit(Request $request, TypeEquipement $typeEquipement, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(TypeEquipementType::class, $typeEquipement);
         $form->handleRequest($request);
@@ -69,6 +72,8 @@ class TypeEquipementController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $success = $translator->trans('Modification effectuée avec succès');
+            $this->addFlash('message', $success);
             return $this->redirectToRoute('type_equipement_index');
         }
 
@@ -81,7 +86,7 @@ class TypeEquipementController extends AbstractController
     /**
      * @Route("/{id}", name="type_equipement_delete", methods={"POST"})
      */
-    public function delete(Request $request, TypeEquipement $typeEquipement): Response
+    public function delete(Request $request, TypeEquipement $typeEquipement, TranslatorInterface $translator): Response
     {
         if ($this->isCsrfTokenValid('delete'.$typeEquipement->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -89,6 +94,8 @@ class TypeEquipementController extends AbstractController
             $entityManager->flush();
         }
 
+        $success = $translator->trans('Suppression effectuée avec succès');
+        $this->addFlash('message', $success);
         return $this->redirectToRoute('type_equipement_index');
     }
 }
