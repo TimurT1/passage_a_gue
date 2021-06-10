@@ -43,11 +43,12 @@ class Equipement
      */
     private $idTypeEquipement;
 
+   
+
     /**
-     * @ORM\ManyToOne(targetEntity=PassageAGue::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity=PassageAGue::class, inversedBy="equipements", cascade={"persist", "remove"})
      */
-    private $idPassageAGue;
+    private $passageAGue;
 
     public function getId(): ?int
     {
@@ -114,15 +115,38 @@ class Equipement
         return $this;
     }
 
-    public function getIdPassageAGue(): ?PassageAGue
+
+ 
+
+    public function getPassageAGue(): ?PassageAGue
     {
-        return $this->idPassageAGue;
+        return $this->passageAGue;
     }
 
-    public function setIdPassageAGue(?PassageAGue $idPassageAGue): self
+    public function setPassageAGue(?PassageAGue $passageAGue): self
     {
-        $this->idPassageAGue = $idPassageAGue;
+        $this->passageAGue = $passageAGue;
 
         return $this;
     }
+   //////////////////////
+    public function __toString() {
+        return $this->passageAGue;
+    }
+
+    
+
+ 
+    
+    public function removePassageAGue(PassageAGue $passageAGue): self
+    {
+        $this->passageAGue->removeEquipement($this);
+
+        return $this;
+    }
+
+   
+    
+    ///////////////////////////////////
+    
 }

@@ -56,8 +56,14 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
     <link rel=\"stylesheet\" href=\"/style.css\"><!--  Notre feuille de style  -->
     <link rel=\"stylesheet\" href=\"/fontawesome/css/all.min.css\"><!--  Font Awesome  -->
     <link rel=\"shortcut icon\" type=\"image/png\" href=\"/img/site/logo.ico\"/><!--  Notre logo  -->
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>
+    <!-- Carte -->
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\" integrity=\"sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==\" crossorigin=\"\"/>
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css\">
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css\">
+    <!-- Carte -->
     ";
-        // line 10
+        // line 16
         $this->displayBlock('stylesheets', $context, $blocks);
         echo "<!--  Nos feuilles de styles propres à chaque page seront surchargées ici  -->
 </head>
@@ -67,7 +73,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
         <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
         <div class=\"container-fluid\">
             <a class=\"navbar-brand\" href=\"";
-        // line 17
+        // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
         echo "\"> 
                 <img class=\"logo\" id=\"logo\" src=\"/img/site/logo.png\" alt=\"logo du site\">
@@ -79,47 +85,47 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                 <ul class=\"navbar-nav me-auto\"><!--  cette liste est classé par droits d'accès  -->
                     <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-        // line 26
+        // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("passage_a_gue_index");
         echo "\">Recherche</a>
                     </li>
                     ";
-        // line 28
+        // line 34
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_GESTIONNAIRE")) {
-            // line 29
+            // line 35
             echo "                    <li class=\"nav-item\">
                         <a class=\"nav-link\" href=\"";
-            // line 30
+            // line 36
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("creation");
             echo "\">Création</a>
                     </li>
                     ";
         }
-        // line 33
+        // line 39
         echo "                    ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 34
+            // line 40
             echo "                        <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-            // line 35
+            // line 41
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("parametrage");
             echo "\">Tables de paramétrages</a>
                         </li>
                     ";
         }
-        // line 38
+        // line 44
         echo "                </ul>
 
                 <!--  infos sur l'utilisateur si on est connecté  -->
                 ";
-        // line 41
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41)) {
-            // line 42
+        // line 47
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 47, $this->source); })()), "user", [], "any", false, false, false, 47)) {
+            // line 48
             echo "                <ul class=\"navbar-nav me-auto\">
                     <li class=\"nav-item\">
                         <span>Connecté en tant que ";
-            // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44), "pseudoUtilisateur", [], "any", false, false, false, 44), "html", null, true);
+            // line 50
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "user", [], "any", false, false, false, 50), "pseudoUtilisateur", [], "any", false, false, false, 50), "html", null, true);
             echo " \t&nbsp;</span>
                     </li>
                     <li class=\"nav-item\">
@@ -128,44 +134,44 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
                 </ul>
                 ";
         }
-        // line 51
+        // line 57
         echo "
                 <!--  connexion et inscription vont ensemble, mais déconnexion apparait uniquement si on est connecté  -->
                 <ul class=\"navbar-nav\">
                     ";
-        // line 54
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "user", [], "any", false, false, false, 54)) {
-            // line 55
+        // line 60
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 60, $this->source); })()), "user", [], "any", false, false, false, 60)) {
+            // line 61
             echo "                        <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-            // line 56
+            // line 62
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profil");
             echo "\">Mon profil</a>
                         </li>
                         <li class=\"nav-item\">                
                             <a class=\"nav-link\" href=\"";
-            // line 59
+            // line 65
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Déconnexion</a>
                         </li>
                     ";
         } else {
-            // line 62
+            // line 68
             echo "                        <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-            // line 63
+            // line 69
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Connexion</a>
                         </li>
                         <li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"";
-            // line 66
+            // line 72
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_registration");
             echo "\">Inscription</a>
                         </li>
                     ";
         }
-        // line 69
+        // line 75
         echo "                </ul>
             </div>
         </div>
@@ -173,10 +179,15 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
     </header>
 
     <main><!--  Dans notre main, on surcharge notre main :)   -->
+
+    <!-- Carte -->
+    <div id=\"maCarte\"></div>
+    <!-- Carte -->
+
         ";
-        // line 76
+        // line 87
         $this->displayBlock('main', $context, $blocks);
-        // line 77
+        // line 88
         echo "    </main>
 
     <footer><!--  Notre footer contient les liens vers d'autres sites, et vers les informations \"secondaires\"  -->
@@ -199,25 +210,32 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
         </div>
         <div>
             <a href=\"";
-        // line 98
+        // line 109
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("portail");
         echo "\" class=\"btn btn-secondary bouton\">Portail technique</a>
             <a href=\"";
-        // line 99
+        // line 110
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mention");
         echo "\" class=\"btn btn-secondary bouton\">Mentions légales</a>
             <a href=\"";
-        // line 100
+        // line 111
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\" class=\"btn btn-info bouton\">Contactez-nous!</a>
         </div>
         
-    </footer>
+    </footer>    
     <script src=\"https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js\"></script><!--  Script js bootstrap  -->
+    
+    <!-- Carte -->
+    <script src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\" integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\" crossorigin=\"\"></script>
+    <script src=\"https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js\"></script>
+    <script src=\"/js/carte.js\"></script>
+   <!-- Carte -->
+    
     ";
-        // line 105
+        // line 123
         $this->displayBlock('script', $context, $blocks);
-        // line 106
+        // line 124
         echo "</body>     
 </html>
 ";
@@ -247,7 +265,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     }
 
-    // line 10
+    // line 16
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -265,7 +283,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     }
 
-    // line 76
+    // line 87
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -283,7 +301,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     }
 
-    // line 105
+    // line 123
     public function block_script($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -313,7 +331,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     public function getDebugInfo()
     {
-        return array (  287 => 105,  269 => 76,  251 => 10,  233 => 5,  221 => 106,  219 => 105,  211 => 100,  207 => 99,  203 => 98,  180 => 77,  178 => 76,  169 => 69,  163 => 66,  157 => 63,  154 => 62,  148 => 59,  142 => 56,  139 => 55,  137 => 54,  132 => 51,  122 => 44,  118 => 42,  116 => 41,  111 => 38,  105 => 35,  102 => 34,  99 => 33,  93 => 30,  90 => 29,  88 => 28,  83 => 26,  71 => 17,  61 => 10,  53 => 5,  47 => 1,);
+        return array (  305 => 123,  287 => 87,  269 => 16,  251 => 5,  239 => 124,  237 => 123,  222 => 111,  218 => 110,  214 => 109,  191 => 88,  189 => 87,  175 => 75,  169 => 72,  163 => 69,  160 => 68,  154 => 65,  148 => 62,  145 => 61,  143 => 60,  138 => 57,  128 => 50,  124 => 48,  122 => 47,  117 => 44,  111 => 41,  108 => 40,  105 => 39,  99 => 36,  96 => 35,  94 => 34,  89 => 32,  77 => 23,  67 => 16,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -327,6 +345,12 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
     <link rel=\"stylesheet\" href=\"/style.css\"><!--  Notre feuille de style  -->
     <link rel=\"stylesheet\" href=\"/fontawesome/css/all.min.css\"><!--  Font Awesome  -->
     <link rel=\"shortcut icon\" type=\"image/png\" href=\"/img/site/logo.ico\"/><!--  Notre logo  -->
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>
+    <!-- Carte -->
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\" integrity=\"sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==\" crossorigin=\"\"/>
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css\">
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css\">
+    <!-- Carte -->
     {% block stylesheets %}{% endblock %}<!--  Nos feuilles de styles propres à chaque page seront surchargées ici  -->
 </head>
 
@@ -393,6 +417,11 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
     </header>
 
     <main><!--  Dans notre main, on surcharge notre main :)   -->
+
+    <!-- Carte -->
+    <div id=\"maCarte\"></div>
+    <!-- Carte -->
+
         {% block main %}{% endblock %}
     </main>
 
@@ -420,11 +449,18 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
             <a href=\"{{ path('contact') }}\" class=\"btn btn-info bouton\">Contactez-nous!</a>
         </div>
         
-    </footer>
+    </footer>    
     <script src=\"https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js\"></script><!--  Script js bootstrap  -->
+    
+    <!-- Carte -->
+    <script src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\" integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\" crossorigin=\"\"></script>
+    <script src=\"https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js\"></script>
+    <script src=\"/js/carte.js\"></script>
+   <!-- Carte -->
+    
     {% block script %}{% endblock %}
 </body>     
 </html>
-", "base.html.twig", "C:\\Users\\samyg\\Desktop\\StageDev\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\Fg\\StageDev\\templates\\base.html.twig");
     }
 }

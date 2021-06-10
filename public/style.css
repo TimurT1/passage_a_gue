@@ -144,3 +144,14 @@ thead>tr>th{
     content: '';
     transform: rotate(45deg);
 }
+
+/* pour les formulaires imbriqués*/
+
+.procedures, .equipements {
+    display: none;
+}
+
+/* pour la carte*/
+#maCarte{
+    height: 400px;
+}

@@ -2,13 +2,16 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Procedure;
+use App\Entity\Equipement;
 use App\Entity\PassageAGue;
 use App\Form\PassageAGueType;
 use App\Repository\PassageAGueRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/passage")
@@ -39,6 +42,30 @@ class PassageController extends AbstractController
     public function creation(Request $request): Response
     {
         $passageAGue = new PassageAGue();
+
+
+/////////////////////////////////////////////////////
+       /* $equipement1 = new Equipement();
+        $equipement1->setNomEquipement('equipement1');
+        $passageAGue->getEquipements()->add($equipement1);  
+        $equipement2 = new Equipement();
+        $equipement2->setNomEquipement('equipement2');
+        $passageAGue->getEquipements()->add($equipement2);         
+       */
+////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////
+       /* $procedure1 = new Procedure();
+        $procedure1->setNomProcedure('procedure1');
+        $passageAGue->getProcedures()->add($procedure1);  
+        $procedure2 = new Procedure();
+        $procedure2->setNomProcedure('procedure2');
+        $passageAGue->getProcedures()->add($procedure2);         
+       */
+////////////////////////////////////////////////////
+
+
+
         $form = $this->createForm(PassageAGueType::class, $passageAGue);
         $form->handleRequest($request);
 
@@ -69,6 +96,7 @@ class PassageController extends AbstractController
     /**
      * @Route("/{id}/edit", name="passage_a_gue_edit", methods={"GET","POST"})
      */
+
     public function edit(Request $request, PassageAGue $passageAGue): Response
     {
         $form = $this->createForm(PassageAGueType::class, $passageAGue);
@@ -85,6 +113,7 @@ class PassageController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    
 
     /**
      * @Route("/{id}", name="passage_a_gue_delete", methods={"POST"})

@@ -79,6 +79,10 @@ class PassageAGue
      */
     private $submersions;
 
+
+    
+   
+
     /**
      * @ORM\ManyToOne(targetEntity=TypeOuvrage::class, inversedBy="TypeOuvrage")
      */
@@ -101,11 +105,23 @@ class PassageAGue
      */
     private $route;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Equipement::class, mappedBy="passageAGue", cascade={"persist", "remove"}))
+     */
+    private $equipements;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Procedure::class, mappedBy="PassageAGue", cascade={"persist", "remove"}))
+     */
+    private $procedures;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
         $this->submersions = new ArrayCollection();
         $this->route = new ArrayCollection();
+        $this->equipements = new ArrayCollection();
+        $this->procedures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -268,6 +284,22 @@ class PassageAGue
         return $this->submersions;
     }
 
+    /**
+     * @return Collection|Equipement[]
+     */
+    public function getEquipements(): Collection
+    {
+        return $this->equipements;
+    }
+
+    /**
+     * @return Collection|Procedure[]
+     */
+    public function getProcedures(): Collection
+    {
+        return $this->procedures;
+    }
+
     public function addSubmersion(Submersion $submersion): self
     {
         if (!$this->submersions->contains($submersion)) {
@@ -278,6 +310,28 @@ class PassageAGue
         return $this;
     }
 
+
+    public function addEquipement(Equipement $equipement): self
+    {
+        if (!$this->equipements->contains($equipement)) {
+            $this->equipements[] = $equipement;
+            $equipement->setpassageAGue($this);
+        }
+
+        return $this;
+    }
+
+    public function addProcedure(Procedure $procedure): self
+    {
+        if (!$this->procedures->contains($procedure)) {
+            $this->procedures[] = $procedure;
+            $procedure->setpassageAGue($this);
+        }
+
+        return $this;
+    }
+
+
     public function removeSubmersion(Submersion $submersion): self
     {
         if ($this->submersions->removeElement($submersion)) {
@@ -286,6 +340,87 @@ class PassageAGue
 
         return $this;
     }
+
+    public function removeEquipement(Equipement $equipement): self
+    {
+        if ($this->equipements->removeElement($equipement)) {
+            //$equipement->removePassageAGue($this);
+           
+            //$equipement->setPassageAGue($this);
+
+            
+            if ($equipement->getPassageAGue() === $this) {
+                //$equipement->setPassageAGue($this);
+                $equipement->setPassageAGue(null);
+            }
+            
+        }
+
+        return $this;
+    }
+
+    public function removeProcedure(Procedure $procedure): self
+    {
+        if ($this->procedures->removeElement($procedure)) {
+            //$equipement->removePassageAGue($this);
+           
+            //$equipement->setPassageAGue($this);
+
+            
+            if ($procedure->getPassageAGue() === $this) {
+                //$equipement->setPassageAGue($this);
+                $procedure->setPassageAGue(null);
+            }
+            
+        }
+
+        return $this;
+    }
+
+
+
+
+
+/*
+    public function addEquipement(Equipement $equipement): self
+    {
+        if (!$this->equipements->contains($equipement)) {
+            $this->equipements[] = $equipement;
+            $equipement->setpassageAGue($this);
+        }
+
+        return $this;
+    }
+
+    
+    public function removeEquipement(Equipement $equipement): self
+    {
+        if ($this->equipements->removeElement($equipement)) {
+            // set the owning side to null (unless already changed)
+            if ($equipement->getEquipement() === $this) {
+                $equipements->setEquipement(null);
+            }
+        }
+
+        return $this;
+    }
+*/
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
     public function getTypeOuvrage(): ?TypeOuvrage
     {
@@ -349,4 +484,6 @@ class PassageAGue
 
         return $this;
     }
+
+   
 }

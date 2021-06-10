@@ -134,6 +134,34 @@
                     <tbody>                
                    </table>
                 </td>                      
+            </tr> 
+            <tr>
+                <th>Equipements</th>                     
+                <td> 
+                    <table> 
+                    <tbody>                    
+                 {% for equipement in passage_a_gue.equipements %}
+                    <tr>                        
+                        <td>{{ equipement.nomEquipement }}</td>
+                    </tr> 
+                 {% endfor %} 
+                    <tbody>                
+                   </table>
+                </td>                      
+            </tr> 
+            <tr>
+                <th>Procedures</th>                     
+                <td> 
+                    <table> 
+                    <tbody>                    
+                 {% for procedure in passage_a_gue.procedures %}
+                    <tr>                        
+                        <td>{{ procedure.nomProcedure }}</td>
+                    </tr> 
+                 {% endfor %} 
+                    <tbody>                
+                   </table>
+                </td>                      
             </tr>                       
         </tbody>
     </table>

@@ -5,7 +5,7 @@
 {% block main %}
     <h1>Passage à gué</h1>
 
-    <table class="table">
+    <table class="table table-sm table-hover">
         <thead>
             <tr>
                 <th>Gps X</th>
@@ -24,14 +24,15 @@
                 <th>Utilisateurs ayant accès aux données</th>
                 <th>Submersions</th>
                 <th>Route</th>
+                <th>Equipements </th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for passage_a_gue in passage_a_gues %}
             <tr>
-                <td>{{ passage_a_gue.gpsX }}</td>
-                <td>{{ passage_a_gue.gpsY }}</td>
+                <td class='gpsX' data-gpsX-id="{{ passage_a_gue.id }}">{{ passage_a_gue.gpsX }}</td> 
+                <td class='gpsY' gpsY-id="{{ passage_a_gue.id }}">{{ passage_a_gue.gpsY }}</td>
                 <td>{{ passage_a_gue.frequenceSubmersion }}</td>
                 <td>{{ passage_a_gue.largeurPassage }}</td>
                 <td>{{ passage_a_gue.longueurPassage }}</td>
@@ -41,7 +42,7 @@
                 <td>{{ passage_a_gue.tauxAccidentalite }}</td>
                 <td>{{ passage_a_gue.TypeOuvrage }}</td> 
                 <td>{{ passage_a_gue.CoursEau }}</td> 
-                <td>{{ passage_a_gue.localisation }}</td>  
+                <td class='localisation' localisation-id={{ passage_a_gue.id }}">{{ passage_a_gue.localisation }}</td>  
                 <td>{{ passage_a_gue.idUtilisateur.fullname }}</td>                
                 <td>
                     <select name="" id=""> 
@@ -72,7 +73,27 @@
                         </option> 
                     {% endfor %}                 
                     </select>   
-                </td>         
+                </td> 
+                 <td>               
+                    <select name="" id=""> 
+                        <option>Equipements</option>
+                    {% for equipement in passage_a_gue.equipements %}
+                        <option>
+                        {{ equipement.nomEquipement }} 
+                        </option> 
+                    {% endfor %}                 
+                    </select>   
+                </td> 
+                <td>               
+                    <select name="" id=""> 
+                        <option>Procedures</option>
+                    {% for procedure in passage_a_gue.procedures %}
+                        <option>
+                        {{ procedure.nomProcedure }} 
+                        </option> 
+                    {% endfor %}                 
+                    </select>   
+                </td>        
 
                 <td>
                     <div class="bouton-align">

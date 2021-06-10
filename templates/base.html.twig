@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="/style.css"><!--  Notre feuille de style  -->
     <link rel="stylesheet" href="/fontawesome/css/all.min.css"><!--  Font Awesome  -->
     <link rel="shortcut icon" type="image/png" href="/img/site/logo.ico"/><!--  Notre logo  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Carte -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+    <!-- Carte -->
     {% block stylesheets %}{% endblock %}<!--  Nos feuilles de styles propres à chaque page seront surchargées ici  -->
 </head>
 
@@ -73,6 +79,11 @@
     </header>
 
     <main><!--  Dans notre main, on surcharge notre main :)   -->
+
+    <!-- Carte -->
+    <div id="maCarte"></div>
+    <!-- Carte -->
+
         {% block main %}{% endblock %}
     </main>
 
@@ -100,8 +111,15 @@
             <a href="{{ path('contact') }}" class="btn btn-info bouton">Contactez-nous!</a>
         </div>
         
-    </footer>
+    </footer>    
     <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script><!--  Script js bootstrap  -->
+    
+    <!-- Carte -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="/js/carte.js"></script>
+   <!-- Carte -->
+    
     {% block script %}{% endblock %}
 </body>     
 </html>

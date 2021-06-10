@@ -34,8 +34,7 @@ class Procedure
     private $dateAjoutProcedure;
 
     /**
-     * @ORM\ManyToOne(targetEntity=PassageAGue::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity=PassageAGue::class, inversedBy="procedures", cascade={"persist", "remove"})
      */
     private $PassageAGue;
 
@@ -91,4 +90,26 @@ class Procedure
 
         return $this;
     }
+
+
+    //////////////////////
+    public function __toString() {
+        return $this->PassageAGue;
+    }
+
+    
+
+ 
+    
+    public function removePassageAGue(PassageAGue $PassageAGue): self
+    {
+        $this->PassageAGue->removeEquipement($this);
+
+        return $this;
+    }
+
+   
+    
+    ///////////////////////////////////
+    
 }

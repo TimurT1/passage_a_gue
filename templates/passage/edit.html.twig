@@ -10,10 +10,16 @@
 {% block main %}
     <div class="formulaire">
         <h1>Edition passage à gué</h1>
-
+        
         {{ include('passage/_form.html.twig', {'button_label': 'Modifier'}) }}
         {{ include('passage/_delete_form.html.twig') }}
         <a href="{{ path('passage_a_gue_index') }}" class="btn btn-secondary">Retour</a>
         
     </div>
+{% endblock %}
+
+{% block script %}    
+    <!--script src="/js/formulaireImbriqueEquipement.js"></script-->     
+    <!--script src="/js/formulaireImbriqueProcedure.js"></script-->
+    <script src="/js/formulaireImbrique.js"></script>
 {% endblock %}
