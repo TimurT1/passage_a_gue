@@ -21,3 +21,14 @@ d41f83,127.0.0.1,GET,https://127.0.0.1:8000/fr/passage/,1623334954,,200
 c651f3,127.0.0.1,GET,https://127.0.0.1:8000/fr/passage/,1623334972,,200
 dc7cdc,127.0.0.1,GET,https://127.0.0.1:8000/fr/passage/creation,1623335083,,200
 5d480b,127.0.0.1,GET,https://127.0.0.1:8000/fr/parametrage,1623335085,,200
+63811a,127.0.0.1,GET,https://127.0.0.1:8000/,1623393585,,200
+61f217,127.0.0.1,GET,https://127.0.0.1:8000/fr/passage/creation,1623393592,,200
+112e1b,127.0.0.1,GET,https://127.0.0.1:8000/fr/parametrage,1623393594,,200
+54b694,127.0.0.1,GET,https://127.0.0.1:8000/fr/parametrage/utilisateurs/,1623393595,,200
+5f758a,127.0.0.1,GET,https://127.0.0.1:8000/fr/parametrage/utilisateurs/new,1623393597,,200
+66f943,127.0.0.1,POST,https://127.0.0.1:8000/fr/parametrage/utilisateurs/new,1623393613,,302
+f3f396,127.0.0.1,GET,https://127.0.0.1:8000/fr/parametrage/utilisateurs/,1623393614,,200
+272421,127.0.0.1,GET,https://127.0.0.1:8000/fr/parametrage/utilisateurs/7/edit,1623393645,,200
+38f417,127.0.0.1,GET,https://127.0.0.1:8000/fr/parametrage/utilisateurs/7/edit/mot_de_passe,1623393649,,200
+729191,127.0.0.1,POST,https://127.0.0.1:8000/fr/parametrage/utilisateurs/7/edit/mot_de_passe,1623393662,,302
+7cd120,127.0.0.1,GET,https://127.0.0.1:8000/fr/parametrage/utilisateurs/,1623393662,,200
