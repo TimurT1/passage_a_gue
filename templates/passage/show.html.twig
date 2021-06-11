@@ -39,15 +39,15 @@
             </tr>
             <tr>
                 <th>Localisation</th>
-                <td>{{ passage_a_gue.localisation }}</td>
+                <td id="passageLocalisation">{{ passage_a_gue.localisation }}</td>
             </tr>             
             <tr>
                 <th>Gps X</th>
-                <td>{{ passage_a_gue.gpsX }}</td>
+                <td id="passageGpsX">{{ passage_a_gue.gpsX }}</td>
             </tr>
             <tr>
                 <th>Gps Y</th>
-                <td>{{ passage_a_gue.gpsY }}</td>
+                <td id="passageGpsY">{{ passage_a_gue.gpsY }}</td>
             </tr>            
             <tr>
                 <th>Largeur du passage</th>
@@ -167,6 +167,6 @@
     </table>
     <div class="bouton-align">
         <div><a href="{{ path('passage_a_gue_index') }}" class="btn btn-secondary">Retour</a></div>
-        <div><a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}" class="btn btn-info" >Modifier</a></div>
+        <div><a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}" id="voirModifier" class="btn btn-info" >Modifier</a></div>
         <div>{{ include('passage/_delete_form.html.twig') }}</div>
 {% endblock %}

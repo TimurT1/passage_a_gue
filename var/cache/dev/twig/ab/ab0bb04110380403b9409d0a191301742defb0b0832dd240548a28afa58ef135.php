@@ -132,7 +132,7 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
         foreach ($context['_seq'] as $context["_key"] => $context["passage_a_gue"]) {
             // line 33
             echo "            <tr>
-                <td class='gpsX' data-gpsX-id=\"";
+                <td class='gpsX' gpsX-id=\"";
             // line 34
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "id", [], "any", false, false, false, 34), "html", null, true);
             echo "\">";
@@ -180,7 +180,7 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
             // line 44
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "CoursEau", [], "any", false, false, false, 44), "html", null, true);
             echo "</td> 
-                <td class='localisation' localisation-id=";
+                <td class='localisation' localisation-id=\"";
             // line 45
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "id", [], "any", false, false, false, 45), "html", null, true);
             echo "\">";
@@ -316,6 +316,8 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
                         <a href=\"";
             // line 100
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("passage_a_gue_show", ["id" => twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "id", [], "any", false, false, false, 100)]), "html", null, true);
+            echo "\" voirPlus-id=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["passage_a_gue"], "id", [], "any", false, false, false, 100), "html", null, true);
             echo "\" class=\"btn btn-info\">Voir + </a>
                         <a href=\"";
             // line 101
@@ -383,7 +385,7 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
 
     public function getDebugInfo()
     {
-        return array (  362 => 115,  358 => 114,  353 => 111,  344 => 107,  326 => 102,  322 => 101,  318 => 100,  310 => 94,  301 => 92,  298 => 91,  294 => 90,  286 => 84,  277 => 82,  274 => 81,  270 => 80,  262 => 74,  253 => 72,  250 => 71,  246 => 70,  238 => 64,  229 => 62,  226 => 61,  222 => 60,  214 => 54,  205 => 52,  202 => 51,  198 => 50,  191 => 46,  185 => 45,  181 => 44,  177 => 43,  173 => 42,  169 => 41,  165 => 40,  161 => 39,  157 => 38,  153 => 37,  149 => 36,  143 => 35,  137 => 34,  134 => 33,  116 => 32,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  364 => 115,  360 => 114,  355 => 111,  346 => 107,  328 => 102,  324 => 101,  318 => 100,  310 => 94,  301 => 92,  298 => 91,  294 => 90,  286 => 84,  277 => 82,  274 => 81,  270 => 80,  262 => 74,  253 => 72,  250 => 71,  246 => 70,  238 => 64,  229 => 62,  226 => 61,  222 => 60,  214 => 54,  205 => 52,  202 => 51,  198 => 50,  191 => 46,  185 => 45,  181 => 44,  177 => 43,  173 => 42,  169 => 41,  165 => 40,  161 => 39,  157 => 38,  153 => 37,  149 => 36,  143 => 35,  137 => 34,  134 => 33,  116 => 32,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -421,7 +423,7 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
         <tbody>
         {% for passage_a_gue in passage_a_gues %}
             <tr>
-                <td class='gpsX' data-gpsX-id=\"{{ passage_a_gue.id }}\">{{ passage_a_gue.gpsX }}</td> 
+                <td class='gpsX' gpsX-id=\"{{ passage_a_gue.id }}\">{{ passage_a_gue.gpsX }}</td> 
                 <td class='gpsY' gpsY-id=\"{{ passage_a_gue.id }}\">{{ passage_a_gue.gpsY }}</td>
                 <td>{{ passage_a_gue.frequenceSubmersion }}</td>
                 <td>{{ passage_a_gue.largeurPassage }}</td>
@@ -432,7 +434,7 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
                 <td>{{ passage_a_gue.tauxAccidentalite }}</td>
                 <td>{{ passage_a_gue.TypeOuvrage }}</td> 
                 <td>{{ passage_a_gue.CoursEau }}</td> 
-                <td class='localisation' localisation-id={{ passage_a_gue.id }}\">{{ passage_a_gue.localisation }}</td>  
+                <td class='localisation' localisation-id=\"{{ passage_a_gue.id }}\">{{ passage_a_gue.localisation }}</td>  
                 <td>{{ passage_a_gue.idUtilisateur.fullname }}</td>                
                 <td>
                     <select name=\"\" id=\"\"> 
@@ -487,7 +489,7 @@ class __TwigTemplate_d8e21dfda904c198ff30194d2db7a9e5686d0b528631c0b2d78accd3841
 
                 <td>
                     <div class=\"bouton-align\">
-                        <a href=\"{{ path('passage_a_gue_show', {'id': passage_a_gue.id}) }}\" class=\"btn btn-info\">Voir + </a>
+                        <a href=\"{{ path('passage_a_gue_show', {'id': passage_a_gue.id }) }}\" voirPlus-id=\"{{  passage_a_gue.id }}\" class=\"btn btn-info\">Voir + </a>
                         <a href=\"{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}\" class=\"btn btn-primary\">Modifier</a>
                         {{ include('passage/_delete_form.html.twig') }}
                     </div>

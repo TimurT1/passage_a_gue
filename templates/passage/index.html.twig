@@ -31,7 +31,7 @@
         <tbody>
         {% for passage_a_gue in passage_a_gues %}
             <tr>
-                <td class='gpsX' data-gpsX-id="{{ passage_a_gue.id }}">{{ passage_a_gue.gpsX }}</td> 
+                <td class='gpsX' gpsX-id="{{ passage_a_gue.id }}">{{ passage_a_gue.gpsX }}</td> 
                 <td class='gpsY' gpsY-id="{{ passage_a_gue.id }}">{{ passage_a_gue.gpsY }}</td>
                 <td>{{ passage_a_gue.frequenceSubmersion }}</td>
                 <td>{{ passage_a_gue.largeurPassage }}</td>
@@ -42,7 +42,7 @@
                 <td>{{ passage_a_gue.tauxAccidentalite }}</td>
                 <td>{{ passage_a_gue.TypeOuvrage }}</td> 
                 <td>{{ passage_a_gue.CoursEau }}</td> 
-                <td class='localisation' localisation-id={{ passage_a_gue.id }}">{{ passage_a_gue.localisation }}</td>  
+                <td class='localisation' localisation-id="{{ passage_a_gue.id }}">{{ passage_a_gue.localisation }}</td>  
                 <td>{{ passage_a_gue.idUtilisateur.fullname }}</td>                
                 <td>
                     <select name="" id=""> 
@@ -97,7 +97,7 @@
 
                 <td>
                     <div class="bouton-align">
-                        <a href="{{ path('passage_a_gue_show', {'id': passage_a_gue.id}) }}" class="btn btn-info">Voir + </a>
+                        <a href="{{ path('passage_a_gue_show', {'id': passage_a_gue.id }) }}" voirPlus-id="{{  passage_a_gue.id }}" class="btn btn-info">Voir + </a>
                         <a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}" class="btn btn-primary">Modifier</a>
                         {{ include('passage/_delete_form.html.twig') }}
                     </div>
