@@ -4,19 +4,22 @@
 {% block title %}{% trans %}Passage à gué{% endtrans %}{% endblock %}
 
 {% block main %}
-    <h1>{% endtrans %}Passage à gué{% endtrans %}</h1>
+    <!-- Carte -->
+    <div id="maCarte"></div>
+    <!-- Carte -->
+    <h1>{% trans %}Passage à gué{% endtrans %}</h1>
 
     <table class="table table-sm table-hover">        
         <tbody>
             <tr>
-                <th>{% endtrans %}Gestionnaire{% endtrans %}</th>
+                <th>{% trans %}Gestionnaire{% endtrans %}</th>
                 <td>
                 <table class="table table-sm"> 
                     <thead>
                         <tr>
-                            <th>{% endtrans %}Nom{% endtrans %}</th>
-                            <th>{% endtrans %}Prénom{% endtrans %}</th> 
-                            <th>{% endtrans %}Email{% endtrans %}</th>                 
+                            <th>{% trans %}Nom{% endtrans %}</th>
+                            <th>{% trans %}Prénom{% endtrans %}</th> 
+                            <th>{% trans %}Email{% endtrans %}</th>                 
                         </tr>             
                     </thead>
                      <tbody>
@@ -39,15 +42,15 @@
             </tr>
             <tr>
                 <th>{% trans %}Localisation{% endtrans %}</th>
-                <td>{{ passage_a_gue.localisation }}</td>
+                <td id="passageLocalisation">{{ passage_a_gue.localisation }}</td>
             </tr>             
             <tr>
                 <th>{% trans %}Gps - X{% endtrans %}</th>
-                <td>{{ passage_a_gue.gpsX }}</td>
+                <td id="passageGpsX">{{ passage_a_gue.gpsX }}</td>
             </tr>
             <tr>
                 <th>{% trans %}Gps - Y{% endtrans %}</th>
-                <td>{{ passage_a_gue.gpsY }}</td>
+                <td id="passageGpsY">{{ passage_a_gue.gpsY }}</td>
             </tr>            
             <tr>
                 <th>{% trans %}Largeur du passage{% endtrans %}</th>
@@ -134,11 +137,48 @@
                     <tbody>                
                    </table>
                 </td>                      
+            </tr> 
+            <tr>
+                <th>Equipements</th>                     
+                <td> 
+                    <table> 
+                    <tbody>                    
+                 {% for equipement in passage_a_gue.equipements %}
+                    <tr>                        
+                        <td>{{ equipement.nomEquipement }}</td>
+                    </tr> 
+                 {% endfor %} 
+                    <tbody>                
+                   </table>
+                </td>                      
+            </tr> 
+            <tr>
+                <th>Procedures</th>                     
+                <td> 
+                    <table> 
+                    <tbody>                    
+                 {% for procedure in passage_a_gue.procedures %}
+                    <tr>                        
+                        <td>{{ procedure.nomProcedure }}</td>
+                    </tr> 
+                 {% endfor %} 
+                    <tbody>                
+                   </table>
+                </td>                      
             </tr>                       
         </tbody>
     </table>
     <div class="bouton-align">
         <div><a href="{{ path('passage_a_gue_index') }}" class="btn btn-secondary">{% trans %}Retour{% endtrans %}</a></div>
-        <div><a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}" class="btn btn-info" >{% trans %}Modifier{% endtrans %}</a></div>
+        <div><a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}" id="voirModifier" class="btn btn-info" >{% trans %}Modifier{% endtrans %}</a></div>
         <div>{{ include('passage/_delete_form.html.twig') }}</div>
+{% endblock %}
+
+{% block script %}
+    <!-- Carte -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="/js/carte.js"></script>
+   <!-- Carte -->
 {% endblock %}

@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+
+use App\Entity\Procedure;
+use App\Entity\Equipement;
 use App\Entity\PassageAGue;
 use App\Form\PassageAGueType;
 use App\Repository\PassageAGueRepository;
@@ -10,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -41,10 +45,13 @@ class PassageController extends AbstractController
     public function creation(Request $request, TranslatorInterface $translator): Response
     {
         $passageAGue = new PassageAGue();
+
         $form = $this->createForm(PassageAGueType::class, $passageAGue);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //$passageAGue->setGpsX($this->verificationCoordonees($passageAGue->getGpsX(), 180));
+           // $passageAGue->setGpsY($this->verificationCoordonees($passageAGue->getGpsY(), 90));
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($passageAGue);
             $entityManager->flush();
@@ -59,6 +66,7 @@ class PassageController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    
 
     /**
      * @Route("/{id}", name="passage_a_gue_show", methods={"GET"})
@@ -79,6 +87,8 @@ class PassageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //$passageAGue->setGpsX($this->verificationCoordonees($passageAGue->getGpsX(), 180));
+            //$passageAGue->setGpsY($this->verificationCoordonees($passageAGue->getGpsY(), 90));
             $this->getDoctrine()->getManager()->flush();
 
             $success = $translator->trans('Modification effectuée avec succès');
@@ -91,6 +101,7 @@ class PassageController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+    
 
     /**
      * @Route("/{id}", name="passage_a_gue_delete", methods={"POST"})
@@ -124,5 +135,18 @@ class PassageController extends AbstractController
         $success = $translator->trans('Archivage effectuée avec succès');
         $this->addFlash('message', $success);
         return $this->redirectToRoute('passage_a_gue_index');
+    }
+
+
+    public function verificationCoordonees($gps,$borne){
+        while($gps>$borne || $gps<(-1)*$borne){
+            if($gps>$borne){
+                $gps-=$borne;
+            }
+            else{
+                $gps+=$borne;
+            }
+        }
+        return $gps;
     }
 }

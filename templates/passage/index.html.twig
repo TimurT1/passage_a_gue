@@ -3,9 +3,12 @@
 {% block title %}{% trans %}Passage à gué{% endtrans %}{% endblock %}
 
 {% block main %}
+    <!-- Carte -->
+    <div id="maCarte"></div>
+    <!-- Carte -->
     <h1>{% trans %}Passage à gué{% endtrans %}</h1>
 
-    <table class="table">
+    <table class="table table-sm table-hover">
         <thead>
             <tr>
                 <th>{% trans %}Gps - X{% endtrans %}</th>
@@ -31,8 +34,8 @@
         {% for passage_a_gue in passage_a_gues %}
             {% if passage_a_gue.boolArchive == 0 %}
                 <tr>
-                    <td>{{ passage_a_gue.gpsX }}</td>
-                    <td>{{ passage_a_gue.gpsY }}</td>
+                    <td class='gpsX' gpsX-id="{{ passage_a_gue.id }}">{{ passage_a_gue.gpsX }}</td>
+                    <td class='gpsY' gpsY-id="{{ passage_a_gue.id }}">{{ passage_a_gue.gpsY }}</td>
                     <td>{{ passage_a_gue.frequenceSubmersion }}</td>
                     <td>{{ passage_a_gue.largeurPassage }}</td>
                     <td>{{ passage_a_gue.longueurPassage }}</td>
@@ -42,7 +45,7 @@
                     <td>{{ passage_a_gue.tauxAccidentalite }}</td>
                     <td>{{ passage_a_gue.TypeOuvrage }}</td> 
                     <td>{{ passage_a_gue.CoursEau }}</td> 
-                    <td>{{ passage_a_gue.localisation }}</td>  
+                    <td class='localisation' localisation-id="{{ passage_a_gue.id }}">{{ passage_a_gue.localisation }}</td>  
                     <td>{{ passage_a_gue.idUtilisateur.fullname }}</td>                
                     <td>
                         <select name="" id=""> 
@@ -77,7 +80,7 @@
 
                     <td>
                         <div class="bouton-align">
-                            <a href="{{ path('passage_a_gue_show', {'id': passage_a_gue.id}) }}" class="btn btn-info">{% trans %}Voir + {% endtrans %}</a>
+                            <a href="{{ path('passage_a_gue_show', {'id': passage_a_gue.id}) }}" voirPlus-id="{{  passage_a_gue.id }}" class="btn btn-info">{% trans %}Voir + {% endtrans %}</a>
                             {% if is_granted('ROLE_TECHNICIEN') %}
                                 <a href="{{ path('passage_a_gue_edit', {'id': passage_a_gue.id}) }}" class="btn btn-primary">{% trans %}Modifier{% endtrans %}</a>
                             {% endif %}
@@ -102,4 +105,13 @@
         <a href="{{ path('creation') }}" class="btn btn-success">{% trans %}Créer un nouveau passage{% endtrans %}</a>
         <a href="{{ path('accueil') }}" class="btn btn-secondary">{% trans %}Retour{% endtrans %}</a>
     </div>
+{% endblock %}
+
+{% block script %}
+    <!-- Carte -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="/js/carte.js"></script>
+   <!-- Carte -->
 {% endblock %}

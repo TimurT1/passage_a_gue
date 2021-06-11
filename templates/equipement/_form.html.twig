@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+    
+
+    {{ form_row(form.nomEquipement , { 'label': "Nom Equipement"}) }}
+    {{ form_row(form.photoEquipement , { 'label': "Photo d'Equipement"}) }}
+    
+    {{ form_row(form.detailEquipement , { 'label': "Detail d'Equipement"}) }}
+    {{ form_row(form.etatVestuste , { 'label': "Etat d'Equipement"}) }}
+    {{ form_row(form.idTypeEquipement, { 'label': "Type d'Equipement"}) }}
+    {{ form_row(form.passageAGue,{ 'label': "passageAGue"}) }}
+    
+
+
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

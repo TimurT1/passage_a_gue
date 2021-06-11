@@ -4,5 +4,16 @@
 
 {% block main %}
 <h1>Recherche</h1>
+<!-- Carte -->
+<div id="maCarte"></div>
+<!-- Carte -->
+{% endblock %}
 
+{% block script %}
+    <!-- Carte -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="/js/carte.js"></script>
+   <!-- Carte -->
 {% endblock %}

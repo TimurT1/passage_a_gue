@@ -1,5 +1,7 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 {{ form_start(form) }}
 
+    {#{ form_row(form.id, {'label': "Id"}) }#}
     {{ form_row(form.gpsX, { 'label': "GPS - X", 'attr': {'placeholder' : "123.0123"}}) }}
     {{ form_row(form.gpsY, { 'label': "GPS - Y", 'attr': {'placeholder' : "123.0123"}}) }}
     {{ form_row(form.frequenceSubmersion, { 'label': "Fréquence de submersion", 'attr': {'placeholder' : "2 mois/an"}}) }}
@@ -16,6 +18,61 @@
     {{ form_row(form.users, { 'label': "Permettre l'utilisateur à accéder aux données" }) }}
     {{ form_row(form.submersions, { 'label': "Submersions" }) }}
     {{ form_row(form.route, { 'label': "Route" }) }}
+    {#{ form_row(form.equipements, { 'label': "Equipements" }) }#}
+    
+    <div>    
+        <p>Equipements</p>
+        <span class="ovrir equipement btn btn-info">Voir</span>
+        <ul class="equipements" data-prototype="{{ form_widget(form.equipements.vars.prototype)|e('html_attr') }}"> 
+        
+            {% for equipement in form.equipements %}
+        <span>                
+                <!--li>{#{ form_row(equipement.id) }#}</li-->            
+                <li>{{ form_row(equipement.nomEquipement) }}</li>
+                <li>{{ form_row(equipement.photoEquipement) }}</li>
+                <li>{{ form_row(equipement.detailEquipement) }}</li>
+                <li>{{ form_row(equipement.idTypeEquipement) }}</li>
+                <li>{{ form_row(equipement.etatVestuste) }}</li>
+                <li>{{ form_row(equipement.passageAGue) }}</li> 
+                
+                <button class=" del btn btn-danger">Delete</button>
+        </span>
+            {% endfor %}
+            
+        </ul>
+    </div>   
+    <div>
+        <p>Procedures</p>
+        <span class="ovrir procedure btn btn-info">Voir</span>
+        <ul class="procedures" data-prototype="{{ form_widget(form.procedures.vars.prototype)|e('html_attr') }}"> 
+                
+            {% for procedure in form.procedures %}
+        <span class="procedureSpan">
+                                
+                <li>{{ form_row(procedure.nomProcedure) }}</li>           
+                <li>{{ form_row(procedure.detailProcedure) }}</li>
+                <li>{{ form_row(procedure.dateAjoutProcedure) }}</li>           
+                <li>{{ form_row(procedure.PassageAGue) }}</li> 
+            
+                <button class=" del btn btn-danger">Delete</button>
+        </span>    
+            
+            {% endfor %}
+            
+        </ul>
+
+    </div>
+
+    
+    
+    
+
     <div class="bouton-align">
     <button class="btn btn-success center">{{ button_label|default('Enregistrer') }}</button>
+    
+
+    
+
+
+
 {{ form_end(form) }}

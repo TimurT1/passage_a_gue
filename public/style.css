@@ -98,6 +98,16 @@ thead>tr>th{
 .langue{
     height: 32px;
 }
+table{
+    width: fit-content;
+}
+
+
+/* pour la carte*/
+#maCarte{
+    height: 400px;
+}
+
 
 /**
 *   css de popperjs
@@ -147,3 +157,5 @@ thead>tr>th{
     content: '';
     transform: rotate(45deg);
 }
+
+

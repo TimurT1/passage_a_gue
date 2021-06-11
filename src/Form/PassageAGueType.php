@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use App\Entity\CoursEau;
+use App\Entity\Equipement;
 use App\Entity\PassageAGue;
 use App\Entity\TypeOuvrage;
 use App\Entity\Localisation;
@@ -11,6 +12,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class PassageAGueType extends AbstractType
 {
@@ -18,6 +21,7 @@ class PassageAGueType extends AbstractType
     {
         $editedObject = $builder->getData();
         $builder
+            //->add('id')
             ->add('gpsX')
             ->add('gpsY')
             ->add('frequenceSubmersion')
@@ -67,7 +71,34 @@ class PassageAGueType extends AbstractType
                 'multiple'  => true,
                 'by_reference' => false
             ])
+            /*->add('equipements', EntityType::class, [ 
+                'class'        => 'App\Entity\Equipement',
+                'choice_label' => 'nomEquipement',
+                'label'     => 'Equipement',
+                'expanded'  => true,
+                'multiple'  => true,
+                'by_reference' => true
+            ])*/
+
         ;
+        $builder->add('equipements', CollectionType::class, [
+                    'entry_type' => EquipementType::class,
+                    'entry_options' => ['label' => false],                    
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'by_reference' => false                    
+        ])
+        
+        ;  
+        $builder->add('procedures', CollectionType::class, [
+            'entry_type' => ProcedureType::class,
+            'entry_options' => ['label' => false],                    
+            'allow_add' => true,
+            'allow_delete' => true,
+            'by_reference' => false                    
+        ])
+
+        ;    
     }
 
     public function configureOptions(OptionsResolver $resolver)

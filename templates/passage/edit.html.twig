@@ -8,12 +8,21 @@
 {% endblock %}
 
 {% block main %}
+    <!-- Carte -->
+    <div id="maCarte"></div>
+    <!-- Carte -->
     <div class="formulaire">
         <h1>{% trans %}Edition passage à gué{% endtrans %}</h1>
-
         {{ include('passage/_form.html.twig', {'button_label': 'Modifier'}) }}
         {{ include('passage/_delete_form.html.twig') }}
         <a href="{{ path('passage_a_gue_index') }}" class="btn btn-secondary">{% trans %}Retour{% endtrans %}</a>
-        
     </div>
+{% endblock %}
+
+{% block script %}    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="/js/carte.js"></script>
+    <script src="/js/formulaireImbrique.js"></script>    
 {% endblock %}

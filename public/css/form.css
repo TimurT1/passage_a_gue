@@ -27,6 +27,12 @@ form>div{
 .petit-lien{
     font-size: 0.8em !important;
 }
+/* pour les formulaires imbriqués*/
+
+.procedures, .equipements {
+    display: none;
+}
+
 
 .popup{
     width: 25%;
@@ -74,8 +80,19 @@ form>div{
     transform: rotate(45deg);
 }
   
+/*
+.equipements{
+    width: 1000px;
+    display: flex;
+    flex-flow: row wrap;
+}
 
+.equipements span{
+    
+    width: 50%;
+}
 
+*/
 
 
 

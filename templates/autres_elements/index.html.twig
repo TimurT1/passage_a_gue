@@ -3,6 +3,19 @@
 {% block title %}{% trans %}Accueil{% endtrans %}{% endblock %}
 
 {% block main %}
-<h1>{% trans %}Page d'acceuil{% endtrans %}</h1>
+<!-- Carte -->
+<div id="maCarte"></div>
+<!-- Carte -->
+<h1>{% trans %}Bienvenue sur Pagué{% endtrans %}</h1>
+    
+    
 
+{% endblock %}
+{% block script %}
+    <!-- Carte -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="/js/carte.js"></script>
+   <!-- Carte -->
 {% endblock %}
